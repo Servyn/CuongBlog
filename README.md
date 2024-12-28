@@ -1,2 +1,0 @@
-# CuongBlog
- Blog cá nhân
