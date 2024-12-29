@@ -5,9 +5,27 @@
 
     // Lấy vị trí phát hiện tại từ Local Storage (nếu có)
     const savedTime = localStorage.getItem('audioCurrentTime');
+    const isPaused = localStorage.getItem('audioPaused') === 'true';
+
     if (savedTime) {
         audio.currentTime = savedTime;
     }
+
+    // Nếu nhạc chưa bị pause trước đó, tiếp tục phát
+    if (!isPaused) {
+        audio.play(); // Đảm bảo nhạc tự động chạy
+    } else {
+        audio.pause(); // Nếu bị pause trước đó, nhạc sẽ dừng lại
+    }
+
+    // Lưu trạng thái phát nhạc (play/pause) vào Local Storage
+    audio.addEventListener('play', () => {
+        localStorage.setItem('audioPaused', 'false');
+    });
+
+    audio.addEventListener('pause', () => {
+        localStorage.setItem('audioPaused', 'true');
+    });
 
     // Lưu vị trí phát hiện tại trước khi người dùng rời trang
     window.addEventListener('beforeunload', () => {
