@@ -3,12 +3,282 @@
     <title>CuongBlog</title>
     <link href="https://servyn.github.io/CuongBlog/feed.xml" rel="self" />
     <link href="https://servyn.github.io/CuongBlog" />
-    <updated>2024-12-31T04:39:36+07:00</updated>
+    <updated>2024-12-31T05:30:09+07:00</updated>
     <author>
         <name>Cuong</name>
     </author>
     <id>https://servyn.github.io/CuongBlog</id>
 
+    <entry>
+        <title>Function trong Javascript</title>
+        <author>
+            <name>Cuong</name>
+        </author>
+        <link href="https://servyn.github.io/CuongBlog/blog/function-trong-javascript/"/>
+        <id>https://servyn.github.io/CuongBlog/blog/function-trong-javascript/</id>
+            <category term="Tự học Javascript"/>
+
+        <updated>2024-12-11T05:28:00+07:00</updated>
+            <summary>
+                <![CDATA[
+                    Function(Hàm) là gì? Function (hàm, chức năng), gọi chung là subprogram (chương trình con) có thể được gọi ở bên ngoài hoặc bên trong chính nó. Nó bao&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h3><strong>Function(Hàm) là gì?</strong></h3>
+<p><strong>Function</strong> (hàm, chức năng), gọi chung là <strong>subprogram (chương trình con) </strong>có thể được gọi ở bên ngoài hoặc bên trong chính nó.</p>
+<p>Nó bao gồm tập hợp các câu lệnh gọi là <strong>function</strong> <strong>body. </strong>Các giá trị có thể truyền đến một hàm, và một hàm có thể trả về giá trị. </p>
+<p>Bây giờ, với các ứng dụng hiện đại, các function có thể là một chương trình hoàn chỉnh, chứ không phải là khái niệm tổng quát như ''subprogram" nữa. Có sự khác nhau giữa function và procedure (thủ tục) rằng sự lý tưởng của function nên trả về một giá trị còn procedure thì không ( bây giờ điều này có thể thay đổi theo ngôn ngữ lập trình).</p>
+<h3>1. Khai báo hàm</h3>
+<p>Để khai báo hàm, chúng ta dùng từ khóa <code>function,</code> theo sau nó là:</p>
+<ul>
+<li>Tên hàm</li>
+<li>Danh sách các tham số truyền vào hàm, được đặt trong ngoặc đơn và cách nhau bởi dấu phẩy.</li>
+<li>Các câu lệnh của JavaScript để tạo ra một hàm, được đặt trong ngoặc nhọn <code>{...}</code>.</li>
+</ul>
+<p>Ví dụ, để định nghĩa một hàm in ra chữ "Hello World" ở console:</p>
+<pre class="language-javascript" tabindex="0"><code>function sayHello () {
+  console.log("Hello World");
+}</code></pre>
+<h3>2. Biểu thức hàm (Hàm trong biến)</h3>
+<p>Trong khi việc khai báo hàm ở trên là một câu lệnh về mặt cú pháp, các hàm cũng có thể tạo ra bằng một biểu thức hàm (<strong>function expression</strong>). Một hàm như vậy có thể <strong>nặc danh</strong>; nó không cần phải có tên. Ví dụ, hàm sayHello ở trên có thể được khai báo như sau:</p>
+<pre class="language-javascript" tabindex="0"><code>const sayHello = function() {
+     console.log("Hello World");
+}</code></pre>
+<p>Tuy nhiên, một cái tên <em>có thể</em> được cung cấp trong một biểu thức hàm. Việc cung cấp tên cho phép hàm có thể chạy chính nó, hoặc có thể sử dụng hệ thống debug để nhận dạng hàm trong stack traces.</p>
+<pre class="language-javascript" tabindex="0"><code>const hello = function sayHello() {
+     console.log("Hello World");
+}</code></pre>
+<h3>3. Các ràng buộc về tên hàm</h3>
+<p>Javascript cũng giống như các ngôn ngữ khác nó cũng có các ràng buộc về tên hàm sau đây:</p>
+<ul>
+<li>Tên hàm phải được bắt đầu bằng chữ cái (a-z,A-Z) hoặc ký tự <code>_</code>.</li>
+<li>Tên hàm không được bắt đầu bằng số, các ký tự khác ký tự <code>_</code>.</li>
+</ul>
+<h3>Các loại hàm</h3>
+<h3>1. Hàm cơ bản</h3>
+<p>Đây là dạng hàm cơ bản nhất trong Javascript, cú pháp có dạng như sau:</p>
+<pre class="language-javascript" tabindex="0"><code>function doSomeThing() {
+     // Do Something
+}</code></pre>
+<p>Trong đó: doSomeThing là tên của hàm bạn muốn đặt và <code>function</code> là từ khóa bắt buộc.</p>
+<p>Ví dụ: Tạo hàm in ra tên website codelearn ở console</p>
+<pre class="language-javascript" tabindex="0"><code>function getWebsite() {
+     console.log("https://codelearn.io/");
+}</code></pre>
+<h3>2. Hàm có tham số truyền vào</h3>
+<p>Đây là một dạng hàm rất hay được sử dụng, cú pháp có dạng như sau:</p>
+<pre class="language-javascript" tabindex="0"><code>function funName(param_1, ..., pram_n) {
+	//code
+}</code></pre>
+<p><strong>Trong đó:</strong></p>
+<ul>
+<li><strong>funName </strong>là tên của hàm các bạn muốn đặt.</li>
+<li><strong>param_1,...,pram_n</strong> là các tham số mà các bạn muốn truyền vào hàm(không giới hạn số lượng).</li>
+</ul>
+<p><strong>VD:</strong> Tạo hàm tính tổng 2 số</p>
+<pre class="language-javascript" tabindex="0"><code>function getSum(a, b) {
+	console.log("Tổng: " + (a + b));
+}</code></pre>
+<h3>3. Hàm có tham số mặc định</h3>
+<p>Đây thực ra là dạng hàm có truyền tham số và đồng thời xét luôn giá trị mặc định cho các tham số đó. Cú pháp:</p>
+<pre class="language-javascript" tabindex="0"><code>function funName(param_1 = value_1, ..., pram_n = value_2) {
+	//code
+}</code></pre>
+<p><strong>Trong đó</strong>:</p>
+<ul>
+<li><strong>funName </strong>là tên của hàm các bạn muốn đặt.</li>
+<li><strong>param_1,...,pram_n</strong> là các tham số mà các bạn muốn truyền vào hàm(không giới hạn số lượng).</li>
+<li><strong>value_1,...,value_n</strong> là các giá trị tương ứng với các pram.</li>
+</ul>
+<p><strong>VD</strong>: với hàm <strong>getSum</strong> ở trên mình sẽ xét tham số mặc định cho nó.</p>
+<pre class="language-javascript" tabindex="0"><code>function getSum(a = 5, b = 10) {
+	console.log("Tổng: " + (a + b));
+}</code></pre>
+<h3>4. Hàm có và không trả về giá trị</h3>
+<p>Trong javascript có hai loại hàm,đó là hàm có giá trị trả về và hàm không có giá trị trả về.</p>
+<ul>
+<li>Đối với hàm có giá trị trả về thì phải sử dụng từ khóa <code>return</code></li>
+<li>Và ngược lại đối với hàm không có giá trị trả về thì không có từ khóa <code>return</code></li>
+</ul>
+<p><strong>VD</strong>: khai báo hàm getSum ở trên là hàm có giá trị trả về.</p>
+<pre class="language-javascript" tabindex="0"><code>function getSum(a, b) {
+	return a + b;
+}</code></pre>
+<h3>Gọi hàm</h3>
+<p><em>Việc định nghĩa</em> một hàm sẽ không <em>thực thi</em> nó. Định nghĩa một hàm đơn giản chỉ là đặt tên cho hàm và chỉ định những việc cụ thể sẽ làm khi hàm đó được gọi.</p>
+<p>Ví dụ, nếu bạn định nghĩa hàm sayHello, bạn có thể gọi nó như sau:</p>
+<pre class="language-javascript" tabindex="0"><code>function sayHello () {
+  console.log("Hello World");
+}
+
+sayHello(); // Gọi hàm</code></pre>
+<p>Câu lệnh trên gọi hàm sayHello, kết quả trả về chữ "Hello World" tại console.</p>
+<p>Các hàm phải đặt <em>trong phạm vi (</em><em>in scope)</em> khi nó được gọi, nhưng việc khai báo hàm có thể được hoisted (câu lệnh khai báo hàm xuất hiện bên dưới dòng gọi hàm trong đoạn code), như ví dụ này:</p>
+<pre class="language-javascript" tabindex="0"><code>console.log(getAreaOfSquare(5));
+
+/* ... */
+
+function getAreaOfSquare(n) { 
+    return n*n;
+} </code></pre>
+<p>Phạm vi (scope) của một hàm là khoảng không gian bên trong hàm mà nó được khai báo (hoặc là cả chương trình, nếu nó được khai bảo ở top level, tức là nó không nằm trong hàm nào khác).</p>
+<p><strong>Lưu ý: </strong>Điều này chỉ đúng khi định nghĩa một hàm bằng cách sử dụng các cú pháp ở trên (ví dụ <code>function funcName(){}</code>). Điều này có nghĩa rằng function hoisting chỉ hoạt động với cách khai báo hàm thông thường (function declarations) - function hoisting không hoạt động đối với hàm được khai báo bằng biểu thức hàm (function expression). Ví dụ, đoạn code dưới đây sẽ không hoạt động:</p>
+<pre class="language-javascript" tabindex="0"><code>console.log(getAreaOfSquare); // ReferenceError: getAreaOfSquare is not defined
+console.log(getAreaOfSquare(5)); // ReferenceError: getAreaOfSquare is not defined
+getAreaOfSquare = function (n) {
+  return n * n;
+}</code></pre>
+<h3>Một hàm có thể gọi chính nó</h3>
+<p>Ví dụ, đây là một hàm tính giai thừa đệ quy:</p>
+<pre class="language-javascript" tabindex="0"><code>function factorial(n){
+  if ((n == 0) || (n == 1))
+    return 1;
+  else
+    return (n * factorial(n - 1));
+}</code></pre>
+<p>Bạn có thể tính giai thừa của <code>1</code> tới <code>3</code> như sau:</p>
+<pre class="language-javascript" tabindex="0"><code>var a, b, c;
+a = factorial(1); // a gets the value 1
+b = factorial(2); // b gets the value 2
+c = factorial(3); // c gets the value 6</code></pre>
+<p>Có những cách khác để gọi hàm. Có nhiều trường hợp mà tại đó một hàm cần phải được gọi một cách tự động, hoặc làm thay đổi số lượng đối số truyền vào một hàm, hoặc trong trường hợp mà việc gọi hàm cần được gắn với một object nhất định được quyết định tại thời điểm runtime.</p>
+<p>Điều đó lại hóa ra là <em>các hàm tự bản thân chúng là các object</em>, và kết quả là, những object này có các phương thức. Một trong số chúng, phương thức <code>apply()</code>, có thể được dùng để đạt được mục tiêu này.</p>
+<h3>Phạm vi của hàm (Function Scope)</h3>
+<p>Các biến được định nghĩa bên trong một hàm không thể được truy cập từ nơi nào khác bên ngoài hàm, bởi vì biến đó được định nghĩa chỉ trong phạm vi của hàm. Tuy nhiên, một hàm có thể truy cập đến mọi biến và mọi hàm khác trong cùng phạm vi mà nó được định nghĩa.</p>
+<p>Nói cách khác, một hàm được định nghĩa trong phạm vi global có thể truy cập tới tất cả các biến đã được định nghĩa trong phạm vi global. Một hàm được định nghĩa bên trong một hàm khác có thể truy cập đến tất cả biến được định nghĩa bên trong hàm cha của nó, và bất cứ biến nào khác mà hàm cha của nó có quyền truy cập đến. Các bạn có thể tham khảo ví dụ dưới đây:</p>
+<pre class="language-javascript" tabindex="0"><code>// Các biến sau được định nghĩa trong phạm vi global scope
+var num1 = 20,
+    num2 = 3,
+    name = "Khoa";
+
+// Hàm này được định nghĩa trong phạm vi global scope
+function multiply() {
+  return num1 * num2;
+}
+
+multiply(); // Returns 60
+
+// Một ví dụ hàm lồng nhau
+function getScore () {
+  var num1 = 50,
+      num2 = 50;
+  
+  function add() {
+    return name + " scored " + (num1 + num2);
+  }
+  
+  return add();
+}
+
+getScore(); // Returns "Khoa scored 100"</code></pre>
+<h3>Các tham số của Function</h3>
+<p>Kể từ ES6, xuất hiện 2 dạng tham số mới: <strong><em>default parameters</em></strong> và <strong><em>rest parameters</em></strong></p>
+<h3><strong><em>1. Default parameters</em></strong></h3>
+<p><em>Trong JavaScript, các tham số của function được mặc định là <code>undefined</code>. Tuy nhiên, trong một số trường hợp nó có thể hữu ích để thiết lập một giá trị mặc định khác. Đây chính xác là điều mà default parameters sẽ làm.</em></p>
+<h4 id="Khi_không_có_default_parameters_trước_ES6">Khi không có default parameters (trước ES6)</h4>
+<p>Trong quá khứ, cách thông thường để thiết lập các giá trị mặc định là kiểm định giá trị của các tham số bên trong body của function và gán giá trị cho nó nếu nó là <code>undefined</code>.</p>
+<p>Trong ví dụ sau, nếu không có giá trị nào được truyền cho <code>b</code>, giá trị của nó sẽ là <code>undefined</code> khi thực hiện tính toán <code>a*b</code>, và việc gọi hàm <code>multiply</code> sẽ trả về <code>NaN</code>. Tuy nhiên, điều này bị ngăn chặn bởi dòng thứ 2 trong ví dụ này:</p>
+<pre class="language-javascript" tabindex="0"><code>function multiply(a, b) {
+  b = typeof b !== 'undefined' ?  b : 1;
+
+  return a*b;
+}
+
+multiply(5); // 5</code></pre>
+<h4 id="Khi_có_default_parameters_sau_ES6">Khi có default parameters (sau ES6)</h4>
+<p>Với <em>default parameters</em>, việc kiểm tra thủ công bên trong body của function không còn cần thiết. Bạn có thể đơn giản chỉ là đặt <code>1</code> vào làm giá trị mặc định cho <code>b</code> ngay tại head của function:</p>
+<pre class="language-javascript" tabindex="0"><code>function multiply(a, b = 1) {
+  return a*b;
+}
+
+multiply(5); // 5</code></pre>
+<h3><strong><em>2. Rest parameters</em></strong></h3>
+<p>Cú pháp <strong>rest parameter</strong> cho phép chúng ta dùng 1 mảng để đại diện cho số lượng vô hạn các đối số.</p>
+<p>Trong ví dụ sau, hàm <code>multiply</code> sử dụng <em>rest parameters</em> để thu thập các đối số kể từ đối số hứ hai trở về đến hết. Hàm này sau đó sẽ nhân những đối số này với đối số đầu tiên.</p>
+<pre class="language-javascript" tabindex="0"><code>function multiply(multiplier, ...theArgs) {
+  return theArgs.map(x =&gt; multiplier * x);
+}
+
+var arr = multiply(2, 1, 2, 3);
+console.log(arr); // [2, 4, 6]</code></pre>
+<h3>Arrow Function</h3>
+<p>Trong ES6, <strong>arrow function</strong> là một cú pháp mới dùng để viết các hàm trong <strong>JavaScript</strong>. Nó giúp tiết kiệm thời gian phát triển và đơn giản hóa phạm vi function (<strong>function scope</strong>).</p>
+<p><strong>Arrow function</strong> - còn được gọi là <strong>"fat arrow"</strong>, là cú pháp được mượn từ <strong>CoffeeScript</strong> (một ngôn ngữ chuyển tiếp), cú pháp này là cách ngắn gọn hơn dùng để viết function. Ở đây sử dụng kí tự <code>=&gt;</code>, trông giống như một mũi tên "béo". <strong>Arrow function</strong> là một hàm vô danh và nó thay đổi cách <code>this</code> bind đến function. <strong>Arrow function</strong> làm code của ta trông ngắn gọn hơn, giúp đơn giản hóa function scoping cũng như từ khóa <code>this</code>.</p>
+<p>Dưới đây là 1 vài ví dụ về việc sử dụng <strong>Arrow fucntion</strong> trong <strong>Javascript</strong></p>
+<h4><strong>1. Trường hợp có nhiều tham số</strong></h4>
+<pre class="language-javascript" tabindex="0"><code>// (param1, param2, paramN) =&gt; expression 
+ 
+// ES5 
+var multiply = function(x, y) {
+    return x * y;
+}; 
+ 
+// ES6 
+var multiply = (x, y) =&gt; { return x * y };</code></pre>
+<p>Ví dụ trên cho cùng một kết quả, tuy nhiên cú pháp với arrow function tốn ít dòng mã hơn. Trong trường hợp chỉ có một biểu thức thì không cần tới dấu ngoặc nhọn: Ví dụ trên có thể viết lại như sau:</p>
+<pre class="language-javascript" tabindex="0"><code>var multiply = (x, y) =&gt; x * y ;</code></pre>
+<h4>2. Trường hợp có 1 tham số</h4>
+<p>Dấu ngoặc đơn là không bắt buộc khi chỉ có 1 tham số.</p>
+<pre class="language-javascript" tabindex="0"><code>//ES5 
+var phraseSplitterEs5 = function phraseSplitter(phrase) { 
+    return phrase.split(' '); 
+}; 
+ 
+//ES6 
+var phraseSplitterEs6 = phrase =&gt; phrase.split(" "); 
+ 
+console.log(phraseSplitterEs6("Love Codelearn"));  // ["Love", "Codelearn"]</code></pre>
+<h4>3. Trường hợp không có tham số</h4>
+<p>Dấu ngoặc đơn là bắt buộc khi không có tham số.</p>
+<pre class="language-javascript" tabindex="0"><code>// ES5
+var hello = function sayHello() {
+     console.log("Hello World");
+}
+
+// ES6
+var hello = () =&gt; { console.log("Hello World"); }
+
+hello(); // Hello World</code></pre>
+<h3>Closures</h3>
+<p><strong>Closures</strong> là một trong những chức năng quyền lực nhất của JavaScript. JavaScript cho phép lồng các function vào nhau, và cấp quyền cho function con, để function con có toàn quyền truy cập vào tất cả các biến và function được định nghĩa bên trong function cha (và tất cả biến và function mà function cha được cấp quyền truy cập đến).</p>
+<p>Tuy nhiên, function cha không có quyền truy cập đến các biến và function được định nghĩa bên trong function con. Điều này tạo nên một dạng bảo mật khép kín cho các biến của function con.</p>
+<p>Bên cạnh đó, vì function con có quyền truy cập đến scope của function cha, các biến và function được định nghĩa bên trong function cha sẽ vẫn tồn tại dù việc thực thi function cha đã kết thúc, nếu function con xoay sở để tồn tại lâu hơn thời gian sống của function cha. Một closure được tạo ra khi một function con bằng cách nào đó trở nên khả dụng với bất kỳ scope nào bên ngoài function cha.</p>
+<p>Hãy xem các ví dụ sau đây để hiểu hơn về <strong>Closures</strong></p>
+<p><strong>VD1:</strong></p>
+<pre class="language-javascript" tabindex="0"><code>function numberGenerator() {
+  // Local “free” variable that ends up within the closure
+  var num = 1;
+  function checkNumber() {
+    console.log(num);
+  }
+  num++;
+
+  return checkNumber;
+}
+
+var number = numberGenerator();
+number(); // 2</code></pre>
+<p>Trong ví dụ trên, hàm <code>numberGenerator()</code> tạo ra một biến local <code>num</code> và <code>checkNumber()</code> (một hàm in ra num trong console). Hàm <code>checkNumber()</code> không có bất kỳ biến local nào trong nó. Tuy nhiên, nó có quyền truy cập vào các biến bên ngoài function, bởi vì <code>numberGenerator()</code> là một closure. Do đó, nó có thể sử dụng biến <code>num</code> được khai báo trong <code>numberGenerator()</code> để log <code>num</code> trong console sau khi <code>numberGenerator()</code> được trả lại.</p>
+<p><strong>VD2:</strong></p>
+<pre class="language-javascript" tabindex="0"><code>function sayHello() {
+  var say = function() { console.log(hello); }
+  // Local variable that ends up within the closure
+  var hello = 'Hello, world!';
+
+  return say;
+}
+var sayHelloClosure = sayHello();
+sayHelloClosure(); // ‘Hello, world!’</code></pre>
+<p>Chú ý, biến <code>hello</code> được khai báo sau anonymous function nhưng vẫn có thể truy cập biến <code>hello</code>. Điều này là do biến <code>hello</code> đã được khai báo trong function <em>scope</em> tại thời điểm được tạo ra, làm cho nó có sẵn khi anonymous function được thực thi.</p>
+<h3>Callback Function</h3>
+<p><strong>Callback function</strong> có thể được hiểu nôm na như sau: callback tức là ta truyền một đoạn code <strong>(Hàm A)</strong> này vào một đoạn code khác <strong>(Hàm B)</strong>. Tới một thời điểm nào đó, Hàm A sẽ được hàm B gọi lại (<strong>callback</strong>)<strong>. Javascript</strong> là một ngôn ngữ <strong>lập trình hướng sự kiện</strong> và <strong>bất đồng bộ</strong> nên <strong>callback function</strong> đóng vai trò rất quan trọng, bạn sẽ truyền một <strong>callback function</strong> vào các sự kiện và xử lý bất đồng bộ đó..</p>
+<h3>Tạm kết</h3>
+<p>Như vậy trong bài viết này, chúng ta đã cùng nhau tìm hiểu những vấn đề cơ bản về Function trong Javascript.</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Các framework cho Javascript</title>
         <author>
@@ -18,7 +288,7 @@
         <id>https://servyn.github.io/CuongBlog/blog/postlisting/</id>
             <category term="Tự học Javascript"/>
 
-        <updated>2024-12-31T03:40:13+07:00</updated>
+        <updated>2024-12-10T03:40:00+07:00</updated>
             <summary>
                 <![CDATA[
                     JavaScript Framework là gì? Chức năng của JavaScript Framework: Top 6 JavaScript Framework phổ biến: Các framework mới nổi: Kết luận: Nguồn: icts.io
@@ -44,19 +314,26 @@
 <li>
 <p><strong>Top 6 JavaScript Framework phổ biến:</strong></p>
 <ul>
-<li><strong>React</strong>: Được phát triển bởi Facebook, giúp xây dựng giao diện người dùng với Virtual DOM, JSX, và hỗ trợ tái sử dụng components<img loading="lazy" src="https://icts-website-v2-prod.s3.ap-southeast-1.amazonaws.com/2_7f8e736152.png" alt="undefined" width="440" height="330" data-is-external-image="true"></li>
-<li><strong>Vue.js</strong>: Tạo bởi Evan You, kết hợp các tính năng của Angular và React, hỗ trợ animations và templates dễ sử dụng.<img loading="lazy" src="https://icts-website-v2-prod.s3.ap-southeast-1.amazonaws.com/3_a6839326fa.png" alt="undefined" width="440" height="330" data-is-external-image="true"></li>
-<li><strong>Svelte</strong>: Không sử dụng DOM ảo, biên dịch code thành các module JavaScript nhỏ, giúp tối ưu hóa hiệu suất.<img loading="lazy" src="https://icts-website-v2-prod.s3.ap-southeast-1.amazonaws.com/4_fa2235ec77.png" alt="undefined" width="440" height="330" data-is-external-image="true"></li>
-<li><strong>Angular.js</strong>: Được phát triển bởi Google, cung cấp các công cụ và thư viện tích hợp, hỗ trợ liên kết dữ liệu hai chiều và dependency injection.<img loading="lazy" src="https://icts-website-v2-prod.s3.ap-southeast-1.amazonaws.com/5_86400ec9c3.png" alt="undefined" width="440" height="330" data-is-external-image="true"></li>
-<li><strong>Ember</strong>: Một MVC framework hỗ trợ phát triển ứng dụng web và mobile với Handlebars syntax và công cụ Ember Inspector.<img loading="lazy" src="https://icts-website-v2-prod.s3.ap-southeast-1.amazonaws.com/6_52e0169280.png" alt="undefined" width="438" height="328" data-is-external-image="true"></li>
-<li><strong>Backbone.js</strong>: Framework tối giản giúp phát triển ứng dụng client-side, hỗ trợ MVC và giảm thiểu code khi xử lý DOM.<img loading="lazy" src="https://icts-website-v2-prod.s3.ap-southeast-1.amazonaws.com/7_6f493e654f.png" alt="undefined" width="437" height="328" data-is-external-image="true"></li>
+<li><strong>React</strong>: Được phát triển bởi Facebook, giúp xây dựng giao diện người dùng với Virtual DOM, JSX, và hỗ trợ tái sử dụng components</li>
+<li><img loading="lazy" src="https://icts-website-v2-prod.s3.ap-southeast-1.amazonaws.com/2_7f8e736152.png" alt="undefined" width="440" height="330" data-is-external-image="true"></li>
+<li><strong>Vue.js</strong>: Tạo bởi Evan You, kết hợp các tính năng của Angular và React, hỗ trợ animations và templates dễ sử dụng.</li>
+<li><img loading="lazy" src="https://icts-website-v2-prod.s3.ap-southeast-1.amazonaws.com/3_a6839326fa.png" alt="undefined" width="440" height="330" data-is-external-image="true"></li>
+<li><strong>Svelte</strong>: Không sử dụng DOM ảo, biên dịch code thành các module JavaScript nhỏ, giúp tối ưu hóa hiệu suất.</li>
+<li><img loading="lazy" src="https://icts-website-v2-prod.s3.ap-southeast-1.amazonaws.com/4_fa2235ec77.png" alt="undefined" width="440" height="330" data-is-external-image="true"></li>
+<li><strong>Angular.js</strong>: Được phát triển bởi Google, cung cấp các công cụ và thư viện tích hợp, hỗ trợ liên kết dữ liệu hai chiều và dependency injection.</li>
+<li><img loading="lazy" src="https://icts-website-v2-prod.s3.ap-southeast-1.amazonaws.com/5_86400ec9c3.png" alt="undefined" width="440" height="330" data-is-external-image="true"></li>
+<li><strong>Ember</strong>: Một MVC framework hỗ trợ phát triển ứng dụng web và mobile với Handlebars syntax và công cụ Ember Inspector.</li>
+<li><img loading="lazy" src="https://icts-website-v2-prod.s3.ap-southeast-1.amazonaws.com/6_52e0169280.png" alt="undefined" width="438" height="328" data-is-external-image="true"></li>
+<li><strong>Backbone.js</strong>: Framework tối giản giúp phát triển ứng dụng client-side, hỗ trợ MVC và giảm thiểu code khi xử lý DOM.</li>
+<li><img loading="lazy" src="https://icts-website-v2-prod.s3.ap-southeast-1.amazonaws.com/7_6f493e654f.png" alt="undefined" width="437" height="328" data-is-external-image="true"></li>
 </ul>
 </li>
 <li>
 <p><strong>Các framework mới nổi:</strong></p>
 <ul>
 <li><strong>Redwood.js</strong>: Full-stack framework hỗ trợ việc phát triển ứng dụng web theo cách chuẩn hóa, sử dụng serverless functions và GraphQL.</li>
-<li><strong>Remix</strong>: Framework tối ưu hóa cho server-side rendering (SSR), giúp giảm thiểu JavaScript và cải thiện tốc độ tải trang.<img loading="lazy" src="https://icts-website-v2-prod.s3.ap-southeast-1.amazonaws.com/8_afa3d349fb.png" alt="undefined" width="443" height="332" data-is-external-image="true"></li>
+<li><strong>Remix</strong>: Framework tối ưu hóa cho server-side rendering (SSR), giúp giảm thiểu JavaScript và cải thiện tốc độ tải trang.</li>
+<li><img loading="lazy" src="https://icts-website-v2-prod.s3.ap-southeast-1.amazonaws.com/8_afa3d349fb.png" alt="undefined" width="443" height="332" data-is-external-image="true"></li>
 </ul>
 </li>
 <li>
@@ -77,9 +354,9 @@
         </author>
         <link href="https://servyn.github.io/CuongBlog/blog/blogpostest/"/>
         <id>https://servyn.github.io/CuongBlog/blog/blogpostest/</id>
-            <category term="portfolio"/>
+            <category term="Tự học Javascript"/>
 
-        <updated>2024-12-31T03:33:24+07:00</updated>
+        <updated>2024-12-09T03:33:00+07:00</updated>
             <summary>
                 <![CDATA[
                     Lịch sử object Có một câu nói mang đầy tính triết học như này: Một vấn đề phức tạp có thể được quản lý bằng&hellip;
@@ -449,7 +726,7 @@ console.log(student.getSchool());  // =&gt; NEU
         </content>
     </entry>
     <entry>
-        <title>bài 1 về javascript</title>
+        <title>Biến trong Javascript</title>
         <author>
             <name>Cuong</name>
         </author>
@@ -457,8 +734,170 @@ console.log(student.getSchool());  // =&gt; NEU
         <id>https://servyn.github.io/CuongBlog/blog/bai-1-ve-javascript/</id>
             <category term="Tự học Javascript"/>
 
-        <updated>2024-12-30T17:38:12+07:00</updated>
-            <summary></summary>
-        <content></content>
+        <updated>2024-12-08T17:38:00+07:00</updated>
+            <summary>
+                <![CDATA[
+                    Mở đầu Các biến là phần thiết yếu của mọi ngôn ngữ lập trình. Vì vậy, bạn phải hiểu những điều cơ bản của biến&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h1 id="_mo-dau-0">Mở đầu</h1>
+<p>Các biến là phần thiết yếu của mọi ngôn ngữ lập trình. Vì vậy, bạn phải hiểu những điều cơ bản của biến trước khi bạn đi sâu vào ứng dụng. Nên hôm nay mình xin trình bày đôi nét về biến Javascript.</p>
+<h1 id="_1-bien-la-gi--1">1. Biến là gì ?</h1>
+<p>Giống như nhiều ngôn ngữ lập trình khác, JavaScript có các biến. Các biến có thể được coi là các thùng chứa có tên. Bạn có thể đặt dữ liệu vào các vùng chứa này và sau đó tham khảo dữ liệu chỉ bằng cách đặt tên vùng chứa.</p>
+<h1 id="_2-bien-javascrip-duoc-luu-o-dau-2">2. Biến JavaScrip được lưu ở đâu.</h1>
+<p>Các biến JavaScript được lưu trữ trong bộ nhớ của browser process ( tiến trình trình duyệt) hiểu nôm na 1 cách đơn giản là biến được lưu trong phần Ram mà trình duyệt đang sử dụng.</p>
+<h1 id="_3-khai-bao-bien-3">3. Khai báo biến</h1>
+<p>Để khai báo một biến ta sử dụng từ khóa <code>const, let, var</code>.</p>
+<p><em><strong>const</strong></em> được sử dụng để khai báo 1 hằng số, và giá trị của nó không thay đổi trong suốt chương trình.</p>
+<p><em><strong>let</strong></em> khai báo biến chỉ có thể truy cập được trong block bao quanh nó được xác định bằng cặp {}.</p>
+<p><em><strong>var</strong></em> khai báo biến có thể truy cập ở phạm vi hàm số hoặc bên ngoài hàm số, toàn cục.<br><br>Giống như ngôn ngữ khác, cách đặt tên biến của JS cũng phải tuân theo 1 số quy tắc sau :</p>
+<ul>
+<li>Tên biến phải là các chữ không dấu viết hoa hoặc viết thường, các chữ số từ 0-9 và dấu gạch dưới () và kí hiệu $.</li>
+<li>Tên biến bắt đầu phải là chữ hoặc dấu gạch dưới (_), nếu bắt đầu bằng số là sai.</li>
+<li>Không thể sử dụng các từ dành riêng (như từ khóa JavaScript) làm tên.</li>
+<li>Các tên có phân biệt chữ hoa chữ thường</li>
+</ul>
+<p>một số ví dụ về khai báo biến</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-javascript" data-filename=""><code>*// Đúng*
+
+var person;
+ 
+*// Đúng*
+
+var _person;
+ 
+*// Đúng*
+
+var __person;
+ 
+*// Đúng*
+
+var person1;
+ 
+*// SAI*
+
+var 10persion;
+</code></pre>
+*// Đúng* var person; *// Đúng* var _person; *// Đúng* var __person; *// Đúng* var person1; *// SAI* var 10persion; "&gt;
+<div class="v-content-flex-center"> </div>
+</div>
+<h1 id="_4-kieu-du-lieu-cua-bien-4">4. Kiểu dữ liệu của biến</h1>
+<p>Khi khai báo biến ta không cần phải khai báo kiểu của biến đó trước khi dùng. Kiểu sẽ được tự động xác định trong lúc chương trình được thực thi. Điều đó cũng có nghĩa là một biến có thể chứa giá trị của các kiểu dữ liệu khác nhau.</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-javascript" data-filename=""><code>var test = 123 ; // test là một số
+
+var test = "variable of js "; //test là một chuỗi
+
+var test = true;  // test là một boolean
+</code></pre>
+</div>
+<p>Theo tiêu chuẩn ECMAScript xác định bảy kiểu dữ liệu như sau :</p>
+<blockquote>
+<p>Kiểu boolean</p>
+<p>Kiểu null</p>
+<p>Kiểu undefined</p>
+<p>Kiểu số</p>
+<p>Kiểu chuỗi</p>
+<p>Kiểu Symbol (mới trong ECMAScript 6)</p>
+<p>Kiểu đối tượng</p>
+</blockquote>
+<h1 id="_5-pham-vi-cua-bien-5">5. Phạm vi của biến</h1>
+<p>Có hai loại phạm vi trong JavaScript. <code>biến cục bộ (local scope)</code> và <code>biến toàn cục (global scope)</code>. Biến toàn cục được khai báo ngoài hàm , trong khi đó biến cục bộ được lưu khai báo bên trong một hàm.(Nên với cùng một tên biến, ta có thể khai báo ở những hàm khác nhau).<br><br>Một biến toàn cục có thể được truy cập từ bên ngoài của hàm cũng như bên trong của hàm nhưng, một biến cục bộ chỉ có thể được truy cập bên trong hàm. Nếu truy cập từ bên ngoài của hàm, bạn sẽ nhận được lỗi 'undefined variable' (biến không xác định).</p>
+<p>ví dụ đơn giản :</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-javascript" data-filename=""><code>var foo = 50;  //&lt;= biến toàn cục 
+
+function test() {
+        var bar = 100; //&lt;= biến cục bộ 
+}
+</code></pre>
+</div>
+<p>Ví dụ nâng cao :</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-javascript" data-filename=""><code> function sum(a, b) { 
+     var sum = (a + b) ; // sum là biến cục bố
+     return sum;
+ }
+  
+ var result  = sum(10, 20); //result là biến toàn cục
+  
+  //và chúng ta có thể sử dụng biến result ở khắp nơi
+ function showResult(result) {
+     alert('sum is: ' + result);
+ }
+  
+ showResult();
+</code></pre>
+<button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text=" function sum(a, b) { 
+     var sum = (a + b) ; // sum là biến cục bố
+     return sum;
+ }
+  
+ var result  = sum(10, 20); //result là biến toàn cục
+  
+  //và chúng ta có thể sử dụng biến result ở khắp nơi
+ function showResult(result) {
+     alert('sum is: ' + result);
+ }
+  
+ showResult();
+"></button>
+<div class="v-content-flex-center"> </div>
+</div>
+<p>Trước hết, hàm sum được gọi là truyền hai biến trả về giá trị tổng của biến được truyền. Sau đó, giá trị trả về được lưu trữ trong biến result là biến toàn cục . Sau đó, hàm showResult () được gọi để hiển thị giá trị được lưu trữ trong biến toàn cục.</p>
+<h1 id="_6-mot-so-van-de-hay-gap-phai-khi-lam-viec-voi-bien-6">6. Một số vấn đề hay gặp phải khi làm việc với biến.</h1>
+<p><em><strong>1. Sử dụng toán tử gán (=), thay vì toán tử so sánh (==) trong câu lệnh if.</strong></em></p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-javascript" data-filename=""><code>var x = 0;
+if (x = 10)
+câu lệnh này sẽ trả về giá trị true vì 10 là true
+</code></pre>
+</div>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-javascript" data-filename=""><code>var x = 0;
+if (x = 0) 
+câu lệnh này sẽ trả về giá trị false vì 0 là false
+</code></pre>
+</div>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-javascript" data-filename=""><code>để so sánh chính xác chúng ta phải sử dụng như sau
+var x = 0;
+if (x == 10)
+</code></pre>
+</div>
+<p><strong>2. Nhầm lẫn giữa việc bổ sung và thêm số</strong></p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-javascript" data-filename=""><code>Cả 2 phép  tính toán trên đều sử dụng toán tử cộng giống nhau.
+
+var x = 10;
+var y = 5;
+var z = x + y;           // kết quả của z là  15.
+
+var x = 10;
+var y = "5";
+var z = x + y;           // kết quả của z là "105".
+</code></pre>
+</div>
+<p><strong>3. Phá vỡ chuỗi JavaScript</strong></p>
+<p>javascript cho phép chúng ta chia chuỗi thành 2 dòng nhưng nếu khai báo như :</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-javascript" data-filename=""><code>var x = "Hello
+World!";
+biến sẽ không hoạt động.
+</code></pre>
+</div>
+<p>để biến họat động chúng ta cần khai báo như sau :</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-javascript" data-filename=""><code> var x = "Hello \
+World!";
+</code></pre>
+</div>
+<h1 id="_ket-thuc-7">Kết thúc</h1>
+<p>Đây là một số kiến thức mình học được vào tham khảo từ nhiều nguồn (w3schools ..) trong quá trình học javascript.</p>
+            ]]>
+        </content>
     </entry>
 </feed>
