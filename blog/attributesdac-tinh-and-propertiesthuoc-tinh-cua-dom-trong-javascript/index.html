@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Attributes(Đặc tính) and properties(thuộc tính) của DOM trong Javascript - CuongBlog</title><meta name="description" content="1.Thuộc tính DOM Chúng ta đã thấy các thuộc tính DOM tích hợp sẵn. Có rất nhiều. Nhưng về mặt kỹ thuật thì không ai&hellip;"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://servyn.github.io/CuongBlog/blog/attributesdac-tinh-and-propertiesthuoc-tinh-cua-dom-trong-javascript/"><link rel="alternate" type="application/atom+xml" href="https://servyn.github.io/CuongBlog/feed.xml"><link rel="alternate" type="application/json" href="https://servyn.github.io/CuongBlog/feed.json"><meta property="og:title" content="Attributes(Đặc tính) and properties(thuộc tính) của DOM trong Javascript"><meta property="og:site_name" content="CuongBlog"><meta property="og:description" content="1.Thuộc tính DOM Chúng ta đã thấy các thuộc tính DOM tích hợp sẵn. Có rất nhiều. Nhưng về mặt kỹ thuật thì không ai&hellip;"><meta property="og:url" content="https://servyn.github.io/CuongBlog/blog/attributesdac-tinh-and-propertiesthuoc-tinh-cua-dom-trong-javascript/"><meta property="og:type" content="article"><link rel="preload" href="https://servyn.github.io/CuongBlog/assets/dynamic/fonts/jetbrainsmono/jetbrainsmono.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://servyn.github.io/CuongBlog/assets/dynamic/fonts/jetbrainsmono/jetbrainsmono-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="https://servyn.github.io/CuongBlog/assets/css/style.css?v=2e8e4a056cb849f85447fcd1306475ca"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://servyn.github.io/CuongBlog/blog/attributesdac-tinh-and-propertiesthuoc-tinh-cua-dom-trong-javascript/"},"headline":"Attributes(Đặc tính) and properties(thuộc tính) của DOM trong Javascript","datePublished":"2024-12-31T06:24+07:00","dateModified":"2024-12-31T06:35+07:00","description":"1.Thuộc tính DOM Chúng ta đã thấy các thuộc tính DOM tích hợp sẵn. Có rất nhiều. Nhưng về mặt kỹ thuật thì không ai&hellip;","author":{"@type":"Person","name":"Cuong","url":"https://servyn.github.io/CuongBlog/authors/cuong/"},"publisher":{"@type":"Organization","name":"Cuong"}}</script><noscript><style>img[loading] {
+                    opacity: 1;
+                }</style></noscript></head><body class="post-template"><div class="container container--center"><header class="header"><div class="header__logo"><a class="logo" href="https://servyn.github.io/CuongBlog/">CuongBlog</a></div><nav class="navbar js-navbar"><button class="navbar__toggle js-toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://servyn.github.io/CuongBlog/" target="_self">Home</a></li><li><a href="https://servyn.github.io/CuongBlog/portfolio/" target="_self">Portfolio</a></li><li><a href="https://servyn.github.io/CuongBlog/blog/" title="Danh sách" target="_self">Blog</a></li><li><a href="https://servyn.github.io/CuongBlog/contact/" target="_self">Contact</a></li></ul></nav></header><main class="content"><article class="post"><header><h1 class="post__title">Attributes(Đặc tính) and properties(thuộc tính) của DOM trong Javascript</h1><div class="post__meta"><time datetime="2024-12-31T06:24" class="post__date">December 31, 2024 </time><span class="post__author"><a href="https://servyn.github.io/CuongBlog/authors/cuong/" class="feed__author">Cuong</a></span></div><div class="post__tags"><a href="https://servyn.github.io/CuongBlog/tags/tu-hoc-javascript/" class="invert">Tự học Javascript</a></div></header><div class="post__entry"><h2 class="wp-block-heading">1.<strong>Thuộc tính DOM</strong></h2><p>Chúng ta đã thấy các thuộc tính DOM tích hợp sẵn. Có rất nhiều. Nhưng về mặt kỹ thuật thì không ai giới hạn chúng ta, và nếu không đủ, chúng ta có thể thêm cái của mình.</p><p>Các nút DOM là các đối tượng JavaScript thông thường. Chúng ta có thể thay đổi chúng.</p><p>Ví dụ: hãy tạo một thuộc tính mới trong document.body:</p><pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>document.body.myData = {
+  name: 'Caesar',
+  title: 'Imperator'
+};
+
+alert(document.body.myData.title); // Imperator</code></pre><p>Chúng ta cũng có thể thêm một phương thức:</p><pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>document.body.sayTagName = function() {
+  alert(this.tagName);
+};
+
+document.body.sayTagName(); // BODY (the value of "this" in the method is document.body)</code></pre><p>Chúng ta cũng có thể sửa đổi các nguyên mẫu tích hợp sẵn như Element.prototype và thêm các phương thức mới vào tất cả các phần tử:</p><pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>Element.prototype.sayHi = function() {
+  alert(`Hello, I'm ${this.tagName}`);
+};
+
+document.documentElement.sayHi(); // Hello, I'm HTML
+document.body.sayHi(); // Hello, I'm BODY</code></pre><p>Vì vậy, các thuộc tính và phương thức DOM hoạt động giống như các thuộc tính và phương thức của các đối tượng JavaScript thông thường:</p><ul><li>Chúng có thể có bất kỳ giá trị nào.</li><li>Chúng phân biệt chữ hoa chữ thường (viết elem.nodeType, không phải elem.NoDeTyPe).</li></ul><h2 class="wp-block-heading"><span id="2_Thuoc_tinhAttributes_HTML" class="ez-toc-section"></span>2. <strong>Thuộc tính(Attributes) HTML</strong></h2><p>Trong HTML, các thẻ có thể có các thuộc tính. Khi trình duyệt phân tích cú pháp HTML để tạo các đối tượng DOM cho các thẻ, nó sẽ nhận ra <em>các</em> thuộc tính <em>chuẩn</em> và tạo các thuộc tính DOM từ chúng.</p><p>Vì vậy, khi một phần tử có id hoặc một thuộc tính <em>chuẩn</em> khác , thuộc tính tương ứng sẽ được tạo. Nhưng điều đó không xảy ra nếu thuộc tính không chuẩn.</p><p>Ví dụ:</p><pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>&lt;body id="test" something="non-standard"&gt;
+  &lt;script&gt;
+    alert(document.body.id); // test
+    // non-standard attribute does not yield a property
+    alert(document.body.something); // undefined
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><p>Xin lưu ý rằng một thuộc tính chuẩn cho một phần tử có thể không xác định cho một phần tử khác. Ví dụ: “type”là chuẩn cho <code>&lt;input&gt;</code>( HTMLInputElement ), nhưng không phải cho <code>&lt;body&gt;</code>( HTMLBodyElement ). Các thuộc tính tiêu chuẩn được mô tả trong đặc tả cho lớp phần tử tương ứng.</p><p>Ở đây chúng ta có thể thấy nó:</p><pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>&lt;body id="body" type="..."&gt;
+  &lt;input id="input" type="text"&gt;
+  &lt;script&gt;
+    alert(input.type); // text
+    alert(body.type); // undefined: DOM property not created, because it's non-standard
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><p>Vì vậy, nếu một thuộc tính không phải là tiêu chuẩn, sẽ không có thuộc tính DOM cho nó. Có cách nào để truy cập các thuộc tính như vậy không?</p><p>Chắc chắn rồi. Tất cả các thuộc tính đều có thể truy cập được bằng cách sử dụng các phương pháp sau:</p><ul><li>elem.hasAttribute(name) – kiểm tra sự tồn tại.</li><li>elem.getAttribute(name) – nhận giá trị.</li><li>elem.setAttribute(name, value) – đặt giá trị.</li><li>elem.removeAttribute(name) – loại bỏ thuộc tính.</li></ul><p>Các phương thức này hoạt động chính xác với những gì được viết bằng HTML.</p><p>Ngoài ra, người ta có thể đọc tất cả các thuộc tính bằng cách sử dụng elem.attributes: một tập hợp các đối tượng thuộc một lớp Attr dựng sẵn , với các thuộc tính name và value.</p><p>Dưới đây là bản demo về cách đọc thuộc tính không chuẩn:</p><pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>&lt;body something="non-standard"&gt;
+  &lt;script&gt;
+    alert(document.body.getAttribute('something')); // non-standard
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><p>Thuộc tính HTML có các tính năng sau:</p><ul><li>Tên của họ không phân biệt chữ hoa chữ thường ( id giống như ID).</li><li>Giá trị của chúng luôn là chuỗi.</li></ul><p>Đây là bản demo mở rộng về cách làm việc với các thuộc tính:</p><pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>/*
+Cafedev.vn - Kênh thông tin IT hàng đầu Việt Nam
+@author cafedevn
+Contact: cafedevn@gmail.com
+Fanpage: https://www.facebook.com/cafedevn
+Group: https://www.facebook.com/groups/cafedev.vn/
+Instagram: https://instagram.com/cafedevn
+Twitter: https://twitter.com/CafedeVn
+Linkedin: https://www.linkedin.com/in/cafe-dev-407054199/
+Pinterest: https://www.pinterest.com/cafedevvn/
+YouTube: https://www.youtube.com/channel/UCE7zpY_SlHGEgo67pHxqIoA/
+*/
+
+&lt;body&gt;
+  &lt;div id="elem" about="Elephant"&gt;&lt;/div&gt;
+
+  &lt;script&gt;
+    alert( elem.getAttribute('About') ); // (1) 'Elephant', reading
+
+    elem.setAttribute('Test', 123); // (2), writing
+
+    alert( elem.outerHTML ); // (3), see if the attribute is in HTML (yes)
+
+    for (let attr of elem.attributes) { // (4) list all
+      alert( `${attr.name} = ${attr.value}` );
+    }
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre><p>Xin lưu ý:</p><ol><li>getAttribute(‘About’)- chữ cái đầu tiên là chữ hoa ở đây, và trong HTML thì tất cả đều là chữ thường. Nhưng điều đó không quan trọng: tên thuộc tính không phân biệt chữ hoa chữ thường.</li><li>Chúng ta có thể gán bất kỳ thứ gì cho một thuộc tính, nhưng nó sẽ trở thành một chuỗi. Vì vậy, ở đây chúng ta có giá trị “123”.</li><li>Tất cả các thuộc tính bao gồm cả những cái mà chúng ta thiết lập có thể nhìn thấy trong outerHTML.</li><li>Bộ sưu tập attributes có thể lặp lại và có tất cả các thuộc tính của phần tử (chuẩn và không chuẩn) dưới dạng các đối tượng có  thuộc tính name và value.</li></ol><h2 class="wp-block-heading"><span id="3_Dong_bo_hoa_thuoc_tinh" class="ez-toc-section"></span>3. <strong>Đồng bộ hóa thuộc tính</strong></h2><p>Khi một thuộc tính chuẩn thay đổi, thuộc tính tương ứng sẽ được tự động cập nhật và ngược lại (với một số ngoại lệ).</p><p>Trong ví dụ bên dưới id được sửa đổi dưới dạng một thuộc tính và chúng ta có thể thấy thuộc tính cũng đã thay đổi. Và sau đó ngược lại:</p><pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>&lt;input&gt;
+
+&lt;script&gt;
+  let input = document.querySelector('input');
+
+  // attribute =&gt; property
+  input.setAttribute('id', 'id');
+  alert(input.id); // id (updated)
+
+  // property =&gt; attribute
+  input.id = 'newId';
+  alert(input.getAttribute('id')); // newId (updated)
+&lt;/script&gt;</code></pre><p>Nhưng có những loại trừ, chẳng hạn như input.value chỉ đồng bộ hóa từ thuộc tính → đến thuộc tính, nhưng không đồng bộ hóa trở lại:</p><pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>/*
+Cafedev.vn - Kênh thông tin IT hàng đầu Việt Nam
+@author cafedevn
+Contact: cafedevn@gmail.com
+Fanpage: https://www.facebook.com/cafedevn
+Group: https://www.facebook.com/groups/cafedev.vn/
+Instagram: https://instagram.com/cafedevn
+Twitter: https://twitter.com/CafedeVn
+Linkedin: https://www.linkedin.com/in/cafe-dev-407054199/
+Pinterest: https://www.pinterest.com/cafedevvn/
+YouTube: https://www.youtube.com/channel/UCE7zpY_SlHGEgo67pHxqIoA/
+*/
+
+&lt;input&gt;
+
+&lt;script&gt;
+  let input = document.querySelector('input');
+
+  // attribute =&gt; property
+  input.setAttribute('value', 'text');
+  alert(input.value); // text
+
+  // NOT property =&gt; attribute
+  input.value = 'newValue';
+  alert(input.getAttribute('value')); // text (not updated!)
+&lt;/script&gt;</code></pre><p>Trong ví dụ trên:</p><ul><li>Thay đổi thuộc tính sẽ cập nhật value thuộc tính .</li><li>Nhưng sự thay đổi thuộc tính không ảnh hưởng đến thuộc tính.</li></ul><p>“Tính năng” đó thực sự có thể hữu ích, bởi vì các hành động của người dùng có thể dẫn đến các thay đổi value và sau đó, nếu chúng ta muốn khôi phục giá trị “gốc” từ HTML, thì đó là thuộc tính.</p><h2 class="wp-block-heading"><span id="4_Thuoc_tinh_DOM_duoc_nhap" class="ez-toc-section"></span>4. <strong>Thuộc tính DOM được nhập</strong></h2><p>Thuộc tính DOM không phải lúc nào cũng là chuỗi. Ví dụ, thuộc tính input.checked (dành cho hộp kiểm) là boolean:</p><pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>&lt;input id="input" type="checkbox" checked&gt; checkbox
+
+&lt;script&gt;
+  alert(input.getAttribute('checked')); // the attribute value is: empty string
+  alert(input.checked); // the property value is: true
+&lt;/script&gt;</code></pre><p>Có những ví dụ khác. Các thuộc tính style là một chuỗi, nhưng thuộc tính style là một đối tượng:</p><div class="code-block code-block-4"><div id="ezoic-pub-ad-placeholder-126"><ins class="adsbygoogle" data-ad-client="ca-pub-7094277790563836" data-ad-slot="4847172153" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_4_host"><div class="post__iframe"><iframe loading="lazy" width="696" height="0" id="aswift_4" name="aswift_4" browsingtopics="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;client=ca-pub-7094277790563836&amp;output=html&amp;h=280&amp;slotname=4847172153&amp;adk=1805109040&amp;adf=878008193&amp;pi=t.ma~as.4847172153&amp;w=696&amp;abgtt=6&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1735458073&amp;rafmt=1&amp;format=696x280&amp;url=https%3A%2F%2Fcafedev.vn%2Ftu-hoc-javascript-attributesdac-tinh-and-propertiesthuoc-tinh-cua-dom-trong-javascript%2F&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTMxLjAuNjc3OC4yMDUiLG51bGwsMCxudWxsLCI2NCIsW1siR29vZ2xlIENocm9tZSIsIjEzMS4wLjY3NzguMjA1Il0sWyJDaHJvbWl1bSIsIjEzMS4wLjY3NzguMjA1Il0sWyJOb3RfQSBCcmFuZCIsIjI0LjAuMC4wIl1dLDBd&amp;dt=1735600975913&amp;bpp=2&amp;bdt=983&amp;idt=530&amp;shv=r20241212&amp;mjsv=m202412090101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3Dc8d1aadb69abb428%3AT%3D1735600976%3ART%3D1735600976%3AS%3DALNI_Ma97JVz8cnY_dN_ML3yNyOPxswg1A&amp;gpic=UID%3D00000fc6e58f02c7%3AT%3D1735600976%3ART%3D1735600976%3AS%3DALNI_Ma8XA6Olplal5DfFCLdOut6QZc8vA&amp;eo_id_str=ID%3D5ce7be846a91b15d%3AT%3D1735600976%3ART%3D1735600976%3AS%3DAA-AfjaD5J1IW_yMxPr-Bwiz5lih&amp;prev_fmts=0x0%2C696x280%2C324x250%2C324x250%2C324x250%2C324x250%2C324x250%2C1200x280%2C696x280%2C1349x641%2C1005x124%2C696x280%2C468x60%2C728x90&amp;nras=4&amp;correlator=8415705087904&amp;frm=20&amp;pv=1&amp;u_tz=420&amp;u_his=15&amp;u_h=768&amp;u_w=1366&amp;u_ah=728&amp;u_aw=1366&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=141&amp;ady=7879&amp;biw=1349&amp;bih=641&amp;scr_x=0&amp;scr_y=5358&amp;eid=31088670%2C31089330%2C31089337%2C95345967&amp;oid=2&amp;psts=AOrYGsnZ_asrSU4BhJ3mVsotPcZnFjYULgB87MeJdvVhccCDfRW3NIQ_TEFIbiPPwJEUgGNZEbTVMOCAR2XSIkDuj_6lJ70-lDCCx-8hNcTk9lWmVeZPuw&amp;pvsid=1807840698320409&amp;tmod=937132645&amp;uas=3&amp;nvt=1&amp;ref=https%3A%2F%2Fwww.google.com%2F&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1366%2C0%2C1366%2C728%2C1366%2C641&amp;vis=1&amp;rsz=%7C%7CoeEbr%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;bz=1&amp;td=1&amp;tdf=0&amp;psd=W251bGwsbnVsbCwibGFiZWxfb25seV8zIiwxXQ..&amp;nt=1&amp;ifi=5&amp;uci=a!5&amp;btvi=10&amp;fsb=1&amp;dtd=32218" data-google-container-id="a!5" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CI-_qczR0IoDFWBKnQkdT68UeA" data-load-complete="true" data-mce-fragment="1"></iframe></div></div></ins></div></div><pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>&lt;div id="div" style="color:red;font-size:120%"&gt;Hello&lt;/div&gt;
+
+&lt;script&gt;
+  // string
+  alert(div.getAttribute('style')); // color:red;font-size:120%
+
+  // object
+  alert(div.style); // [object CSSStyleDeclaration]
+  alert(div.style.color); // red
+&lt;/script&gt;</code></pre><p>Hầu hết các thuộc tính là chuỗi mặc dù.</p><p>Rất hiếm, ngay cả khi loại thuộc tính DOM là một chuỗi, nó có thể khác với thuộc tính. Ví dụ: thuộc tính href DOM luôn là một URL <em>đầy đủ</em> , ngay cả khi thuộc tính chứa một URL tương đối hoặc chỉ một #hash.</p><p>Đây là một ví dụ:</p><pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>&lt;a id="a" href="#hello"&gt;link&lt;/a&gt;
+&lt;script&gt;
+  // attribute
+  alert(a.getAttribute('href')); // #hello
+
+  // property
+  alert(a.href ); // full URL in the form http://site.com/page#hello
+&lt;/script&gt;</code></pre><p>Nếu chúng ta cần giá trị của href hoặc bất kỳ thuộc tính nào khác chính xác như được viết trong HTML, chúng ta có thể sử dụng getAttribute.</p><h2 class="wp-block-heading"><span id="5_Thuoc_tinh_khong_chuan_tap_du_lieu" class="ez-toc-section"></span>5. <strong>Thuộc tính không chuẩn, tập dữ liệu</strong></h2><p>Khi viết HTML, chúng ta sử dụng rất nhiều thuộc tính chuẩn. Nhưng những gì về những cái không chuẩn, tùy chỉnh? Đầu tiên, hãy xem chúng có hữu ích hay không? Để làm gì?</p><p>Đôi khi các thuộc tính không chuẩn được sử dụng để chuyển dữ liệu tùy chỉnh từ HTML sang JavaScript hoặc để “đánh dấu” các phần tử HTML cho JavaScript.</p><p>Như thế này:</p><pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>&lt;!-- mark the div to show "name" here --&gt;
+&lt;div show-info="name"&gt;&lt;/div&gt;
+&lt;!-- and age here --&gt;
+&lt;div show-info="age"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  // the code finds an element with the mark and shows what's requested
+  let user = {
+    name: "David",
+    age: 25
+  };
+
+  for(let div of document.querySelectorAll('[show-info]')) {
+    // insert the corresponding info into the field
+    let field = div.getAttribute('show-info');
+    div.innerHTML = user[field]; // first David into "name", then 25 into "age"
+  }
+&lt;/script&gt;</code></pre><p>Ngoài ra, chúng có thể được sử dụng để tạo kiểu cho một phần tử.</p><p>Ví dụ: ở đây đối với trạng thái đơn hàng, thuộc tính order-state được sử dụng:</p><pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>&lt;style&gt;
+  /* styles rely on the custom attribute "order-state" */
+  .order[order-state="new"] {
+    color: green;
+  }
+
+  .order[order-state="pending"] {
+    color: blue;
+  }
+
+  .order[order-state="canceled"] {
+    color: red;
+  }
+&lt;/style&gt;
+
+&lt;div class="order" order-state="new"&gt;
+  A new order.
+&lt;/div&gt;
+
+&lt;div class="order" order-state="pending"&gt;
+  A pending order.
+&lt;/div&gt;
+
+&lt;div class="order" order-state="canceled"&gt;
+  A canceled order.
+&lt;/div&gt;</code></pre><p>Tại sao sử dụng một thuộc tính được thích hợp hơn để có các lớp học như .order-state-new, .order-state-pending, order-state-canceled?</p><div class="code-block code-block-5"><ins class="adsbygoogle" data-ad-client="ca-pub-7094277790563836" data-ad-slot="4847172153" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_5_host"><div class="post__iframe"><iframe loading="lazy" width="696" height="0" id="aswift_5" name="aswift_5" browsingtopics="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;client=ca-pub-7094277790563836&amp;output=html&amp;h=280&amp;slotname=4847172153&amp;adk=33370681&amp;adf=3805417209&amp;pi=t.ma~as.4847172153&amp;w=696&amp;abgtt=6&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1735458073&amp;rafmt=1&amp;format=696x280&amp;url=https%3A%2F%2Fcafedev.vn%2Ftu-hoc-javascript-attributesdac-tinh-and-propertiesthuoc-tinh-cua-dom-trong-javascript%2F&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTMxLjAuNjc3OC4yMDUiLG51bGwsMCxudWxsLCI2NCIsW1siR29vZ2xlIENocm9tZSIsIjEzMS4wLjY3NzguMjA1Il0sWyJDaHJvbWl1bSIsIjEzMS4wLjY3NzguMjA1Il0sWyJOb3RfQSBCcmFuZCIsIjI0LjAuMC4wIl1dLDBd&amp;dt=1735600975915&amp;bpp=1&amp;bdt=985&amp;idt=534&amp;shv=r20241212&amp;mjsv=m202412090101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3Dc8d1aadb69abb428%3AT%3D1735600976%3ART%3D1735600976%3AS%3DALNI_Ma97JVz8cnY_dN_ML3yNyOPxswg1A&amp;gpic=UID%3D00000fc6e58f02c7%3AT%3D1735600976%3ART%3D1735600976%3AS%3DALNI_Ma8XA6Olplal5DfFCLdOut6QZc8vA&amp;eo_id_str=ID%3D5ce7be846a91b15d%3AT%3D1735600976%3ART%3D1735600976%3AS%3DAA-AfjaD5J1IW_yMxPr-Bwiz5lih&amp;prev_fmts=0x0%2C696x280%2C324x250%2C324x250%2C324x250%2C324x250%2C324x250%2C1200x280%2C696x280%2C1349x641%2C1005x124%2C696x280%2C468x60%2C728x90%2C696x280&amp;nras=4&amp;correlator=8415705087904&amp;frm=20&amp;pv=1&amp;u_tz=420&amp;u_his=15&amp;u_h=768&amp;u_w=1366&amp;u_ah=728&amp;u_aw=1366&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=141&amp;ady=10204&amp;biw=1349&amp;bih=641&amp;scr_x=0&amp;scr_y=7698&amp;eid=31088670%2C31089330%2C31089337%2C95345967&amp;oid=2&amp;psts=AOrYGsnZ_asrSU4BhJ3mVsotPcZnFjYULgB87MeJdvVhccCDfRW3NIQ_TEFIbiPPwJEUgGNZEbTVMOCAR2XSIkDuj_6lJ70-lDCCx-8hNcTk9lWmVeZPuw&amp;pvsid=1807840698320409&amp;tmod=937132645&amp;uas=3&amp;nvt=1&amp;ref=https%3A%2F%2Fwww.google.com%2F&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1366%2C0%2C1366%2C728%2C1366%2C641&amp;vis=1&amp;rsz=%7C%7CoeEbr%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;bz=1&amp;td=1&amp;tdf=0&amp;psd=W251bGwsbnVsbCwibGFiZWxfb25seV8zIiwxXQ..&amp;nt=1&amp;ifi=6&amp;uci=a!6&amp;btvi=11&amp;fsb=1&amp;dtd=32864" data-google-container-id="a!6" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CO7u0MzR0IoDFdV6nQkdjOoNpw" data-load-complete="true" data-mce-fragment="1"></iframe></div></div></ins></div><p>Bởi vì một thuộc tính sẽ thuận tiện hơn để quản lý. Trạng thái có thể được thay đổi dễ dàng như:</p><pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>// a bit simpler than removing old/adding a new class
+div.setAttribute('order-state', 'canceled');</code></pre><p>Nhưng có thể có một vấn đề có thể xảy ra với các thuộc tính tùy chỉnh. Điều gì sẽ xảy ra nếu chúng ta sử dụng một thuộc tính phi tiêu chuẩn cho các mục đích của mình và sau đó tiêu chuẩn giới thiệu nó và khiến nó hoạt động? Ngôn ngữ HTML vẫn tồn tại, nó phát triển và nhiều thuộc tính xuất hiện hơn để phù hợp với nhu cầu của các nhà phát triển. Có thể có những tác động không mong muốn trong trường hợp đó</p><p>Để tránh xung đột, có các thuộc tính data- * .</p><p><strong>Tất cả các thuộc tính bắt đầu bằng “data-” được dành riêng cho <svg viewbox="100 -1000 840 840" width="calc(15px - 2px)" height="15px"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"></path></svg> <span class="google-anno-t">lập trình</span> viên sử dụng. Chúng có sẵn trong thuộc tính dataset.</strong></p><p>Ví dụ: nếu một thuộc tính elem có tên “data-about”, thuộc tính đó có sẵn dưới dạng elem.dataset.about.</p><p>Như thế này:</p><pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>&lt;body data-about="Elephants"&gt;
+&lt;script&gt;
+  alert(document.body.dataset.about); // Elephants
+&lt;/script&gt;</code></pre><p>Nhiều từ các thuộc tính như data-order-state trở thành lạc đà: dataset.orderState.</p><p>Đây là một ví dụ về “trạng thái đơn hàng” được viết lại:</p><pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>&lt;style&gt;
+  .order[data-order-state="new"] {
+    color: green;
+  }
+
+  .order[data-order-state="pending"] {
+    color: blue;
+  }
+
+  .order[data-order-state="canceled"] {
+    color: red;
+  }
+&lt;/style&gt;
+
+&lt;div id="order" class="order" data-order-state="new"&gt;
+  A new order.
+&lt;/div&gt;
+
+&lt;script&gt;
+  // read
+  alert(order.dataset.orderState); // new
+
+  // modify
+  order.dataset.orderState = "pending"; // (*)
+&lt;/script&gt;</code></pre><p>Sử dụng thuộc tính data-* là một cách hợp lệ, an <svg viewbox="100 -1000 840 840" width="calc(15px - 2px)" height="15px"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"></path></svg> <span class="google-anno-t">toàn</span> để chuyển dữ liệu tùy chỉnh.</p><p>Xin lưu ý rằng chúng ta không chỉ có thể đọc mà còn có thể sửa đổi các thuộc tính dữ liệu. Sau đó CSS ​​cập nhật chế độ xem cho phù hợp: trong ví dụ trên, dòng cuối cùng (*)thay đổi màu thành màu xanh lam.</p><h2 class="wp-block-heading"><span id="6_Tom_luoc" class="ez-toc-section"></span>6. <strong>Tóm lược</strong></h2><ul><li>Đặc tính(Attributes) – là những gì được viết bằng HTML.</li><li>Thuộc tính(Properties) – là những gì trong các đối tượng DOM.</li></ul><p>Một so sánh nhỏ:</p><table class="wp-block-table"><tbody><tr><td> </td><td><strong>Tính chất</strong></td><td><strong>Thuộc tính</strong></td></tr><tr><td>Kiểu</td><td>Bất kỳ giá trị nào, thuộc tính tiêu chuẩn có các loại được mô tả trong thông số kỹ thuật</td><td>Một chuỗi</td></tr><tr><td>Tên</td><td>Tên phân biệt chữ hoa chữ thường</td><td>Tên không phân biệt chữ hoa chữ thường</td></tr></tbody></table><p>Các phương pháp để làm việc với các thuộc tính là:</p><ul><li>elem.hasAttribute(name) – để kiểm tra sự tồn tại.</li><li>elem.getAttribute(name) – để nhận giá trị.</li><li>elem.setAttribute(name, value) – để đặt giá trị.</li><li>elem.removeAttribute(name) – để loại bỏ thuộc tính.</li><li>elem.attributes là một tập hợp của tất cả các thuộc tính.</li></ul><p>Đối với hầu hết các tình huống, việc sử dụng thuộc tính DOM là tốt hơn. Chúng ta chỉ nên tham khảo các thuộc tính khi các thuộc tính DOM không phù hợp với chúng ta, khi chúng ta cần các thuộc tính chính xác, ví dụ:</p><ul><li>Chúng ta cần một thuộc tính không chuẩn. Nhưng nếu nó bắt đầu bằng data-, thì chúng ta nên sử dụng dataset.</li><li>Chúng ta muốn đọc giá trị “như được viết” trong HTML. Giá trị của thuộc tính DOM có thể khác nhau, ví dụ: thuộc tính href luôn là một URL đầy đủ và chúng ta có thể muốn lấy giá trị “gốc”.</li></ul></div><footer class="wrapper post__footer"><p class="post__last-updated">This article was updated on December 31, 2024</p><div class="post__share"></div></footer><nav class="pagination"><div class="pagination__title"><span>Read other posts</span></div><div class="pagination__buttons"><a href="https://servyn.github.io/CuongBlog/blog/function-trong-javascript/" class="btn previous" rel="prev" aria-label="[MISSING TRANSLATION]:  Function trong Javascript "><span class="btn__icon">←</span> <span class="btn__text">Function trong Javascript</span> </a><a href="https://servyn.github.io/CuongBlog/blog/cach-su-dung-api-trong-javascript/" class="btn next" rel="next" aria-label="[MISSING TRANSLATION]:  Cách sử dụng API trong JavaScript "><span class="btn__text">Cách sử dụng API trong JavaScript</span> <span class="btn__icon">→</span></a></div></nav></article></main><footer class="footer"><div class="footer__inner"><div class="footer__copyright"><footer><audio id="background-music" autoplay="autoplay" loop="loop" controls="controls"><source src="https://servyn.github.io/CuongBlog/media/files/Homemusic.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio><script>const audio = document.getElementById('background-music');
+
+    // Lấy vị trí phát hiện tại từ Local Storage (nếu có)
+    const savedTime = localStorage.getItem('audioCurrentTime');
+    const isPaused = localStorage.getItem('audioPaused') === 'true';
+
+    // Nếu có thời gian đã lưu, thiết lập lại vị trí phát nhạc
+    if (savedTime) {
+        audio.currentTime = savedTime;
+    }
+
+    // Kiểm tra trạng thái âm thanh
+    if (isPaused) {
+        audio.pause(); // Nếu pause, nhạc dừng lại
+    } else {
+        audio.play(); // Nếu chưa pause, nhạc tiếp tục phát
+    }
+
+    // Lưu trạng thái play/pause vào Local Storage khi nhạc bắt đầu phát
+    audio.addEventListener('play', () => {
+        localStorage.setItem('audioPaused', 'false');
+    });
+
+    // Lưu trạng thái pause vào Local Storage khi nhạc dừng
+    audio.addEventListener('pause', () => {
+        localStorage.setItem('audioPaused', 'true');
+    });
+
+    // Lưu vị trí phát hiện tại vào Local Storage trước khi người dùng rời trang
+    window.addEventListener('beforeunload', () => {
+        localStorage.setItem('audioCurrentTime', audio.currentTime);
+    });</script><div class="footer-content"><br><img src="https://servyn.github.io/CuongBlog/media/files/Logo.png" alt="Logo" width="136" height="136"><p>© 2024 by CAO MANH CUONG</p></div></footer></div></div></footer></div><script defer="defer" src="https://servyn.github.io/CuongBlog/assets/js/scripts.min.js?v=c2232aa7558e9517946129d2a1b8c770"></script><script>window.publiiThemeMenuConfig={mobileMenuMode:'sidebar',animationSpeed:300,submenuWidth: 'auto',doubleClickTime:500,mobileMenuExpandableSubmenus:true,relatedContainerForOverlayMenuSelector:'.top'};</script><script>var images = document.querySelectorAll('img[loading]');
+        for (var i = 0; i < images.length; i++) {
+            if (images[i].complete) {
+                images[i].classList.add('is-loaded');
+            } else {
+                images[i].addEventListener('load', function () {
+                    this.classList.add('is-loaded');
+                }, false);
+            }
+        }</script></body></html>

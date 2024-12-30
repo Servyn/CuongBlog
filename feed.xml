@@ -3,609 +3,515 @@
     <title>CuongBlog</title>
     <link href="https://servyn.github.io/CuongBlog/feed.xml" rel="self" />
     <link href="https://servyn.github.io/CuongBlog" />
-    <updated>2024-12-31T05:54:20+07:00</updated>
+    <updated>2024-12-31T06:35:44+07:00</updated>
     <author>
         <name>Cuong</name>
     </author>
     <id>https://servyn.github.io/CuongBlog</id>
 
     <entry>
-        <title>Mảng trong Javascript</title>
+        <title>Cách sử dụng API trong JavaScript</title>
         <author>
             <name>Cuong</name>
         </author>
-        <link href="https://servyn.github.io/CuongBlog/blog/mang-trong-javascript/"/>
-        <id>https://servyn.github.io/CuongBlog/blog/mang-trong-javascript/</id>
+        <link href="https://servyn.github.io/CuongBlog/blog/cach-su-dung-api-trong-javascript/"/>
+        <id>https://servyn.github.io/CuongBlog/blog/cach-su-dung-api-trong-javascript/</id>
             <category term="Tự học Javascript"/>
 
-        <updated>2024-12-31T05:52:05+07:00</updated>
+        <updated>2024-12-31T06:34:34+07:00</updated>
             <summary>
                 <![CDATA[
-                    Định nghĩa về Array Javascript Mảng (Array) là kiểu dữ liệu trong Javascript và được sử dụng để lưu trữ nhiều giá trị trong một biến. Các&hellip;
+                    API Là Gì? Một API (Giao diện Lập trình Ứng dụng) là một cách để hai hoặc nhiều chương trình máy tính hoặc thành phần giao tiếp với nhau.
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <div id="t1" class="section">
-<h2><span id="Dinh_nghia_ve_Array_Javascript"><strong>Định nghĩa về Array Javascript</strong></span></h2>
-<p>Mảng (Array) là kiểu dữ liệu trong <strong>Javascript</strong> và được sử dụng để lưu trữ nhiều giá trị trong một biến. Các giá trị trong mảng có thể thuộc bất kỳ kiểu dữ liệu nào, chẳng hạn như chuỗi, số, boolean, hoặc các kiểu dữ liệu khác.</p>
-<figure class="size-full wp-image-77353 aligncenter sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro.jpg 1000w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-300x132.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-700x309.webp 640w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-200x88.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-100x44.webp 100w" sizes="(max-width: 1000px) 100vw, 1000px" type="image/webp"><img loading="lazy"  src="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro.jpg" sizes="(max-width: 1000px) 100vw, 1000px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro.jpg 1000w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-300x132.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-700x309.jpg 640w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-200x88.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-100x44.jpg 100w" alt="array javascript - itviec blog" width="1000" height="441" data-is-external-image="true"></figure></picture></p>
-<p><i>Array Javascript (Nguồn: Geeksforgeeks)</i></p>
-<p>Một số thuật ngữ cơ bản trong Array Javascript như:</p>
+                <h2 id="api-l%C3%A0-g%C3%AC">API Là Gì?</h2>
+<p>Một API (Giao diện Lập trình Ứng dụng) là một cách để <strong>hai hoặc nhiều chương trình máy tính hoặc thành phần</strong> giao tiếp với nhau. Nó hoạt động như một <strong>giao diện phần mềm</strong>, cung cấp dịch vụ cho các phần mềm khác.</p>
+<h2 id="t%E1%BA%A1i-sao-b%E1%BA%A1n-n%C3%AAn-quan-t%C3%A2m-%C4%91%E1%BA%BFn-apis">Tại Sao Bạn Nên Quan Tâm Đến APIs?</h2>
+<p>APIs là nền tảng của phát triển web hiện đại. Chúng cho phép các ứng dụng của bạn tiếp cận một lượng lớn tài nguyên bên ngoài mà không cần phải phát minh lại bánh xe.</p>
+<h3 id="truy-c%E1%BA%ADp-d%E1%BB%AF-li%E1%BB%87u-b%E1%BA%A1n-c%E1%BA%A7n">Truy Cập Dữ Liệu Bạn Cần:</h3>
 <ul>
-<li aria-level="1"><strong>Mảng (Array):</strong> Cấu trúc dữ liệu trong Javascript cho phép bạn lưu trữ nhiều giá trị trong một biến duy nhất.</li>
-<li aria-level="1"><strong>Phần tử mảng (Array Element):</strong> Mỗi giá trị trong một mảng được gọi là một phần tử, các phần tử được truy cập theo chỉ mục của chúng.</li>
-<li aria-level="1"><strong>Chỉ mục mảng (Array Index):</strong> Một biểu diễn số cho biết vị trí của một phần tử trong mảng. Mảng Javascript được lập chỉ mục bằng 0, nghĩa là phần tử đầu tiên có chỉ mục là 0.</li>
-<li aria-level="1"><strong>Độ dài mảng (Array Length):</strong> Số lượng phần tử trong một mảng, có thể truy xuất bằng thuộc tính length.</li>
+<li>APIs không chỉ dùng để xây dựng ứng dụng; chúng còn cung cấp quyền truy cập vào một loạt các bộ dữ liệu khác nhau.</li>
+<li>Bạn có thể truy cập vào các nguồn dữ liệu như <strong>US Census</strong>, <strong>dữ liệu chăm sóc sức khỏe</strong>, <strong>thông tin tài chính</strong>, và nhiều hơn nữa.</li>
+<li>Bằng cách hiểu cách sử dụng APIs, bạn có thể trực tiếp thu thập, xử lý và hiểu các dữ liệu liên quan cho các dự án của mình.</li>
+<li>APIs cho phép bạn tránh phụ thuộc vào trung gian và lấy dữ liệu bạn cần trực tiếp từ nguồn.</li>
 </ul>
-<h2><span id="12_phuong_thuc_co_ban_cua_Array_Javascript"><strong>12 phương thức cơ bản của Array Javascript </strong></span></h2>
-<h3><strong>Array Length</strong></h3>
-<p>Thuộc tính length có công dụng trả về độ dài (kích thước) của một mảng:</p>
-<pre>&lt;!DOCTYPE html&gt;
-&lt;<strong>html</strong>&gt;
-&lt;<strong>body</strong>&gt;
-&lt;<strong>h1</strong>&gt;JavaScript Arrays&lt;/<strong>h1</strong>&gt;
-&lt;<strong>h2</strong>&gt;The length Property&lt;/<strong>h2</strong>&gt;
-
-&lt;<strong>p</strong>&gt;The length property returns the length of an array:&lt;/<strong>p</strong>&gt;
-
-&lt;<strong>p</strong> id="demo"&gt;&lt;/<strong>p</strong>&gt;
-
-&lt;<strong>script</strong>&gt;
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
-let size = fruits.length;
-document.getElementById("demo").innerHTML = size;
-&lt;/<strong>script</strong>&gt;
-
-&lt;/<strong>body</strong>&gt;
-&lt;/<strong>html</strong>&gt;</pre>
-<h3><strong>ArraytoString()</strong></h3>
-<p>Phương thức Javascript toString() giúp chuyển đổi một mảng thành một chuỗi các giá trị mảng, được phân tách bằng dấu phẩy.</p>
-<pre>&lt;!DOCTYPE html&gt;
-&lt;<strong>html</strong>&gt;
-&lt;<strong>body</strong>&gt;
-&lt;<strong>h1</strong>&gt;JavaScript Arrays&lt;/<strong>h1</strong>&gt; 
-&lt;<strong>h2</strong>&gt;The toString() Method&lt;/<strong>h2</strong>&gt;
-
-&lt;<strong>p</strong>&gt;The toString() method returns an array as a comma separated string:&lt;/<strong>p</strong>&gt;
-
-&lt;<strong>p</strong> id="demo"&gt;&lt;/<strong>p</strong>&gt;
-
-&lt;<strong>script</strong>&gt;
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
-document.getElementById("demo").innerHTML = fruits.toString();
-&lt;/<strong>script</strong>&gt;
-
-&lt;/<strong>body</strong>&gt;
-&lt;/<strong>html</strong>&gt;</pre>
-<h3><strong>Array join()</strong></h3>
-<p>Phương pháp join() giúp nối tất cả các phần tử trong mảng thành một chuỗi. Nhìn chung, join() hoạt động giống toString() nhưng bạn có thể chỉ định thêm dấu phân cách. </p>
-<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
-document.getElementById("demo").innerHTML = fruits.join(" * ");
-&lt;/<strong>html</strong>&gt;</pre>
-<h3><strong>Array pop() và push()</strong></h3>
-<p>Trong quá trình khai báo array, khi muốn thêm hoặc xóa bớt một phần tử trong mảng, bạn có thể sử dụng pop() và push(). Trong khi pop() được dùng để xóa phần tử cuối trong mảng thì push() có công dụng thêm một phần tử mới vào trong mảng.</p>
-<p>Khi sử dụng pop() để xóa phần tử, kết quả sẽ trả về giá trị đã được “bật ra”.</p>
-<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
-let fruit = fruits.pop();</pre>
-<p>Tương tự, khi bạn thêm một phần tử mới vào cuối mảng, bạn sẽ sử dụng push(). Push() sẽ trả về kết quả là độ dài của mảng mới. Cụ thể:</p>
-<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
-let length = fruits.push("Kiwi");</pre>
-<h3><strong>Array shift()</strong></h3>
-<p>Shift() có công dụng xóa phần tử đầu tiên trong mảng và chuyển các phần tử khác sang chỉ mục thấp hơn. Khi khai báo, shift() sẽ trả về giá trị mảng sau khi phần tử đã được chuyển ra.</p>
-<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
-let fruit = fruits.shift();</pre>
-<h3><strong>Array unshift()</strong></h3>
-<p>Khác với shift(), unshift() sẽ thêm một phần tử mới vào mảng (ở phần đầu) và bỏ dịch chuyển ở các phần tử cũ hơn. Khi trả về kết quả, unshift() sẽ trả về độ dài mảng mới sau khi đã được thêm phần tử vào.</p>
-<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.unshift("Lemon");</pre>
-<h3><strong>Array concat()</strong></h3>
-<p>Trong Javascript, khi muốn thực hiện nối các mảng, nghĩa là nối các mảng lại với nhau từ đầu đến cuối, bạn sẽ sử dụng phương thức concat() để tạo ra một mảng mới phù hợp với mảng hiện có. </p>
-<p>Chẳng hạn như khi nối hai mảng riêng biệt sau:</p>
-<pre>let myGirls = ["Cecilie", "Lone"];
-let myBoys = ["Emil", "Tobias", "Linus"];
-
-let myChildren = myGirls.concat(myBoys);</pre>
-<p>Bên cạnh đó, khi sử dụng phương pháp concat(), bạn nên lưu ý một số điều như sau:</p>
+<figure class="kg-card kg-image-card"><figure class="kg-image"><img  src="https://assets.apidog.com/static/logo/apidog-logo-256.png" alt="" loading="lazy" data-is-external-image="true"></figure></figure>
+<h3 id="th%C3%A0nh-th%E1%BA%A1o-t%C3%ADch-h%E1%BB%A3p-d%E1%BB%8Bch-v%E1%BB%A5">Thành Thạo Tích Hợp Dịch Vụ:</h3>
 <ul>
-<li aria-level="1">concat() không thay đổi các mảng hiện có, kết quả trả về sẽ là một mảng mới đã được nối từ phần tử đầu tiên đến cuối cùng.</li>
-<li aria-level="1">concat() có thể lấy bất kỳ số lượng đối số của mảng hoặc có thể lấy chuỗi để làm đối số.</li>
+<li>APIs đóng một vai trò quan trọng trong phát triển phần mềm bằng cách giúp dễ dàng tái sử dụng phần mềm hiện có.</li>
+<li>Khi bạn khám phá các nhà cung cấp <strong>Phần mềm như một Dịch vụ (SaaS)</strong>, bạn sẽ tìm thấy các trang tích hợp dành riêng cho các APIs khác nhau.</li>
+<li>Các tích hợp này cho phép bạn kết nối các nền tảng khác nhau một cách liền mạch.</li>
+<li>Bằng cách thành thạo APIs, bạn có thể tự tin tích hợp các dịch vụ, đi trước đối thủ và tiến bộ với sự linh hoạt.</li>
 </ul>
-<h3><strong>Array splice()</strong></h3>
-<p>splice() được sử dụng để thêm các mục mới vào trong một mảng. Chẳng hạn như:</p>
-<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.splice(2, 0, "Lemon", "Kiwi");</pre>
-<p>Ở ví dụ trên:</p>
+<h3 id="%C4%91i-tr%C6%B0%E1%BB%9Bc-m%E1%BB%99t-b%C6%B0%E1%BB%9Bc">Đi Trước Một Bước:</h3>
 <ul>
-<li aria-level="1">Tham số đầu tiên (2) xác định vị trí mà các phần tử mới sẽ được thêm vào (nối vào)</li>
-<li aria-level="1">Tham số 0 xác định số lượng phần tử bị xóa</li>
-<li aria-level="1">Các tham số còn lại như “Lemon” và “Kiwi” chính là phần tử mới sẽ được thêm vào. </li>
+<li>APIs đang định hình cách thức kinh doanh diễn ra trong thập kỷ tới.</li>
+<li>Chúng cho phép các doanh nghiệp đổi mới, hợp tác và thích ứng nhanh chóng.</li>
+<li>Hiểu biết về APIs đảm bảo rằng bạn đã sẵn sàng cho bối cảnh công nghệ và kinh doanh đang phát triển.</li>
 </ul>
-<p>Kết quả sau khi sử dụng splice() để thêm phần tử như sau:</p>
-<figure class="alignnone size-full wp-image-77352 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro.jpg 538w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro-300x54.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro-200x36.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro-100x18.webp 100w" sizes="(max-width: 538px) 100vw, 538px" type="image/webp"><img loading="lazy"  src="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro.jpg" sizes="(max-width: 538px) 100vw, 538px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro.jpg 538w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro-300x54.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro-200x36.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro-100x18.jpg 100w" alt="array javascript - itviec blog" width="538" height="97" data-is-external-image="true"></figure></picture></p>
-<p>Ngoài ra, bạn cũng có thể sử dụng splice() để xóa các phần tử mà không để xuất hiện khoảng trống trong khoảng. Cụ thể:</p>
-<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.splice(0, 1);</pre>
-<p>Trong đó:</p>
+<h2 id="javascript-l%C3%A0-g%C3%AC">Javascript là gì?</h2>
+<p><strong>JavaScript</strong> là một <strong>ngôn ngữ lập trình</strong> đóng vai trò quan trọng trong phát triển web. Hãy khám phá nó là gì và nó có thể làm gì:</p>
+<h3 id="%C4%91%E1%BB%8Bnh-ngh%C4%A9a-c%E1%BA%A5p-cao">Định Nghĩa Cấp Cao:</h3>
 <ul>
-<li aria-level="1">Tham số 0 đầu tiên xác định vị trí mà các phần tử mới sẽ được thêm vào.</li>
-<li aria-level="1">Tham số thứ hai là số 1 xác định số lượng phần tử sẽ bị xóa.</li>
-<li aria-level="1">Các tham số còn lại được bỏ qua vì không có phần tử mới được thêm vào.</li>
+<li>JavaScript là một <strong>ngôn ngữ kịch bản hoặc lập trình</strong> cho phép bạn thực hiện các tính năng phức tạp trên các trang web.</li>
+<li>Bất cứ khi nào một trang web thực hiện nhiều hơn chỉ là hiển thị thông tin tĩnh (chẳng hạn như cập nhật nội dung kịp thời, bản đồ tương tác, đồ họa động, hoặc video quay vòng), JavaScript có thể đã tham gia.</li>
+<li>Nó là <strong>tầng thứ ba</strong> của các công nghệ web tiêu chuẩn, xây dựng trên HTML và CSS.</li>
 </ul>
-<p>Kết quả hiển thị:</p>
-<figure class="alignnone size-full wp-image-77351 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro.jpg 507w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro-300x64.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro-200x43.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro-100x21.webp 100w" sizes="(max-width: 507px) 100vw, 507px" type="image/webp"><img loading="lazy"  src="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro.jpg" sizes="(max-width: 507px) 100vw, 507px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro.jpg 507w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro-300x64.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro-200x43.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro-100x21.jpg 100w" alt="array javascript - itviec blog" width="507" height="108" data-is-external-image="true"></figure></picture></p>
-<h3><strong>Array slice()</strong></h3>
-<p>slice() trong Array có công dụng cắt một phần tử của mảng thành một mảng mới. Chúng có công dụng tạo một mảng mới và không xóa bất kỳ phần tử nào khỏi mảng nguồn.</p>
-<pre>const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-const citrus = fruits.slice(1, 3);</pre>
-<p>Phương thức slice() có thể lấy hai đối số như slice(1,3) và chọn các phần tử từ số bắt đầu và lên đến đối số kết thúc trong mảng. Nếu đối số kết thúc bị bỏ qua, slice() sẽ cắt phần còn lại của mảng.</p>
-<h3><strong>Array find()</strong></h3>
-<p>Phương thức find() có chức năng trả về giá trị của phần tử mảng đầu tiên qua hàm kiểm tra (a test function). Hàm này có 3 đối số chủ yếu là giá trị (value), chỉ mục (index) và mảng (array).</p>
-<p>Để hiểu rõ hơn về cách hoạt động của find(), bạn có thể xem qua ví dụ sau: Tìm (trả về giá trị) phần tử đầu tiên lớn hơn 18 như sau:</p>
-<pre>const numbers = [4, 9, 16, 25, 29];
-let first = numbers.find(myFunction);
-
-function myFunction(value, index, array) {
-  return value &gt; 18;
-}</pre>
-<h3><strong>Array sort()</strong></h3>
-<p>Khi muốn sắp xếp dữ liệu mảng trong mã, bạn có thể sử dụng phương thức sort() để thực hiện sắp xếp theo thứ tự từ A-Z. Ví dụ như:</p>
-<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.sort();</pre>
-<p>Kết quả hiển thị:</p>
-<figure class="alignnone size-full wp-image-77349 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro.jpg 523w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro-300x69.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro-200x46.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro-100x23.webp 100w" sizes="(max-width: 523px) 100vw, 523px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro.jpg" sizes="(max-width: 523px) 100vw, 523px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro.jpg 523w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro-300x69.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro-200x46.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro-100x23.jpg 100w" alt="array javascript - itviec blog" width="523" height="120" loading="lazy" data-is-external-image="true"></figure></picture></p>
-<p>Ngoài ra, Array Javascript cũng có thêm phương thức toSorted() như một cách an toàn để thực hiện sắp xếp mảng mà không làm thay đổi cấu trúc mảng gốc.</p>
-<p>Sự khác biệt giữa toSorted() và sort() là toSorted() cho phép tạo một mảng mới và vẫn giữ nguyên mảng gốc trong khi sort() có thể làm thay đổi mảng gốc.</p>
-<pre>const months = ["Jan", "Feb", "Mar", "Apr"];
-const sorted = months.toSorted();</pre>
-<h3><strong>Array reverse()</strong></h3>
-<p>Cách hoạt động của reverse() giúp đảo ngược các phần tử trong một mảng, cụ thể như:</p>
-<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.reverse();</pre>
-<p>Kết quả hiển thị:</p>
-<figure class="alignnone size-full wp-image-77348 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro.jpg 429w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro-300x76.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro-200x51.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro-100x25.webp 100w" sizes="(max-width: 429px) 100vw, 429px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro.jpg" sizes="(max-width: 429px) 100vw, 429px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro.jpg 429w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro-300x76.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro-200x51.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro-100x25.jpg 100w" alt="array javascript - itviec blog" width="429" height="109" loading="lazy" data-is-external-image="true"></figure></picture></p>
-<p>Bên cạnh đó, khi kết hợp sort() và reverse(), bạn có thể thực hiện sắp xếp một mảng theo thứ tự giảm dần, như sau:</p>
-<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.sort();
-fruits.reverse();</pre>
-<p>Kết quả hiển thị:</p>
-<figure class="alignnone size-full wp-image-77347 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro.jpg 474w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro-300x63.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro-200x42.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro-100x21.webp 100w" sizes="(max-width: 474px) 100vw, 474px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro.jpg" sizes="(max-width: 474px) 100vw, 474px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro.jpg 474w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro-300x63.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro-200x42.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro-100x21.jpg 100w" alt="array javascript - itviec blog" width="474" height="100" loading="lazy" data-is-external-image="true"></figure></picture></p>
-<blockquote>
-<p>Bên cạnh 12 phương thức cơ bản, Array Javascript còn có một số phương thức như map(), filter(), reduce(), some(), every(), includes(),…</p>
-<p>Bạn có thể tìm hiểu thêm về phương thức của Array Javascript qua các nguồn tài nguyên chất lượng như FreeCodeCamp, W3School hay MDN Web Docs để nâng cao thêm “tay nghề” lập trình của mình nhé!</p>
-</blockquote>
-<h2><span id="Cach_khai_bao_Array_Javascript"><strong>Cách khai báo Array Javascript</strong></span></h2>
-<p>Khi khai báo Array, bạn có thể thực hiện một trong hai cách là Array Literal và Array Constructor.</p>
-<h3><strong>Tạo Array bằng cách sử dụng Array Literal</strong></h3>
-<p>Tạo Array bằng cách dùng Literal sẽ sử dụng dấu ngoặc vuông [] để định nghĩa và tạo mảng. Phương pháp này có cú pháp ngắn gọn và thường được sử dụng nhiều bởi vì tính đơn giản của chúng. Cú pháp cơ bản của Array Literal như sau:</p>
-<pre>let arrayName = [value1, value2, ...];</pre>
-<p>Ví dụ:</p>
-<pre>&lt;!DOCTYPE html&gt;
-&lt;<strong>html</strong>&gt;
-&lt;<strong>body</strong>&gt;
-&lt;<strong>h1</strong>&gt;JavaScript Arrays&lt;/<strong>h1</strong>&gt;
-
-&lt;<strong>p</strong> id="demo"&gt;&lt;/<strong>p</strong>&gt;
-
-&lt;<strong>script</strong>&gt;
-let cars = [
-  "Saab",
-  "Volvo",
-  "BMW"
-];
-document.getElementById("demo").innerHTML = cars;
-&lt;/<strong>script</strong>&gt;
-
-&lt;/<strong>body</strong>&gt;
-&lt;/<strong>html</strong>&gt;</pre>
-<h3><strong>Tạo Array bằng cách Array Constructor</strong></h3>
-<p>Array Constructor là phương pháp tạo mảng bằng cách dùng hàm Array constructor. Phương pháp này cho phép khởi động và có thể được sử dụng để tạo mảng có độ dài hoặc phần tử được chỉ định. Cú pháp cơ bản của phương pháp này như sau:</p>
-<pre>let arrayName = new Array();</pre>
-<p>Ví dụ: </p>
-<pre>&lt;!DOCTYPE html&gt;
-&lt;<strong>html</strong>&gt;
-&lt;<strong>body</strong>&gt;
-&lt;<strong>h1</strong>&gt;JavaScript Arrays&lt;/<strong>h1</strong>&gt;
-
-&lt;<strong>p</strong> id="demo"&gt;&lt;/<strong>p</strong>&gt;
-
-&lt;<strong>script</strong>&gt;
-let cars = new Array("Saab", "Volvo", "BMW");
-document.getElementById("demo").innerHTML = cars;
-&lt;/<strong>script</strong>&gt;
-
-&lt;/<strong>body</strong>&gt;
-&lt;/<strong>html</strong>&gt;</pre>
-<h2><span id="Thao_tac_co_ban_voi_Array_Javascript"><strong>Thao tác cơ bản với Array Javascript</strong></span></h2>
-<h3><strong>Truy cập phần tử của Array</strong></h3>
-<p>Bất kỳ phần tử nào trong mảng đều có thể truy cập bằng cách sử dụng số chỉ mục (index number). Chỉ mục trong mảng thường bắt đầu bằng 0. </p>
-<pre>let courses = ["HTML", "CSS", "Javascript", "React"];
-
-console.log(courses[0]);
-console.log(courses[1]);
-console.log(courses[2]);
-console.log(courses[3]);</pre>
-<p>Kết quả hiển thị của đoạn mã trên như sau:</p>
-<pre>HTML
-
-CSS
-
-Javascript
-
-React</pre>
-<h3><strong>Truy cập phần tử đầu tiên của Array</strong></h3>
-<p>Các chỉ số mảng bắt đầu từ 0, do đó bạn có thể truy cập phần tử đầu tiên của mảng bằng cách sử dụng chỉ số đó.</p>
-<pre>let courses = ["HTML", "CSS", "JavaScript", "React"];
-
-let firstItem = courses[0];
-
-console.log("First Item: ", firstItem);</pre>
-<p>Lúc này, kết quả sẽ hiển thị phần tử đầu tiên trong mảng chính là HTML. </p>
-<h3><strong>Truy cập phần tử cuối cùng của Array</strong></h3>
-<p>Bạn có thể thực hiện truy cập phần tử mảng cuối cùng bằng cách sử dụng số chỉ mục [array.length-1].</p>
-<pre>let courses = ["HTML", "CSS", "JavaScript", "React"];
-
-let lastItem = courses[courses.length - 1];
-
-console.log("First Item: ", lastItem);</pre>
-<p>Sau khi thực hiện lệnh trên, kết quả sẽ hiển thị phần tử cuối trong mảng là React. </p>
-<h3><strong>Sửa đổi các phần tử Mảng</strong></h3>
-<p>Để thực hiện sửa đổi các phần tử trong mảng bằng cách gán trị mới cho chỉ mục tương ứng của chúng. Cụ thể như sau:</p>
-<pre>let courses = ["HTML", "CSS", "Javascript", "React"];
-console.log(courses);
-
-courses[1]= "Bootstrap";
-console.log(courses);</pre>
-<p>Kết quả hiển thị sau khi bạn thực hiện lệnh đổi phần tử CSS sang Boostrap. </p>
-<pre>[ 'HTML', 'CSS', 'Javascript', 'React' ]
-
-[ 'HTML', 'Bootstrap', 'Javascript', 'React' ]</pre>
-<h3><strong>Thêm phần tử vào Mảng</strong></h3>
-<p>Để tiến hành thêm một hoặc một số phần tử vào mảng, bạn có thể sử dụng push() hoặc unshift(). Cách thực hiện cụ thể như:</p>
-<pre>let courses = ["HTML", "CSS", "Javascript", "React"];
-
-courses.push("Node.js");
-
-courses.unshift("Web Development");
-
-console.log(courses);</pre>
-<p>Kết quả hiển thị như sau:</p>
-<pre>[ 'Web Development', 'HTML', 'CSS', 'Javascript', 'React', 'Node.js' ]</pre>
-<h3><strong>Loại một phần tử khỏi Mảng</strong></h3>
-<p>Khi bạn muốn xóa các phần tử không còn cần thiết trong mảng, có thể sử dụng phương thức pop(), shift() hoặc splice(). Cụ thể như:</p>
-<pre>let courses = ["HTML", "CSS", "Javascript", "React", "Node.js"];
-console.log("Original Array: " + courses);
-
-let lastElement = courses.pop();
-console.log("After Removing the last elements: " + courses);
-
-let firstElement = courses.shift();
-console.log("After Removing the First elements: " + courses);
-
-courses.splice(1, 2);
-console.log("After Removing 2 elements starting from index 1: " + courses);</pre>
-<p>Kết quả hiển thị cho đoạn mã trên như sau:</p>
-<pre>Original Array: HTML,CSS,Javascript,React,Node.js
-
-After Removing the last elements: HTML,CSS,Javascript,React
-
-After Removing the First elements: CSS,Javascript,React
-
-After Removing 2 elements starting from index 1: CSS</pre>
-<h3><strong>Array Length</strong></h3>
-<p>Đối với một đoạn mã dài và có nhiều phần tử, để biết được trong mảng đó có bao nhiêu phần tử, bạn có thể sử dụng thuộc tính length. Cụ thể như sau:</p>
-<pre>let courses = ["HTML", "CSS", "Javascript", "React", "Node.js"];
-let len = courses.length;
-console.log("Array Length: " + len);</pre>
-<p>Khi đó, kết quả sẽ hiển thị độ dài của mảng là 5.</p>
-<h3><strong>Tăng và giảm độ dài của Mảng</strong></h3>
-<p>Khi thực hiện tăng hoặc giảm độ dài của Mảng bằng cách sử dụng thuộc tính length trong Javascript. Cụ thể như sau:</p>
-<pre>let courses = ["HTML", "CSS", "Javascript", "React", "Node.js"];
-courses.length = 7;
-console.log("Array After Increase the Length: ", courses);
-courses.length = 2;
-console.log("Array After Decrease the Length: ", courses)</pre>
-<p>Kết quả hiển thị sau khi thực hiện đoạn mã trên: </p>
-<pre>Array After Increase the Length:  [ 'HTML', 'CSS', 'Javascript', 'React', 'Node.js', &lt;2 empty items&gt; ]
-
-Array After Decrease the Length:  [ 'HTML', 'CSS' ]</pre>
-<h3><strong>Lặp lại các phần tử Mảng</strong></h3>
-<p>Bạn có thể lặp lại mảng và truy cập các phần tử mảng bằng cách sử dụng for và forEach loop. Cụ thể khi sử dụng for:</p>
-<pre>let courses = ["HTML", "CSS", "JavaScript", "React"];
-for (let i = 0; i &lt; courses.length; i++) {
-    console.log(courses[i])
-}</pre>
-<p>Hoặc khi bạn sử dụng ForEach loop:</p>
-<pre>let courses = ["HTML", "CSS", "JavaScript", "React"];
-courses.forEach(function myfunc(elements) {
-    console.log(elements);
-});</pre>
-<h3><strong>Nối Mảng (Array Concatenation)</strong></h3>
-<p>Khi bạn thực hiện kết hợp hai hoặc nhiều mảng bằng phương thức concat() thì trình duyệt sẽ trả về một mảng mới chứa các phần tử từ các mảng đã kết hợp. Cụ thể:</p>
-<pre>let courses = ["HTML", "CSS", "JavaScript", "React"];
-let otherCourses = ["Node.js", "Expess.js"];
-let concateArray = courses.concat(otherCourses);
-console.log("Concatenated Array: ", concateArray);</pre>
-<p>Kết quả sẽ trả về như sau:</p>
-<pre>Concatenated Array:  [ 'HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Expess.js' ]</pre>
-<h3><strong>Chuyển đổi Array sang Chuỗi (String)</strong></h3>
-<p>Khi thực hiện chuyển đổi từ Mảng (Array) sang chuỗi (String), bạn có thể sử dụng phương pháp toString() tích hợp để thực hiện quá trình này. Cụ thể:</p>
-<pre>let courses = ["HTML", "CSS", "JavaScript", "React"];
-console.log(courses.toString());</pre>
-<h3><strong>Kiểm tra loại của Mảng</strong></h3>
-<p>Để thực hiện kiểm tra kiểu của một Mảng, bạn sử dụng toán tử Javascript typeof. Khi trả kết quả, chúng sẽ trả về object cho các mảng. Cụ thể:</p>
-<pre>let courses = ["HTML", "CSS", "JavaScript", "React"];
-console.log(typeof courses);</pre>
-<h2><span id="Cau_hoi_thuong_gap_ve_Array_Javascript"><strong>Câu hỏi thường gặp về Array Javascript</strong></span></h2>
-<h3><strong>Khi nào nên sử dụng Array Javascript?</strong></h3>
-<p>Bạn nên sử dụng khai báo Array Javascript khi:</p>
+<h3 id="ph%C3%A2n-t%E1%BA%A7ng-cake">Phân Tầng Cake:</h3>
 <ul>
-<li aria-level="1">Cần lưu trữ một danh sách các giá trị có thứ tự và thực hiện phép toán hoặc thao tác trên nhiều phần tử.</li>
-<li aria-level="1">Không cần các thuộc tính hoặc phương thức đặc biệt mà đối tượng (Object) cung cấp.</li>
-<li aria-level="1">Cần lưu trữ các giá trị có thể là số, chuỗi, hoặc bất kỳ kiểu dữ liệu nào khác trong cùng một danh sách. </li>
+<li>Hãy tưởng tượng một nút bấm trên một trang web:</li>
 </ul>
-<h3><strong>Sự khác nhau giữa Array và Object</strong></h3>
-<p>Trong Javascript, sự khác nhau cơ bản giữa Array và Object chính là cách thức tổ chức và khả năng truy cập dữ liệu trong Array cũng như Object. Cụ thể:</p>
+<pre><code class="language-html">&lt;button type="button"&gt;Người Chơi 1: Chris&lt;/button&gt;
+</code></pre>
 <ul>
-<li aria-level="1"><strong>Array:</strong> Trong Javascript, Array được dùng như một cấu trúc dữ liệu để lưu trữ các phần tử. Các phần tử này được truy cập thông qua chỉ số (index) dạng số bắt đầu từ 0.</li>
-<li aria-level="1"><strong>Object: </strong>Một cấu trúc dữ liệu được dùng để lưu trữ các cặp key-value. Trong đó, key thường là một chuỗi (string) và value có thể là bất kỳ dữ liệu nào. </li>
+<li>Các lớp được xây dựng chồng lên nhau:</li>
+<li><strong>HTML</strong>: Định nghĩa cấu trúc và ý nghĩa của nội dung web (ví dụ: đoạn văn, tiêu đề, hình ảnh).</li>
+<li><strong>CSS</strong>: Tạo kiểu cho nội dung HTML (ví dụ: màu sắc, phông chữ, bố cục).</li>
+<li><strong>JavaScript</strong>: Thêm hành vi động (ví dụ: cập nhật nội dung, điều khiển đa phương tiện, hoạt hình).</li>
 </ul>
-<h3><strong>Làm thế nào để biết một biến có phải là Array không?</strong></h3>
-<p>Chẳng hạn như đoạn mã dưới đây, khi sử dụng typeof, Javascript Operator sẽ trả về kết quả là một Object. Vậy để giải quyết vấn đề này, bạn có thể sử dụng phương pháp là Array.isArray(), cụ thể:</p>
-<pre>&lt;!DOCTYPE html&gt;
-&lt;<strong>html</strong>&gt;
-&lt;<strong>body</strong>&gt;
-&lt;<strong>h1</strong>&gt;JavaScript Arrays&lt;/<strong>h1</strong>&gt;
-&lt;<strong>h2</strong>&gt;The isArray() Method&lt;/<strong>h2</strong>&gt;
+<figure class="kg-card kg-image-card"><figure class="kg-image"><img  src="https://assets.apidog.com/static/logo/apidog-logo-256.png" alt="" loading="lazy" data-is-external-image="true"></figure></figure>
+<h3 id="v%C3%AD-d%E1%BB%A5-h%C3%A0nh-vi-%C4%91%E1%BB%99ng-v%E1%BB%9Bi-javascript">Ví Dụ: Hành Vi Động với JavaScript:</h3>
+<ul>
+<li>Giả sử chúng ta muốn thay đổi nhãn nút khi nhấp vào:</li>
+</ul>
+<pre><code class="language-javascript">const button = document.querySelector("button");
+button.addEventListener("click", updateName);
 
-&lt;<strong>p</strong> id="demo"&gt;&lt;/<strong>p</strong>&gt;
-
-&lt;<strong>script</strong>&gt;
-const fruits = ["Banana", "Orange", "Apple"];
-document.getElementById("demo").innerHTML = Array.isArray(fruits);
-&lt;/<strong>script</strong>&gt;
-
-&lt;/<strong>body</strong>&gt;
-&lt;/<strong>html</strong>&gt;</pre>
-<p>Ngoài ra, một phương pháp nữa bạn có thể sử dụng là instanceof trả về true nếu một đối tượng được tạo bởi một hàm nhất định. Cụ thể:</p>
-<pre>&lt;!DOCTYPE html&gt;
-&lt;<strong>html</strong>&gt;
-&lt;<strong>body</strong>&gt;
-&lt;<strong>h1</strong>&gt;JavaScript Operators&lt;/<strong>h1</strong>&gt;
-&lt;<strong>h2</strong>&gt;The instanceof Operator&lt;/<strong>h2</strong>&gt;
-
-&lt;<strong>p</strong>&gt;The instanceof operator returns true if an object is an instance of a specified object type:&lt;/<strong>p</strong>&gt;
-
-&lt;<strong>p</strong> id="demo"&gt;&lt;/<strong>p</strong>&gt;
-
-&lt;<strong>script</strong>&gt; 
-// Create an Array
-const fruits = ["apples", "bananas", "oranges"];
-
-document.getElementById("demo").innerHTML =
-"Array: " + (fruits instanceof Array);
-&lt;/<strong>script</strong>&gt;
-
-&lt;/<strong>body</strong>&gt;
-&lt;/<strong>html</strong>&gt;</pre>
-<p>Kết quả đoạn mã trên:</p>
-<figure class="alignnone size-full wp-image-77350 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro.jpg 885w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-300x89.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-700x209.webp 640w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-200x60.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-100x30.webp 100w" sizes="(max-width: 885px) 100vw, 885px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro.jpg" sizes="(max-width: 885px) 100vw, 885px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro.jpg 885w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-300x89.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-700x209.jpg 640w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-200x60.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-100x30.jpg 100w" alt="array javascript - itviec blog" width="885" height="264" loading="lazy" data-is-external-image="true"></figure></picture></p>
-<h2><span id="Tong_ket_ve_Array_Javascript"><strong>Tổng kết về Array Javascript</strong></span></h2>
-<p>Như vậy, bài viết đã giải đáp chi tiết về Array Javascript, một trong những cấu trúc dữ liệu cơ bản trong Javascript. Để nắm vững hơn nền tảng kiến thức về Javascript, hãy thử áp dụng chúng vào những dự án thực tế cũng như có cơ hội tìm hiểu nhiều hơn về khái niệm nâng cao.</p>
+function updateName() {
+  const name = prompt("Nhập tên mới");
+  button.textContent = `Người Chơi 1: ${name}`;
+}
+</code></pre>
+<ul>
+<li>Nhấp vào nút để thấy nó hoạt động! JavaScript có thể làm được nhiều hơn thế — hãy cùng khám phá thêm.</li>
+</ul>
+<h3 id="javascript-c%C3%B3-th%E1%BB%83-l%C3%A0m-g%C3%AC">JavaScript Có Thể Làm Gì:</h3>
+<ul>
+<li>JavaScript cho phép bạn:</li>
+<li>Tạo <strong>nội dung cập nhật động</strong>.</li>
+<li>Điều khiển <strong>đa phương tiện</strong> (âm thanh, video).</li>
+<li>Hoạt hình hình ảnh.</li>
+<li>Xử lý <strong>tương tác của người dùng</strong> (nhấp chuột, gửi biểu mẫu).</li>
+<li>Giao tiếp với <strong>máy chủ</strong> (lấy dữ liệu, gửi yêu cầu).</li>
+<li>Xây dựng <strong>ứng dụng web</strong> (ứng dụng một trang, trò chơi).</li>
+<li>Và nhiều hơn thế nữa!</li>
+</ul>
+<figure class="kg-card kg-image-card"><figure class="kg-image"><img  src="https://assets.apidog.com/blog/2024/04/image-8.png" alt="" width="1363" height="484" loading="lazy" data-is-external-image="true"></figure></figure>
+<h2 id="b%E1%BA%AFt-%C4%91%E1%BA%A7u-l%E1%BA%A5y-d%E1%BB%AF-li%E1%BB%87u">Bắt Đầu: Lấy Dữ Liệu</h2>
+<p>API <code>fetch</code> được tích hợp sẵn trong các trình duyệt hiện đại và giúp bạn dễ dàng gửi yêu cầu HTTP và xử lý phản hồi không đồng bộ. Dưới đây là một đoạn mã giúp bạn bắt đầu:</p>
+<pre><code class="language-javascript">fetch('https://api.example.com/data')
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log('Đây là dữ liệu của bạn:', data);
+  })
+  .catch(error =&gt; {
+    console.error('Ôi, có điều gì đó không ổn:', error);
+  });
+</code></pre>
+<h2 id="hi%E1%BB%83u-v%E1%BB%81-json">Hiểu Về JSON</h2>
+<p>Các API thường phục vụ dữ liệu dưới định dạng JSON. JSON (JavaScript Object Notation) giống như một ngôn ngữ phổ quát cho việc trao đổi dữ liệu. Nó ngắn gọn, dễ đọc đối với con người, và dễ dàng cho JavaScript xử lý. Hãy nghĩ đến nó như một thực đơn – được tổ chức gọn gàng và chứa đầy các tùy chọn hấp dẫn.</p>
+<h2 id="th%E1%BB%B1c-hi%E1%BB%87n-c%C3%A1c-y%C3%AAu-c%E1%BA%A7u-api">Thực Hiện Các Yêu Cầu API</h2>
+<p>Giờ đây, khi bạn đã quen với việc lấy dữ liệu, hãy cùng khám phá các loại yêu cầu khác nhau:</p>
+<ul>
+<li><strong>GET</strong>: Lấy dữ liệu (như đọc một cuốn sách).</li>
+<li><strong>POST</strong>: Gửi dữ liệu (như viết một bức thư).</li>
+<li><strong>PUT</strong>: Cập nhật dữ liệu (như chỉnh sửa một tài liệu).</li>
+<li><strong>DELETE</strong>: Xóa dữ liệu (như dọn dẹp phòng của bạn).</li>
+</ul>
+<h2 id="c%C3%A1ch-ki%E1%BB%83m-tra-api-javascript-c%E1%BB%A7a-b%E1%BA%A1n-v%E1%BB%9Bi-apidog">Cách Kiểm Tra API Javascript Của Bạn Với Apidog</h2>
+<p>Kiểm tra API Javascript của bạn với Apidog có thể hợp lý hóa quy trình và đảm bảo rằng API của bạn hoạt động như mong đợi. Apidog là một công cụ có thể giúp bạn thiết kế, phát triển, gỡ lỗi, và kiểm tra các API của bạn.</p>
+<div class="download-app-button">
+<div class="flex-center flex-col">Sign Up for Free<svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.87204 3.03873C4.03476 2.87601 4.29858 2.87601 4.46129 3.03873L6.12796 4.70539C6.29068 4.86811 6.29068 5.13193 6.12796 5.29465L4.46129 6.96132C4.29858 7.12403 4.03476 7.12403 3.87204 6.96132C3.70932 6.7986 3.70932 6.53478 3.87204 6.37206L5.24408 5.00002L3.87204 3.62798C3.70932 3.46526 3.70932 3.20144 3.87204 3.03873Z" fill="#5B7FFF"></path></svg>
+<p class="text-xs text-center secondary-text"><svg width="13" height="12" viewbox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_3395_4823)"><path d="M6.5 6.75C6.77614 6.75 7 6.97386 7 7.25V8.25C7 8.52614 6.77614 8.75 6.5 8.75C6.22386 8.75 6 8.52614 6 8.25V7.25C6 6.97386 6.22386 6.75 6.5 6.75Z" fill="#101828" fill-opacity="0.56"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 4C3.5 2.34315 4.84315 1 6.5 1C8.15685 1 9.5 2.34315 9.5 4V4.57516C9.6413 4.60613 9.77693 4.65121 9.90798 4.71799C10.2843 4.90973 10.5903 5.21569 10.782 5.59202C10.9057 5.83469 10.9549 6.09304 10.9779 6.37409C11 6.64468 11 6.97686 11 7.37934V8.12066C11 8.52314 11 8.85532 10.9779 9.12591C10.9549 9.40696 10.9057 9.66531 10.782 9.90798C10.5903 10.2843 10.2843 10.5903 9.90798 10.782C9.66531 10.9057 9.40696 10.9549 9.12591 10.9779C8.85532 11 8.52314 11 8.12066 11H4.87934C4.47686 11 4.14468 11 3.87409 10.9779C3.59304 10.9549 3.33469 10.9057 3.09202 10.782C2.7157 10.5903 2.40973 10.2843 2.21799 9.90798C2.09434 9.66531 2.04506 9.40696 2.0221 9.12591C1.99999 8.85532 1.99999 8.52313 2 8.12065V7.37935C1.99999 6.97687 1.99999 6.64468 2.0221 6.37409C2.04506 6.09304 2.09434 5.83469 2.21799 5.59202C2.40973 5.21569 2.7157 4.90973 3.09202 4.71799C3.22307 4.65121 3.3587 4.60613 3.5 4.57516V4ZM4.5 4.50081C4.61886 4.5 4.7452 4.5 4.87935 4.5H8.12065C8.2548 4.5 8.38115 4.5 8.5 4.50081V4C8.5 2.89543 7.60457 2 6.5 2C5.39543 2 4.5 2.89543 4.5 4V4.50081ZM3.95552 5.51878C3.73631 5.53669 3.62421 5.56915 3.54601 5.60899C3.35785 5.70487 3.20487 5.85785 3.10899 6.04601C3.06915 6.12421 3.03669 6.23631 3.01878 6.45552C3.00039 6.68056 3 6.97171 3 7.4V8.1C3 8.52829 3.00039 8.81944 3.01878 9.04448C3.03669 9.26369 3.06915 9.37579 3.10899 9.45399C3.20487 9.64215 3.35785 9.79513 3.54601 9.89101C3.62421 9.93085 3.73631 9.96331 3.95552 9.98122C4.18056 9.99961 4.47171 10 4.9 10H8.1C8.52829 10 8.81944 9.99961 9.04448 9.98122C9.26369 9.96331 9.37579 9.93085 9.45399 9.89101C9.64215 9.79513 9.79513 9.64215 9.89101 9.45399C9.93085 9.37579 9.96331 9.26369 9.98122 9.04448C9.99961 8.81944 10 8.52829 10 8.1V7.4C10 6.97171 9.99961 6.68056 9.98122 6.45552C9.96331 6.23631 9.93085 6.12421 9.89101 6.04601C9.79513 5.85785 9.64215 5.70487 9.45399 5.60899C9.37579 5.56915 9.26369 5.53669 9.04448 5.51878C8.81944 5.50039 8.52829 5.5 8.1 5.5H4.9C4.47171 5.5 4.18056 5.50039 3.95552 5.51878Z" fill="#101828" fill-opacity="0.56"></path></g><defs><rect width="12" height="12" fill="white" transform="translate(0.5)"></rect></defs></svg>Privacy protected</p>
 </div>
+<div class="flex-center flex-col sm-hidden"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewbox="0 0 18 18" fill="none"><path d="M15.7945 2.73824V8.14933C15.7945 8.41742 15.5783 8.63535 15.3102 8.63747L8.9221 8.68816C8.65097 8.69031 8.43004 8.47113 8.43004 8.20002V3.65078C8.43004 3.40785 8.60869 3.2019 8.84919 3.16754L15.2373 2.255C15.5314 2.21297 15.7945 2.44117 15.7945 2.73824Z" fill="#5B7FFF"></path><path d="M7.7579 3.88209V8.20103C7.7579 8.46912 7.54169 8.68705 7.2736 8.68917L2.69739 8.72549C2.42627 8.72764 2.20534 8.50846 2.20534 8.23735V4.53582C2.20534 4.29289 2.38398 4.08693 2.62448 4.05258L7.2007 3.39887C7.49478 3.35684 7.7579 3.58504 7.7579 3.88209Z" fill="#5B7FFF"></path><path d="M15.7945 9.87962V15.2618C15.7945 15.5581 15.5327 15.786 15.2392 15.7453L8.85107 14.8581C8.60972 14.8246 8.43004 14.6182 8.43004 14.3746V9.85425C8.43004 9.58389 8.64979 9.36503 8.92016 9.3661L15.3083 9.39145C15.5771 9.39255 15.7945 9.61079 15.7945 9.87962Z" fill="#5B7FFF"></path><path d="M7.72867 9.82054V14.1257C7.72867 14.4208 7.46898 14.6484 7.17649 14.6097L2.62949 14.0083C2.38673 13.9761 2.20532 13.7692 2.20532 13.5243V9.79648C2.20532 9.52588 2.42546 9.30691 2.69608 9.30833L7.24306 9.33239C7.51168 9.33382 7.72867 9.55195 7.72867 9.82054Z" fill="#5B7FFF"></path></svg>Download NowFor Mac or Linux<svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.87204 3.03873C4.03476 2.87601 4.29858 2.87601 4.46129 3.03873L6.12796 4.70539C6.29068 4.86811 6.29068 5.13193 6.12796 5.29465L4.46129 6.96132C4.29858 7.12403 4.03476 7.12403 3.87204 6.96132C3.70932 6.7986 3.70932 6.53478 3.87204 6.37206L5.24408 5.00002L3.87204 3.62798C3.70932 3.46526 3.70932 3.20144 3.87204 3.03873Z" fill="#5B7FFF"></path></svg>
+<p class="text-xs text-center secondary-text"><svg width="13" height="12" viewbox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_3395_4832)"><path d="M8.60344 4.14644C8.7987 4.34171 8.7987 4.65829 8.60344 4.85355L6.35344 7.10355C6.15818 7.29881 5.8416 7.29881 5.64633 7.10355L4.64633 6.10355C4.45107 5.90829 4.45107 5.5917 4.64633 5.39644C4.8416 5.20118 5.15818 5.20118 5.35344 5.39644L5.99989 6.04289L7.89634 4.14644C8.0916 3.95118 8.40818 3.95118 8.60344 4.14644Z" fill="#101828" fill-opacity="0.56"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.35687 0.544276C6.45172 0.53057 6.54805 0.53057 6.6429 0.544276C6.75222 0.560073 6.85394 0.5985 6.93471 0.629013C6.9421 0.631806 6.94932 0.634532 6.95635 0.637169L9.63725 1.64251C9.6592 1.65074 9.68098 1.65887 9.70257 1.66693C10.0115 1.78226 10.2827 1.88353 10.4916 2.06764C10.6744 2.2287 10.8152 2.43185 10.9018 2.65952C11.0009 2.91978 11.0004 3.20934 11 3.53906C10.9999 3.56211 10.9999 3.58535 10.9999 3.6088V6C10.9999 7.41331 10.2312 8.5916 9.40036 9.4572C8.56391 10.3286 7.60689 10.9441 7.10084 11.2393C7.09416 11.2432 7.08734 11.2472 7.08035 11.2513C6.988 11.3055 6.86814 11.3759 6.70957 11.4099C6.57984 11.4378 6.41994 11.4378 6.29021 11.4099C6.13164 11.3759 6.01177 11.3055 5.91942 11.2513C5.91244 11.2472 5.90561 11.2432 5.89894 11.2393C5.39289 10.9441 4.43587 10.3286 3.59942 9.4572C2.76853 8.5916 1.99989 7.41331 1.99989 6V3.6088C1.99989 3.58535 1.99985 3.56211 1.99982 3.53906C1.99934 3.20934 1.99892 2.91978 2.09796 2.65952C2.18459 2.43185 2.32538 2.2287 2.50813 2.06764C2.71704 1.88353 2.98831 1.78225 3.29721 1.66693C3.3188 1.65887 3.34058 1.65074 3.36253 1.64251L6.04343 0.637169C6.05046 0.634532 6.05768 0.631806 6.06507 0.629013C6.14584 0.5985 6.24756 0.560073 6.35687 0.544276ZM6.49838 1.53563C6.47796 1.54233 6.45026 1.55261 6.39455 1.5735L3.71365 2.57884C3.30103 2.73357 3.22163 2.77177 3.1693 2.81788C3.10838 2.87157 3.06146 2.93928 3.03258 3.01517C3.00777 3.08035 2.99989 3.16812 2.99989 3.6088V6C2.99989 7.0409 3.56973 7.98221 4.32085 8.76471C5.06639 9.54141 5.93488 10.1025 6.40285 10.3756C6.43145 10.3922 6.45208 10.4043 6.47002 10.4144C6.4841 10.4223 6.49347 10.4273 6.49989 10.4306C6.50631 10.4273 6.51568 10.4223 6.52975 10.4144C6.54769 10.4043 6.56833 10.3922 6.59693 10.3756C7.0649 10.1025 7.93339 9.54141 8.67893 8.76471C9.43004 7.98221 9.99989 7.0409 9.99989 6V3.6088C9.99989 3.16812 9.992 3.08035 9.9672 3.01517C9.93832 2.93928 9.89139 2.87157 9.83047 2.81788C9.77815 2.77177 9.69874 2.73357 9.28612 2.57884L6.60523 1.5735C6.54952 1.55261 6.52182 1.54233 6.5014 1.53563L6.49989 1.53514L6.49838 1.53563Z" fill="#101828" fill-opacity="0.56"></path></g><defs><rect width="12" height="12" fill="white" transform="translate(0.5)"></rect></defs></svg>Security guaranteed with no ads</p>
+</div>
+</div>
+<ol>
+<li>Mở Apidog và tạo một yêu cầu mới.</li>
+</ol>
+<figure class="kg-card kg-image-card"><figure class="kg-image"><img  src="https://assets.apidog.com/blog/2024/01/image-51.png" alt="Giao diện Apidog" width="1008" height="564" loading="lazy" data-is-external-image="true"></figure></figure>
+<p>2. Đặt phương thức yêu cầu thành GET.</p>
+<figure class="kg-card kg-image-card"><figure class="kg-image"><img  src="https://assets.apidog.com/blog/2024/01/image-52.png" alt="Giao diện Apidog" width="1006" height="562" loading="lazy" data-is-external-image="true"></figure></figure>
+<p>3. Nhập URL của tài nguyên mà bạn muốn cập nhật. Bạn cũng có thể thêm bất kỳ tiêu đề hoặc tham số nào bạn muốn bao gồm, sau đó nhấp vào nút 'Gửi' để gửi yêu cầu</p>
+<figure class="kg-card kg-image-card"><figure class="kg-image"><img  src="https://assets.apidog.com/blog/2024/01/image-53.png" alt="Giao diện Apidog" width="1902" height="1060" loading="lazy" data-is-external-image="true"></figure></figure>
+<p>4. Xác nhận rằng phản hồi khớp với mong đợi của bạn.</p>
+<figure class="kg-card kg-image-card"><figure class="kg-image"><img  src="https://assets.apidog.com/blog/2024/01/image-54.png" alt="Giao diện Apidog" width="1900" height="1064" loading="lazy" data-is-external-image="true"></figure></figure>
+<h2 id="c%C3%A1ch-s%E1%BB%AD-d%E1%BB%A5ng-apidog-%C4%91%E1%BB%83-t%E1%BA%A1o-m%C3%A3-kh%C3%A1ch-h%C3%A0ng-javascript-v%E1%BB%9Bi-m%E1%BB%99t-l%E1%BA%A7n-nh%E1%BA%A5p">Cách Sử Dụng Apidog Để Tạo Mã Khách Hàng Javascript Với Một Lần Nhấp</h2>
+<p>Apidog là một nền tảng dựa trên web giúp bạn khám phá, kiểm tra, và tích hợp các API web một cách dễ dàng. Một trong những tính năng mà Apidog cung cấp là khả năng tạo mã khách hàng Fetch với một lần nhấp, dựa trên thông số kỹ thuật API mà bạn cung cấp hoặc chọn.</p>
+<div class="download-app-button">
+<div class="flex-center flex-col">Sign Up for Free<svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.87204 3.03873C4.03476 2.87601 4.29858 2.87601 4.46129 3.03873L6.12796 4.70539C6.29068 4.86811 6.29068 5.13193 6.12796 5.29465L4.46129 6.96132C4.29858 7.12403 4.03476 7.12403 3.87204 6.96132C3.70932 6.7986 3.70932 6.53478 3.87204 6.37206L5.24408 5.00002L3.87204 3.62798C3.70932 3.46526 3.70932 3.20144 3.87204 3.03873Z" fill="#5B7FFF"></path></svg>
+<p class="text-xs text-center secondary-text"><svg width="13" height="12" viewbox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_3395_4823)"><path d="M6.5 6.75C6.77614 6.75 7 6.97386 7 7.25V8.25C7 8.52614 6.77614 8.75 6.5 8.75C6.22386 8.75 6 8.52614 6 8.25V7.25C6 6.97386 6.22386 6.75 6.5 6.75Z" fill="#101828" fill-opacity="0.56"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 4C3.5 2.34315 4.84315 1 6.5 1C8.15685 1 9.5 2.34315 9.5 4V4.57516C9.6413 4.60613 9.77693 4.65121 9.90798 4.71799C10.2843 4.90973 10.5903 5.21569 10.782 5.59202C10.9057 5.83469 10.9549 6.09304 10.9779 6.37409C11 6.64468 11 6.97686 11 7.37934V8.12066C11 8.52314 11 8.85532 10.9779 9.12591C10.9549 9.40696 10.9057 9.66531 10.782 9.90798C10.5903 10.2843 10.2843 10.5903 9.90798 10.782C9.66531 10.9057 9.40696 10.9549 9.12591 10.9779C8.85532 11 8.52314 11 8.12066 11H4.87934C4.47686 11 4.14468 11 3.87409 10.9779C3.59304 10.9549 3.33469 10.9057 3.09202 10.782C2.7157 10.5903 2.40973 10.2843 2.21799 9.90798C2.09434 9.66531 2.04506 9.40696 2.0221 9.12591C1.99999 8.85532 1.99999 8.52313 2 8.12065V7.37935C1.99999 6.97687 1.99999 6.64468 2.0221 6.37409C2.04506 6.09304 2.09434 5.83469 2.21799 5.59202C2.40973 5.21569 2.7157 4.90973 3.09202 4.71799C3.22307 4.65121 3.3587 4.60613 3.5 4.57516V4ZM4.5 4.50081C4.61886 4.5 4.7452 4.5 4.87935 4.5H8.12065C8.2548 4.5 8.38115 4.5 8.5 4.50081V4C8.5 2.89543 7.60457 2 6.5 2C5.39543 2 4.5 2.89543 4.5 4V4.50081ZM3.95552 5.51878C3.73631 5.53669 3.62421 5.56915 3.54601 5.60899C3.35785 5.70487 3.20487 5.85785 3.10899 6.04601C3.06915 6.12421 3.03669 6.23631 3.01878 6.45552C3.00039 6.68056 3 6.97171 3 7.4V8.1C3 8.52829 3.00039 8.81944 3.01878 9.04448C3.03669 9.26369 3.06915 9.37579 3.10899 9.45399C3.20487 9.64215 3.35785 9.79513 3.54601 9.89101C3.62421 9.93085 3.73631 9.96331 3.95552 9.98122C4.18056 9.99961 4.47171 10 4.9 10H8.1C8.52829 10 8.81944 9.99961 9.04448 9.98122C9.26369 9.96331 9.37579 9.93085 9.45399 9.89101C9.64215 9.79513 9.79513 9.64215 9.89101 9.45399C9.93085 9.37579 9.96331 9.26369 9.98122 9.04448C9.99961 8.81944 10 8.52829 10 8.1V7.4C10 6.97171 9.99961 6.68056 9.98122 6.45552C9.96331 6.23631 9.93085 6.12421 9.89101 6.04601C9.79513 5.85785 9.64215 5.70487 9.45399 5.60899C9.37579 5.56915 9.26369 5.53669 9.04448 5.51878C8.81944 5.50039 8.52829 5.5 8.1 5.5H4.9C4.47171 5.5 4.18056 5.50039 3.95552 5.51878Z" fill="#101828" fill-opacity="0.56"></path></g><defs><rect width="12" height="12" fill="white" transform="translate(0.5)"></rect></defs></svg>Privacy protected</p>
+</div>
+<div class="flex-center flex-col sm-hidden"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewbox="0 0 18 18" fill="none"><path d="M15.7945 2.73824V8.14933C15.7945 8.41742 15.5783 8.63535 15.3102 8.63747L8.9221 8.68816C8.65097 8.69031 8.43004 8.47113 8.43004 8.20002V3.65078C8.43004 3.40785 8.60869 3.2019 8.84919 3.16754L15.2373 2.255C15.5314 2.21297 15.7945 2.44117 15.7945 2.73824Z" fill="#5B7FFF"></path><path d="M7.7579 3.88209V8.20103C7.7579 8.46912 7.54169 8.68705 7.2736 8.68917L2.69739 8.72549C2.42627 8.72764 2.20534 8.50846 2.20534 8.23735V4.53582C2.20534 4.29289 2.38398 4.08693 2.62448 4.05258L7.2007 3.39887C7.49478 3.35684 7.7579 3.58504 7.7579 3.88209Z" fill="#5B7FFF"></path><path d="M15.7945 9.87962V15.2618C15.7945 15.5581 15.5327 15.786 15.2392 15.7453L8.85107 14.8581C8.60972 14.8246 8.43004 14.6182 8.43004 14.3746V9.85425C8.43004 9.58389 8.64979 9.36503 8.92016 9.3661L15.3083 9.39145C15.5771 9.39255 15.7945 9.61079 15.7945 9.87962Z" fill="#5B7FFF"></path><path d="M7.72867 9.82054V14.1257C7.72867 14.4208 7.46898 14.6484 7.17649 14.6097L2.62949 14.0083C2.38673 13.9761 2.20532 13.7692 2.20532 13.5243V9.79648C2.20532 9.52588 2.42546 9.30691 2.69608 9.30833L7.24306 9.33239C7.51168 9.33382 7.72867 9.55195 7.72867 9.82054Z" fill="#5B7FFF"></path></svg>Download NowFor Mac or Linux<svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.87204 3.03873C4.03476 2.87601 4.29858 2.87601 4.46129 3.03873L6.12796 4.70539C6.29068 4.86811 6.29068 5.13193 6.12796 5.29465L4.46129 6.96132C4.29858 7.12403 4.03476 7.12403 3.87204 6.96132C3.70932 6.7986 3.70932 6.53478 3.87204 6.37206L5.24408 5.00002L3.87204 3.62798C3.70932 3.46526 3.70932 3.20144 3.87204 3.03873Z" fill="#5B7FFF"></path></svg>
+<p class="text-xs text-center secondary-text"><svg width="13" height="12" viewbox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_3395_4832)"><path d="M8.60344 4.14644C8.7987 4.34171 8.7987 4.65829 8.60344 4.85355L6.35344 7.10355C6.15818 7.29881 5.8416 7.29881 5.64633 7.10355L4.64633 6.10355C4.45107 5.90829 4.45107 5.5917 4.64633 5.39644C4.8416 5.20118 5.15818 5.20118 5.35344 5.39644L5.99989 6.04289L7.89634 4.14644C8.0916 3.95118 8.40818 3.95118 8.60344 4.14644Z" fill="#101828" fill-opacity="0.56"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.35687 0.544276C6.45172 0.53057 6.54805 0.53057 6.6429 0.544276C6.75222 0.560073 6.85394 0.5985 6.93471 0.629013C6.9421 0.631806 6.94932 0.634532 6.95635 0.637169L9.63725 1.64251C9.6592 1.65074 9.68098 1.65887 9.70257 1.66693C10.0115 1.78226 10.2827 1.88353 10.4916 2.06764C10.6744 2.2287 10.8152 2.43185 10.9018 2.65952C11.0009 2.91978 11.0004 3.20934 11 3.53906C10.9999 3.56211 10.9999 3.58535 10.9999 3.6088V6C10.9999 7.41331 10.2312 8.5916 9.40036 9.4572C8.56391 10.3286 7.60689 10.9441 7.10084 11.2393C7.09416 11.2432 7.08734 11.2472 7.08035 11.2513C6.988 11.3055 6.86814 11.3759 6.70957 11.4099C6.57984 11.4378 6.41994 11.4378 6.29021 11.4099C6.13164 11.3759 6.01177 11.3055 5.91942 11.2513C5.91244 11.2472 5.90561 11.2432 5.89894 11.2393C5.39289 10.9441 4.43587 10.3286 3.59942 9.4572C2.76853 8.5916 1.99989 7.41331 1.99989 6V3.6088C1.99989 3.58535 1.99985 3.56211 1.99982 3.53906C1.99934 3.20934 1.99892 2.91978 2.09796 2.65952C2.18459 2.43185 2.32538 2.2287 2.50813 2.06764C2.71704 1.88353 2.98831 1.78225 3.29721 1.66693C3.3188 1.65887 3.34058 1.65074 3.36253 1.64251L6.04343 0.637169C6.05046 0.634532 6.05768 0.631806 6.06507 0.629013C6.14584 0.5985 6.24756 0.560073 6.35687 0.544276ZM6.49838 1.53563C6.47796 1.54233 6.45026 1.55261 6.39455 1.5735L3.71365 2.57884C3.30103 2.73357 3.22163 2.77177 3.1693 2.81788C3.10838 2.87157 3.06146 2.93928 3.03258 3.01517C3.00777 3.08035 2.99989 3.16812 2.99989 3.6088V6C2.99989 7.0409 3.56973 7.98221 4.32085 8.76471C5.06639 9.54141 5.93488 10.1025 6.40285 10.3756C6.43145 10.3922 6.45208 10.4043 6.47002 10.4144C6.4841 10.4223 6.49347 10.4273 6.49989 10.4306C6.50631 10.4273 6.51568 10.4223 6.52975 10.4144C6.54769 10.4043 6.56833 10.3922 6.59693 10.3756C7.0649 10.1025 7.93339 9.54141 8.67893 8.76471C9.43004 7.98221 9.99989 7.0409 9.99989 6V3.6088C9.99989 3.16812 9.992 3.08035 9.9672 3.01517C9.93832 2.93928 9.89139 2.87157 9.83047 2.81788C9.77815 2.77177 9.69874 2.73357 9.28612 2.57884L6.60523 1.5735C6.54952 1.55261 6.52182 1.54233 6.5014 1.53563L6.49989 1.53514L6.49838 1.53563Z" fill="#101828" fill-opacity="0.56"></path></g><defs><rect width="12" height="12" fill="white" transform="translate(0.5)"></rect></defs></svg>Security guaranteed with no ads</p>
+</div>
+</div>
+<p>Để sử dụng Apidog để tạo mã khách hàng Javascript với một lần nhấp, bạn có thể làm theo các bước sau:</p>
+<ul>
+<li>Nhấp vào nút “API Mới” trên bảng điều khiển hoặc chọn một API hiện có từ danh sách.</li>
+</ul>
+<figure class="kg-card kg-image-card"><figure class="kg-image"><img  src="https://assets.apidog.com/blog/2024/01/image-170.png" alt="Apidog" width="1278" height="715" loading="lazy" data-is-external-image="true"></figure></figure>
+<ul>
+<li>Nhấp vào “Tạo Mã Khách Hàng”. Apidog sẽ sử dụng động cơ OpenAPI Generator để tạo mã khách hàng Javascript cho API của bạn, phù hợp với các điểm cuối và cấu trúc dữ liệu mà bạn đã định nghĩa hoặc chọn.</li>
+</ul>
+<figure class="kg-card kg-image-card"><figure class="kg-image"><img  src="https://assets.apidog.com/blog/2024/01/image-171.png" alt="Apidog" width="1266" height="705" loading="lazy" data-is-external-image="true"></figure></figure>
+<ul>
+<li>Bạn sẽ thấy một cửa sổ modal với mã được tạo, mà bạn có thể sao chép vào clipboard của mình.</li>
+</ul>
+<figure class="kg-card kg-image-card"><figure class="kg-image"><img  src="https://assets.apidog.com/blog/2024/01/image-172.png" alt="Apidog" width="1032" height="642" loading="lazy" data-is-external-image="true"></figure></figure>
+<p>Bạn có thể sử dụng mã được tạo trong dự án của riêng bạn, hoặc sửa đổi nó theo ý muốn. Bạn cũng có thể kiểm tra mã với máy chủ giả lập Apidog, mô phỏng các phản hồi API dựa trên thông số kỹ thuật của bạn.</p>
+<p>Vậy là xong! Bạn đã thành công trong việc sử dụng Apidog để tạo mã khách hàng Fetch với một lần nhấp. Bạn có thể sử dụng tính năng này để tiết kiệm thời gian và tránh lỗi khi làm việc với các API web. Bạn cũng có thể khám phá các tính năng khác mà Apidog cung cấp, chẳng hạn như tài liệu API, gỡ lỗi API, giả lập API, và kiểm tra tự động API.</p>
+<h2 id="k%E1%BA%BFt-lu%E1%BA%ADn">Kết luận:</h2>
+<p>Thành thạo APIs với tư cách là một nhà phát triển mới là một bước ngoặt. Không chỉ cho phép bạn xây dựng các ứng dụng web vững chắc tích hợp liền mạch với các dịch vụ bên ngoài, mà họ còn mở ra một thế giới dữ liệu và tài nguyên có thể nâng cao các dự án của bạn lên tầm cao mới.</p>
+<p>Bằng cách hiểu cách lấy dữ liệu, xử lý các phản hồi JSON và thực hiện các loại yêu cầu khác nhau (GET, POST, PUT, DELETE), bạn đã thực hiện bước đầu tiên quan trọng hướng tới sự thành thạo API. Khi bạn tiếp tục hành trình của mình, hãy nhớ kiểm tra kỹ các API của bạn bằng cách sử dụng các công cụ như Apidog, giúp đơn giản hóa quy trình thiết kế, phát triển, gỡ lỗi và kiểm tra APIs.</p>
+<p>Hơn nữa, tính năng tạo mã khách hàng với một lần nhấp của Apidog có thể tiết kiệm thời gian và công sức quý giá của bạn, cho phép bạn tập trung vào chức năng cốt lõi của ứng dụng của mình. Với sức mạnh của APIs trong tầm tay, bạn đã sẵn sàng để đi trước một bước và tạo ra các giải pháp sáng tạo đáp ứng các yêu cầu không ngừng phát triển của ngành công nghệ.</p>
             ]]>
         </content>
     </entry>
     <entry>
-        <title>Vòng lặp trong Javascript</title>
+        <title>Attributes(Đặc tính) and properties(thuộc tính) của DOM trong Javascript</title>
         <author>
             <name>Cuong</name>
         </author>
-        <link href="https://servyn.github.io/CuongBlog/blog/vong-lap-trong-javascript/"/>
-        <id>https://servyn.github.io/CuongBlog/blog/vong-lap-trong-javascript/</id>
+        <link href="https://servyn.github.io/CuongBlog/blog/attributesdac-tinh-and-propertiesthuoc-tinh-cua-dom-trong-javascript/"/>
+        <id>https://servyn.github.io/CuongBlog/blog/attributesdac-tinh-and-propertiesthuoc-tinh-cua-dom-trong-javascript/</id>
             <category term="Tự học Javascript"/>
 
-        <updated>2024-12-31T05:40:00+07:00</updated>
+        <updated>2024-12-31T06:24:00+07:00</updated>
             <summary>
                 <![CDATA[
-                    Vòng lặp trong JavaScript là gì? Vòng lặp trong JavaScript cho phép bạn thực hiện câu lệnh nhiều lần cho đến khi một điều kiện&hellip;
+                    1.Thuộc tính DOM Chúng ta đã thấy các thuộc tính DOM tích hợp sẵn. Có rất nhiều. Nhưng về mặt kỹ thuật thì không ai&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <h2><span id="Vong_lap_trong_JavaScript_la_gi"><strong>Vòng lặp trong JavaScript là gì?</strong></span></h2>
-<p>Vòng lặp trong JavaScript cho phép bạn thực hiện câu lệnh nhiều lần cho đến khi một điều kiện được đáp ứng. Vòng lặp (Loop) giúp bạn tự động hóa các tác vụ mang tính lặp đi lặp lại, tiết kiệm thời gian hiệu quả.</p>
-<p>Ví dụ, bạn thực hiện hiển thị dòng chữ ITviec Blog 5 lần bằng cách sử dụng vòng lặp trong JavaScript. Trong Loop, câu lệnh chỉ cần được viết một lần và vòng lặp sẽ thực hiện 5 lần. Cụ thể như sau:</p>
-<pre>for (let i = 0; i &lt; 5; i++) {
-    console.log("ITviec Blog");
-}</pre>
-<p>Khi thực hiện đoạn mã trên, kết quả sẽ được hiển thị như sau:</p>
-<pre>ITviec Blog
-
-ITviec Blog
-
-ITviec Blog
-
-ITviec Blog
-
-ITviec Blog</pre>
-<blockquote>
-<p><i>Xem thêm: </i><strong><i>JavaScript là gì? Học JavaScript cơ bản với lộ trình dễ hiểu nhất</i></strong></p>
-</blockquote>
-<h2><span id="Cac_phuong_thuc_co_ban_cua_vong_lap_trong_javascript"><strong>Các phương thức cơ bản của vòng lặp trong javascript</strong></span></h2>
-<h3><strong>Vòng lặp trong JavaScript: Vòng lặp for</strong></h3>
-<p>Trong JavaScript, vòng lặp for được sử dụng để lặp lại một đoạn mã theo số lần nhất định hoặc lặp lại các phần tử của một mảng. Vòng lặp for chứa vùng khởi tạo, điều kiện tăng/giảm trong một dòng, do đó cấu trúc của vòng lặp sẽ ngắn gọn và ít lỗi hơn.</p>
-<p>Cú pháp cơ bản của vòng lặp for:</p>
-<pre>for (initialExpression; condition; updateExpression) {
-    // for loop body
-}</pre>
-<p>Trong đó:</p>
-<ul>
-<li aria-level="1"><strong>initialExpression:</strong> Khởi tạo một biến đếm.</li>
-<li aria-level="1"><strong>Condition: </strong>Điều kiện cần được đánh giá, nếu điều kiện đúng, nội dung của vòng lặp sẽ được thực thi.</li>
-<li aria-level="1"><strong>UpdateExpression:</strong> Cập nhật giá trị của initialExpression.</li>
-</ul>
-<p>Sau khi hoàn tất một lần lặp của vòng lặp, điều kiện sẽ được đánh giá lại. Quá trình sẽ được tiếp tục cho đến khi điều kiện sai.</p>
-<figure class="size-full wp-image-77832 aligncenter sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro.png 1072w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-268x300.webp 268w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-768x860.webp 572w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-179x200.webp 179w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-89x100.webp 89w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-402x450.webp 402w" sizes="(max-width: 1072px) 100vw, 1072px" type="image/webp"><img loading="lazy"  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro.png" sizes="(max-width: 1072px) 100vw, 1072px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro.png 1072w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-268x300.png 268w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-768x860.png 572w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-179x200.png 179w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-89x100.png 89w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-402x450.png 402w" alt="vòng lặp trong javascript - itviec blog" width="1072" height="1200" data-is-external-image="true"></figure></picture></p>
-<p><em>Cách hoạt động của vòng lặp for (Nguồn: programiz.com).</em></p>
-<p>Ví dụ, thực hiện hiển thị dãy số từ 1-5 với điều kiện giá trị nhỏ hơn 6. Cụ thể như sau:</p>
-<pre>for (let i = 1; i &lt; 6; i++) {
-    console.log(i);
-}</pre>
-<p>Với cú pháp trên, trình duyệt sẽ hiển thị dãy số từ 1-5 là những giá trị thỏa mãn điều kiện. Khi thực thi, vòng lặp for sẽ phân tích từ giá trị đầu tiên là số 1 với điều kiện là i &lt; 6, số 1 thỏa điều kiện vòng lặp sẽ tiếp tục phân tích đến các giá trị 2,3,4,5 và 6. Đến khi có một giá trị không thỏa mãn điều kiện, vòng lặp sẽ kết thúc.</p>
-<figure class="alignnone size-full wp-image-77831 aligncenter sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro.png 800w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-300x139.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-700x324.webp 640w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-200x93.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-100x46.webp 100w" sizes="(max-width: 800px) 100vw, 800px" type="image/webp"><img loading="lazy"  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro.png" sizes="(max-width: 800px) 100vw, 800px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro.png 800w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-300x139.png 300w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-700x324.png 640w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-200x93.png 200w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-100x46.png 100w" alt="vòng lặp trong javascript - itviec blog" width="800" height="370" data-is-external-image="true"></figure></picture></p>
-<p><i>Cách hoạt động của vòng lặp while (Nguồn: GeeksForGeeks)</i></p>
-<h3><strong>Vòng lặp trong JavaScript: </strong><strong>Vòng lặp while</strong></h3>
-<p>Vòng lặp while là một câu lệnh điều khiển luồng cho phép mã được thực thi nhiều lần dựa trên một điều kiện boolean nhất định. Vòng lặp while cũng có thể được coi như một câu lệnh if lặp lại. Cú pháp cơ bản của vòng lặp while như sau: </p>
-<pre>while (boolean condition) {
-    loop statements...
-}</pre>
-<p>Trong đó: </p>
-<ul>
-<li aria-level="1">Vòng lặp while bắt đầu bằng việc kiểm tra điều kiện, nếu điều kiện đúng thì các câu lệnh trong vòng lặp sẽ được thực thi. Ngược lại, nếu điều kiện câu lệnh đầu tiên không đúng, thì câu lệnh tiếp theo sẽ được thực thi. </li>
-<li aria-level="1">Các câu lệnh chứa giá trị được cập nhật cho biến được xử lý cho lần lặp tiếp theo.</li>
-<li aria-level="1">Khi điều kiện sai, vòng lặp sẽ kết thúc. </li>
-</ul>
-<p>Ví dụ cách sử dụng vòng lặp while khi thực hiện dãy số như sau:</p>
-<pre>let val = 1;
-
-while (val &lt; 6) {
-    console.log(val); 
-    val += 1;
-}</pre>
-<p>Kết quả hiển thị của đoạn mã trên:</p>
-<figure class="alignnone size-full wp-image-77830 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro.jpg 388w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro-300x163.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro-200x109.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro-100x54.webp 100w" sizes="(max-width: 388px) 100vw, 388px" type="image/webp"><img loading="lazy"  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro.jpg" sizes="(max-width: 388px) 100vw, 388px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro.jpg 388w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro-300x163.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro-200x109.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro-100x54.jpg 100w" alt="vòng lặp trong javascript - itviec blog" width="388" height="211" data-is-external-image="true"></figure></picture></p>
-<h3><strong>Vòng lặp trong JavaScript: Vòng lặp do…while</strong></h3>
-<p>Vòng lặp do…while có chức năng tương tự với while nhưng điểm khác biệt chính là do…while sẽ kiểm tra điều kiện sau khi thực thi các câu lệnh. Do đó, do…while sẽ thực thi nội dung vòng lặp ít nhất một lần ngay cả khi điều kiện sai.</p>
-<pre>do {
-    Statements...
-}
-while (condition);</pre>
-<p>Với cú pháp cơ bản của do…while, có thể thấy:</p>
-<ul>
-<li aria-level="1">Vòng lặp do…while sẽ bắt đầu thực thi các câu lệnh, không có kiểm tra bất kỳ điều kiện nào lần đầu tiên.</li>
-<li aria-level="1">Sau khi thực thi các câu lệnh và cập nhật giá trị biến, điều kiện sẽ được kiểm tra đúng hay sai. </li>
-<li aria-level="1">Nếu điều kiện đúng, vòng lặp tiếp theo sẽ bắt đầu. Nếu điều kiện sai, vòng lặp sẽ kết thúc. </li>
-</ul>
-<p>Ngoài ra, cần lưu ý rằng vòng lặp do…while sẽ thực thi câu lệnh ít nhất một lần trước khi bất kỳ điều kiện nào được kiểm tra. </p>
-<p>Chẳng hạn như ví dụ tính tổng của các dãy số như sau: </p>
-<pre>let sum = 0, num = 0;
-do {
-    sum += num;
-    num = parseInt(prompt("Enter a number: "));
-} while (num &gt;= 0);
-console.log(`The sum is ${sum}`);</pre>
-<p>Ở ví dụ trên, do…while nhắc người dùng nhập một số, miễn chúng là các số dương thì vòng lặp sẽ tự cộng chúng lại và nhắc user nhập thêm các số khác. Ngược lại, nếu bạn nhập số âm thì vòng lặp sẽ kết thúc mà không được nhập thêm bất kỳ số âm nào.</p>
-<p>Kết quả hiển thị:</p>
-<figure class="alignnone size-full wp-image-77829 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro.jpg 705w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-300x58.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-700x135.webp 640w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-200x39.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-100x19.webp 100w" sizes="(max-width: 705px) 100vw, 705px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro.jpg" sizes="(max-width: 705px) 100vw, 705px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro.jpg 705w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-300x58.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-700x135.jpg 640w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-200x39.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-100x19.jpg 100w" alt="vòng lặp trong javascript - itviec blog" width="705" height="136" loading="lazy" data-is-external-image="true"></figure></picture></p>
-<h3><strong>Vòng lặp trong JavaScript: Vòng lặp for…in</strong></h3>
-<p>Vòng lặp for…in được sử dụng để thực hiện hành động lặp qua các thuộc tính của một đối tượng (object). For…in chỉ lặp qua các giá trị keys của một đối tượng có thuộc tính có thể đếm được để đặt thành “true”.</p>
-<pre>for(let variable_name in object_name) {
-    // Statement
-}</pre>
-<p>Ví dụ về vòng lặp for…in như sau:</p>
-<pre>const salaries = {
-    Jack: 24000,
-    Paul: 34000,
-    Monica: 55000
+                <h2 class="wp-block-heading">1.<strong>Thuộc tính DOM</strong></h2>
+<p>Chúng ta đã thấy các thuộc tính DOM tích hợp sẵn. Có rất nhiều. Nhưng về mặt kỹ thuật thì không ai giới hạn chúng ta, và nếu không đủ, chúng ta có thể thêm cái của mình.</p>
+<p>Các nút DOM là các đối tượng JavaScript thông thường. Chúng ta có thể thay đổi chúng.</p>
+<p>Ví dụ: hãy tạo một thuộc tính mới trong document.body:</p>
+<pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>document.body.myData = {
+  name: 'Caesar',
+  title: 'Imperator'
 };
-for (let i in salaries) {
-    let salary = "$" + salaries[i];
-    console.log(`${i}: ${salary}`);
-};</pre>
-<p>Ở ví dụ trên, có thể thấy:</p>
-<ul>
-<li aria-level="1">Vòng lặp for…in được sử dụng để lặp lại các thuộc tính của đối tượng salary. </li>
-<li aria-level="1">Thêm chuỗi $ vào mỗi giá trị của đối tượng. </li>
-<li aria-level="1">Đoạn mã sử dụng biến i thay vì key vì có thể sử dụng bất kỳ tên biến nào, miễn là chúng hợp lệ. </li>
-</ul>
-<p>Kết quả hiển thị:</p>
-<figure class="alignnone size-full wp-image-77828 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro.jpg 559w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro-300x63.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro-200x42.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro-100x21.webp 100w" sizes="(max-width: 559px) 100vw, 559px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro.jpg" sizes="(max-width: 559px) 100vw, 559px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro.jpg 559w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro-300x63.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro-200x42.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro-100x21.jpg 100w" alt="vòng lặp trong javascript - itviec blog" width="559" height="117" loading="lazy" data-is-external-image="true"></figure></picture></p>
-<h3><strong>Vòng lặp trong JavaScript: Vòng lặp for…of</strong></h3>
-<p>Vòng lặp for…of được sử dụng để lặp lại các đối tượng có thể lặp lại, chẳng hạn như mảng (array), đối tượng (object), set hoặc map. Vòng lặp sẽ lặp lại trực tiếp giá trị của đối tượng đã cho và có cú pháp ngắn gọn hơn vòng lặp for. </p>
-<pre>for(let variable_name of  object_name) {
-    // Statement
-}</pre>
-<p>Ví dụ về cách sử dụng for…of như sau: </p>
-<pre>const students = ['John', 'Sara', 'Jack'];
-for (let element of students) {
-    console.log(element);
-}</pre>
-<p>Ở ví dụ trên đã thực hiện vòng lặp for…of đối với mảng (array), cụ thể là lặp qua các đối tượng mảng là student và hiển thị tất cả các giá trị của nó.</p>
-<p>Kết quả hiển thị:</p>
-<figure class="alignnone size-full wp-image-77827 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro.jpg 600w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro-300x57.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro-200x38.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro-100x19.webp 100w" sizes="(max-width: 600px) 100vw, 600px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro.jpg" sizes="(max-width: 600px) 100vw, 600px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro.jpg 600w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro-300x57.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro-200x38.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro-100x19.jpg 100w" alt="vòng lặp trong javascript - itviec blog" width="600" height="114" loading="lazy" data-is-external-image="true"></figure></picture></p>
-<h3><strong>Vòng lặp trong JavaScript: Break Statement</strong></h3>
-<p>Câu lệnh break được sử dụng để chấm dứt việc thực thi vòng lặp hoặc câu lệnh switch khi điều kiện đúng. Ví dụ như sau: </p>
-<pre>for (let i = 1; i &lt; 6; i++) {
-    if (i == 4) 
-        break;
-        
-    console.log(i);
-}</pre>
-<p>Ở ví dụ trên, có thể thấy như sau:</p>
-<ul>
-<li aria-level="1">Vòng lặp bắt đầu với i=1 và tiếp tục cho đến khi giá trị i nhỏ hơn 6. </li>
-<li aria-level="1">Khi i bằng 4, câu lệnh break được thực thi, điều này sẽ dừng vòng lặp ngay lập tức.</li>
-<li aria-level="1">Các giá trị của i từ 1 đến 3 sẽ được hiển thị. Khi đến giá trị i bằng 4, vòng lặp sẽ dừng lại trước khi i=4 được hiển thị.</li>
-</ul>
-<p>Kết quả hiển thị:</p>
-<figure class="alignnone size-full wp-image-77826 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro.jpg 357w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro-300x114.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro-200x76.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro-100x38.webp 100w" sizes="(max-width: 357px) 100vw, 357px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro.jpg" sizes="(max-width: 357px) 100vw, 357px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro.jpg 357w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro-300x114.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro-200x76.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro-100x38.jpg 100w" alt="vòng lặp trong javascript - itviec blog" width="357" height="136" loading="lazy" data-is-external-image="true"></figure></picture></p>
-<h3><strong>Vòng lặp trong JavaScript: Continue Statement</strong></h3>
-<p>Câu lệnh continue được sử dụng để bỏ qua phần còn lại của vòng lặp hiện tại và tiếp tục với vòng lặp tiếp theo.</p>
-<p>Câu lệnh continue khác biệt so với câu lệnh break ở một số đặc điểm như:</p>
-<ul>
-<li aria-level="1">Câu lệnh continue sẽ dừng hoàn toàn vòng lặp và tiếp tục thực thi mã sau vòng lặp.</li>
-<li aria-level="1">Trong khi đó, câu lệnh break sẽ bỏ qua phần còn lại của vòng lặp hiện tại, tiếp tục với vòng lặp tiếp theo mà không dừng hoàn toàn vòng lặp.</li>
-</ul>
-<p>Chẳng hạn như ví dụ sau:</p>
-<pre>for (let i = 0; i &lt; 11; i++) {
-    if (i % 2 == 0) 
-        continue;
-        
-    console.log(i);
-}</pre>
-<p>Ở ví dụ trên, giá trị của i được tăng lên cho lần lặp tiếp theo, sau đó câu lệnh continue sẽ bỏ qua lần lặp hiện tại. Lưu ý rằng đoạn mã trên đã tăng giá trị của i cả bên trong và bên ngoài câu lệnh if. </p>
-<p>Kết quả hiển thị:</p>
-<figure class="alignnone size-full wp-image-77825 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro.jpg 489w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro-300x136.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro-200x91.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro-100x45.webp 100w" sizes="(max-width: 489px) 100vw, 489px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro.jpg" sizes="(max-width: 489px) 100vw, 489px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro.jpg 489w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro-300x136.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro-200x91.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro-100x45.jpg 100w" alt="vòng lặp trong javascript - itviec blog" width="489" height="222" loading="lazy" data-is-external-image="true"></figure></picture></p>
-<h3><strong>Vòng lặp trong JavaScript: Infinite Loop </strong></h3>
-<p>Vòng lặp vô hạn (hay còn gọi là Infinite Loop) là một trong những lỗi sai phổ biến khi triển khai bất kỳ loại vòng lặp nào, bởi chúng có thể không bao giờ thoát, tức là vòng lặp sẽ chạy vô hạn lần. Điều này xảy ra khi điều kiện không thành công vì một lý do nào đó.</p>
-<pre>for (let i = 5; i != 0; i -= 2) {
-    console.log(i);
-}
 
-let x = 5;
-while (x == 5) {
-    console.log("In the loop");
-}</pre>
-<h2><span id="Cau_hoi_thuong_gap_ve_vong_lap_trong_JavaScript"><strong>Câu hỏi thường gặp về vòng lặp trong JavaScript</strong></span></h2>
-<h3><strong>Vòng lặp while và do…while khác nhau như thế nào?</strong></h3>
-<p>Vòng lặp while và do…while đều được sử dụng để thực hiện câu lệnh nhiều lần cho đến khi điều kiện không còn đúng. Tuy nhiên, cả hai vẫn có một số điểm khác biệt như:</p>
+alert(document.body.myData.title); // Imperator</code></pre>
+<p>Chúng ta cũng có thể thêm một phương thức:</p>
+<pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>document.body.sayTagName = function() {
+  alert(this.tagName);
+};
+
+document.body.sayTagName(); // BODY (the value of "this" in the method is document.body)</code></pre>
+<p>Chúng ta cũng có thể sửa đổi các nguyên mẫu tích hợp sẵn như Element.prototype và thêm các phương thức mới vào tất cả các phần tử:</p>
+<pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>Element.prototype.sayHi = function() {
+  alert(`Hello, I'm ${this.tagName}`);
+};
+
+document.documentElement.sayHi(); // Hello, I'm HTML
+document.body.sayHi(); // Hello, I'm BODY</code></pre>
+<p>Vì vậy, các thuộc tính và phương thức DOM hoạt động giống như các thuộc tính và phương thức của các đối tượng JavaScript thông thường:</p>
 <ul>
-<li aria-level="1"><strong>Vòng lặp while</strong>: Thường kiểm tra điều kiện trước khi đoạn mã được thực thi. </li>
-<li aria-level="1"><strong>Vòng lặp do…while: </strong>Sẽ thực thi đoạn mã một lần trước khi kiểm tra điều kiện.</li>
+<li>Chúng có thể có bất kỳ giá trị nào.</li>
+<li>Chúng phân biệt chữ hoa chữ thường (viết elem.nodeType, không phải elem.NoDeTyPe).</li>
 </ul>
-<h3><strong>Làm sao để tránh vòng lặp vô hạn (Infinite Loop)?</strong></h3>
-<p>Vòng lặp vô hạn (Infinite Loop) xảy ra khi điều kiện kết thúc (Terminating condition) của vòng lặp không được đáp ứng, khiến cho vòng lặp chạy vô thời hạn. Để tránh tình trạng này, bạn cần đảm bảo điều kiện cuối cùng của vòng lặp là sai (False).</p>
-<h3><strong>Sự khác nhau giữa for…in và for…of</strong></h3>
-<p>Một số điểm khác nhau giữa for…in và for…of cụ thể như:</p>
-<table>
+<h2 class="wp-block-heading"><span id="2_Thuoc_tinhAttributes_HTML" class="ez-toc-section"></span>2. <strong>Thuộc tính(Attributes) HTML</strong></h2>
+<p>Trong HTML, các thẻ có thể có các thuộc tính. Khi trình duyệt phân tích cú pháp HTML để tạo các đối tượng DOM cho các thẻ, nó sẽ nhận ra <em>các</em> thuộc tính <em>chuẩn</em> và tạo các thuộc tính DOM từ chúng.</p>
+<p>Vì vậy, khi một phần tử có id hoặc một thuộc tính <em>chuẩn</em> khác , thuộc tính tương ứng sẽ được tạo. Nhưng điều đó không xảy ra nếu thuộc tính không chuẩn.</p>
+<p>Ví dụ:</p>
+<pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>&lt;body id="test" something="non-standard"&gt;
+  &lt;script&gt;
+    alert(document.body.id); // test
+    // non-standard attribute does not yield a property
+    alert(document.body.something); // undefined
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+<p>Xin lưu ý rằng một thuộc tính chuẩn cho một phần tử có thể không xác định cho một phần tử khác. Ví dụ: “type”là chuẩn cho <code>&lt;input&gt;</code>( HTMLInputElement ), nhưng không phải cho <code>&lt;body&gt;</code>( HTMLBodyElement ). Các thuộc tính tiêu chuẩn được mô tả trong đặc tả cho lớp phần tử tương ứng.</p>
+<p>Ở đây chúng ta có thể thấy nó:</p>
+<pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>&lt;body id="body" type="..."&gt;
+  &lt;input id="input" type="text"&gt;
+  &lt;script&gt;
+    alert(input.type); // text
+    alert(body.type); // undefined: DOM property not created, because it's non-standard
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+<p>Vì vậy, nếu một thuộc tính không phải là tiêu chuẩn, sẽ không có thuộc tính DOM cho nó. Có cách nào để truy cập các thuộc tính như vậy không?</p>
+<p>Chắc chắn rồi. Tất cả các thuộc tính đều có thể truy cập được bằng cách sử dụng các phương pháp sau:</p>
+<ul>
+<li>elem.hasAttribute(name) – kiểm tra sự tồn tại.</li>
+<li>elem.getAttribute(name) – nhận giá trị.</li>
+<li>elem.setAttribute(name, value) – đặt giá trị.</li>
+<li>elem.removeAttribute(name) – loại bỏ thuộc tính.</li>
+</ul>
+<p>Các phương thức này hoạt động chính xác với những gì được viết bằng HTML.</p>
+<p>Ngoài ra, người ta có thể đọc tất cả các thuộc tính bằng cách sử dụng elem.attributes: một tập hợp các đối tượng thuộc một lớp Attr dựng sẵn , với các thuộc tính name và value.</p>
+<p>Dưới đây là bản demo về cách đọc thuộc tính không chuẩn:</p>
+<pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>&lt;body something="non-standard"&gt;
+  &lt;script&gt;
+    alert(document.body.getAttribute('something')); // non-standard
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+<p>Thuộc tính HTML có các tính năng sau:</p>
+<ul>
+<li>Tên của họ không phân biệt chữ hoa chữ thường ( id giống như ID).</li>
+<li>Giá trị của chúng luôn là chuỗi.</li>
+</ul>
+<p>Đây là bản demo mở rộng về cách làm việc với các thuộc tính:</p>
+<pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>/*
+Cafedev.vn - Kênh thông tin IT hàng đầu Việt Nam
+@author cafedevn
+Contact: cafedevn@gmail.com
+Fanpage: https://www.facebook.com/cafedevn
+Group: https://www.facebook.com/groups/cafedev.vn/
+Instagram: https://instagram.com/cafedevn
+Twitter: https://twitter.com/CafedeVn
+Linkedin: https://www.linkedin.com/in/cafe-dev-407054199/
+Pinterest: https://www.pinterest.com/cafedevvn/
+YouTube: https://www.youtube.com/channel/UCE7zpY_SlHGEgo67pHxqIoA/
+*/
+
+&lt;body&gt;
+  &lt;div id="elem" about="Elephant"&gt;&lt;/div&gt;
+
+  &lt;script&gt;
+    alert( elem.getAttribute('About') ); // (1) 'Elephant', reading
+
+    elem.setAttribute('Test', 123); // (2), writing
+
+    alert( elem.outerHTML ); // (3), see if the attribute is in HTML (yes)
+
+    for (let attr of elem.attributes) { // (4) list all
+      alert( `${attr.name} = ${attr.value}` );
+    }
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+<p>Xin lưu ý:</p>
+<ol>
+<li>getAttribute(‘About’)- chữ cái đầu tiên là chữ hoa ở đây, và trong HTML thì tất cả đều là chữ thường. Nhưng điều đó không quan trọng: tên thuộc tính không phân biệt chữ hoa chữ thường.</li>
+<li>Chúng ta có thể gán bất kỳ thứ gì cho một thuộc tính, nhưng nó sẽ trở thành một chuỗi. Vì vậy, ở đây chúng ta có giá trị “123”.</li>
+<li>Tất cả các thuộc tính bao gồm cả những cái mà chúng ta thiết lập có thể nhìn thấy trong outerHTML.</li>
+<li>Bộ sưu tập attributes có thể lặp lại và có tất cả các thuộc tính của phần tử (chuẩn và không chuẩn) dưới dạng các đối tượng có  thuộc tính name và value.</li>
+</ol>
+<h2 class="wp-block-heading"><span id="3_Dong_bo_hoa_thuoc_tinh" class="ez-toc-section"></span>3. <strong>Đồng bộ hóa thuộc tính</strong></h2>
+<p>Khi một thuộc tính chuẩn thay đổi, thuộc tính tương ứng sẽ được tự động cập nhật và ngược lại (với một số ngoại lệ).</p>
+<p>Trong ví dụ bên dưới id được sửa đổi dưới dạng một thuộc tính và chúng ta có thể thấy thuộc tính cũng đã thay đổi. Và sau đó ngược lại:</p>
+<pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>&lt;input&gt;
+
+&lt;script&gt;
+  let input = document.querySelector('input');
+
+  // attribute =&gt; property
+  input.setAttribute('id', 'id');
+  alert(input.id); // id (updated)
+
+  // property =&gt; attribute
+  input.id = 'newId';
+  alert(input.getAttribute('id')); // newId (updated)
+&lt;/script&gt;</code></pre>
+<p>Nhưng có những loại trừ, chẳng hạn như input.value chỉ đồng bộ hóa từ thuộc tính → đến thuộc tính, nhưng không đồng bộ hóa trở lại:</p>
+<pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>/*
+Cafedev.vn - Kênh thông tin IT hàng đầu Việt Nam
+@author cafedevn
+Contact: cafedevn@gmail.com
+Fanpage: https://www.facebook.com/cafedevn
+Group: https://www.facebook.com/groups/cafedev.vn/
+Instagram: https://instagram.com/cafedevn
+Twitter: https://twitter.com/CafedeVn
+Linkedin: https://www.linkedin.com/in/cafe-dev-407054199/
+Pinterest: https://www.pinterest.com/cafedevvn/
+YouTube: https://www.youtube.com/channel/UCE7zpY_SlHGEgo67pHxqIoA/
+*/
+
+&lt;input&gt;
+
+&lt;script&gt;
+  let input = document.querySelector('input');
+
+  // attribute =&gt; property
+  input.setAttribute('value', 'text');
+  alert(input.value); // text
+
+  // NOT property =&gt; attribute
+  input.value = 'newValue';
+  alert(input.getAttribute('value')); // text (not updated!)
+&lt;/script&gt;</code></pre>
+<p>Trong ví dụ trên:</p>
+<ul>
+<li>Thay đổi thuộc tính sẽ cập nhật value thuộc tính .</li>
+<li>Nhưng sự thay đổi thuộc tính không ảnh hưởng đến thuộc tính.</li>
+</ul>
+<p>“Tính năng” đó thực sự có thể hữu ích, bởi vì các hành động của người dùng có thể dẫn đến các thay đổi value và sau đó, nếu chúng ta muốn khôi phục giá trị “gốc” từ HTML, thì đó là thuộc tính.</p>
+<h2 class="wp-block-heading"><span id="4_Thuoc_tinh_DOM_duoc_nhap" class="ez-toc-section"></span>4. <strong>Thuộc tính DOM được nhập</strong></h2>
+<p>Thuộc tính DOM không phải lúc nào cũng là chuỗi. Ví dụ, thuộc tính input.checked (dành cho hộp kiểm) là boolean:</p>
+<pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>&lt;input id="input" type="checkbox" checked&gt; checkbox
+
+&lt;script&gt;
+  alert(input.getAttribute('checked')); // the attribute value is: empty string
+  alert(input.checked); // the property value is: true
+&lt;/script&gt;</code></pre>
+<p>Có những ví dụ khác. Các thuộc tính style là một chuỗi, nhưng thuộc tính style là một đối tượng:</p>
+<div class="code-block code-block-4">
+<div id="ezoic-pub-ad-placeholder-126"><ins class="adsbygoogle" data-ad-client="ca-pub-7094277790563836" data-ad-slot="4847172153" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="unfilled">
+<div id="aswift_4_host"><div class="post__iframe"><iframe loading="lazy" width="696" height="0" id="aswift_4" name="aswift_4" browsingtopics="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;client=ca-pub-7094277790563836&amp;output=html&amp;h=280&amp;slotname=4847172153&amp;adk=1805109040&amp;adf=878008193&amp;pi=t.ma~as.4847172153&amp;w=696&amp;abgtt=6&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1735458073&amp;rafmt=1&amp;format=696x280&amp;url=https%3A%2F%2Fcafedev.vn%2Ftu-hoc-javascript-attributesdac-tinh-and-propertiesthuoc-tinh-cua-dom-trong-javascript%2F&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTMxLjAuNjc3OC4yMDUiLG51bGwsMCxudWxsLCI2NCIsW1siR29vZ2xlIENocm9tZSIsIjEzMS4wLjY3NzguMjA1Il0sWyJDaHJvbWl1bSIsIjEzMS4wLjY3NzguMjA1Il0sWyJOb3RfQSBCcmFuZCIsIjI0LjAuMC4wIl1dLDBd&amp;dt=1735600975913&amp;bpp=2&amp;bdt=983&amp;idt=530&amp;shv=r20241212&amp;mjsv=m202412090101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3Dc8d1aadb69abb428%3AT%3D1735600976%3ART%3D1735600976%3AS%3DALNI_Ma97JVz8cnY_dN_ML3yNyOPxswg1A&amp;gpic=UID%3D00000fc6e58f02c7%3AT%3D1735600976%3ART%3D1735600976%3AS%3DALNI_Ma8XA6Olplal5DfFCLdOut6QZc8vA&amp;eo_id_str=ID%3D5ce7be846a91b15d%3AT%3D1735600976%3ART%3D1735600976%3AS%3DAA-AfjaD5J1IW_yMxPr-Bwiz5lih&amp;prev_fmts=0x0%2C696x280%2C324x250%2C324x250%2C324x250%2C324x250%2C324x250%2C1200x280%2C696x280%2C1349x641%2C1005x124%2C696x280%2C468x60%2C728x90&amp;nras=4&amp;correlator=8415705087904&amp;frm=20&amp;pv=1&amp;u_tz=420&amp;u_his=15&amp;u_h=768&amp;u_w=1366&amp;u_ah=728&amp;u_aw=1366&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=141&amp;ady=7879&amp;biw=1349&amp;bih=641&amp;scr_x=0&amp;scr_y=5358&amp;eid=31088670%2C31089330%2C31089337%2C95345967&amp;oid=2&amp;psts=AOrYGsnZ_asrSU4BhJ3mVsotPcZnFjYULgB87MeJdvVhccCDfRW3NIQ_TEFIbiPPwJEUgGNZEbTVMOCAR2XSIkDuj_6lJ70-lDCCx-8hNcTk9lWmVeZPuw&amp;pvsid=1807840698320409&amp;tmod=937132645&amp;uas=3&amp;nvt=1&amp;ref=https%3A%2F%2Fwww.google.com%2F&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1366%2C0%2C1366%2C728%2C1366%2C641&amp;vis=1&amp;rsz=%7C%7CoeEbr%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;bz=1&amp;td=1&amp;tdf=0&amp;psd=W251bGwsbnVsbCwibGFiZWxfb25seV8zIiwxXQ..&amp;nt=1&amp;ifi=5&amp;uci=a!5&amp;btvi=10&amp;fsb=1&amp;dtd=32218" data-google-container-id="a!5" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CI-_qczR0IoDFWBKnQkdT68UeA" data-load-complete="true" data-mce-fragment="1"></iframe></div></div>
+</ins></div>
+</div>
+<pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>&lt;div id="div" style="color:red;font-size:120%"&gt;Hello&lt;/div&gt;
+
+&lt;script&gt;
+  // string
+  alert(div.getAttribute('style')); // color:red;font-size:120%
+
+  // object
+  alert(div.style); // [object CSSStyleDeclaration]
+  alert(div.style.color); // red
+&lt;/script&gt;</code></pre>
+<p>Hầu hết các thuộc tính là chuỗi mặc dù.</p>
+<p>Rất hiếm, ngay cả khi loại thuộc tính DOM là một chuỗi, nó có thể khác với thuộc tính. Ví dụ: thuộc tính href DOM luôn là một URL <em>đầy đủ</em> , ngay cả khi thuộc tính chứa một URL tương đối hoặc chỉ một #hash.</p>
+<p>Đây là một ví dụ:</p>
+<pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>&lt;a id="a" href="#hello"&gt;link&lt;/a&gt;
+&lt;script&gt;
+  // attribute
+  alert(a.getAttribute('href')); // #hello
+
+  // property
+  alert(a.href ); // full URL in the form http://site.com/page#hello
+&lt;/script&gt;</code></pre>
+<p>Nếu chúng ta cần giá trị của href hoặc bất kỳ thuộc tính nào khác chính xác như được viết trong HTML, chúng ta có thể sử dụng getAttribute.</p>
+<h2 class="wp-block-heading"><span id="5_Thuoc_tinh_khong_chuan_tap_du_lieu" class="ez-toc-section"></span>5. <strong>Thuộc tính không chuẩn, tập dữ liệu</strong></h2>
+<p>Khi viết HTML, chúng ta sử dụng rất nhiều thuộc tính chuẩn. Nhưng những gì về những cái không chuẩn, tùy chỉnh? Đầu tiên, hãy xem chúng có hữu ích hay không? Để làm gì?</p>
+<p>Đôi khi các thuộc tính không chuẩn được sử dụng để chuyển dữ liệu tùy chỉnh từ HTML sang JavaScript hoặc để “đánh dấu” các phần tử HTML cho JavaScript.</p>
+<p>Như thế này:</p>
+<pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>&lt;!-- mark the div to show "name" here --&gt;
+&lt;div show-info="name"&gt;&lt;/div&gt;
+&lt;!-- and age here --&gt;
+&lt;div show-info="age"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  // the code finds an element with the mark and shows what's requested
+  let user = {
+    name: "David",
+    age: 25
+  };
+
+  for(let div of document.querySelectorAll('[show-info]')) {
+    // insert the corresponding info into the field
+    let field = div.getAttribute('show-info');
+    div.innerHTML = user[field]; // first David into "name", then 25 into "age"
+  }
+&lt;/script&gt;</code></pre>
+<p>Ngoài ra, chúng có thể được sử dụng để tạo kiểu cho một phần tử.</p>
+<p>Ví dụ: ở đây đối với trạng thái đơn hàng, thuộc tính order-state được sử dụng:</p>
+<pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>&lt;style&gt;
+  /* styles rely on the custom attribute "order-state" */
+  .order[order-state="new"] {
+    color: green;
+  }
+
+  .order[order-state="pending"] {
+    color: blue;
+  }
+
+  .order[order-state="canceled"] {
+    color: red;
+  }
+&lt;/style&gt;
+
+&lt;div class="order" order-state="new"&gt;
+  A new order.
+&lt;/div&gt;
+
+&lt;div class="order" order-state="pending"&gt;
+  A pending order.
+&lt;/div&gt;
+
+&lt;div class="order" order-state="canceled"&gt;
+  A canceled order.
+&lt;/div&gt;</code></pre>
+<p>Tại sao sử dụng một thuộc tính được thích hợp hơn để có các lớp học như .order-state-new, .order-state-pending, order-state-canceled?</p>
+<div class="code-block code-block-5"><ins class="adsbygoogle" data-ad-client="ca-pub-7094277790563836" data-ad-slot="4847172153" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="unfilled">
+<div id="aswift_5_host"><div class="post__iframe"><iframe loading="lazy" width="696" height="0" id="aswift_5" name="aswift_5" browsingtopics="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;client=ca-pub-7094277790563836&amp;output=html&amp;h=280&amp;slotname=4847172153&amp;adk=33370681&amp;adf=3805417209&amp;pi=t.ma~as.4847172153&amp;w=696&amp;abgtt=6&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1735458073&amp;rafmt=1&amp;format=696x280&amp;url=https%3A%2F%2Fcafedev.vn%2Ftu-hoc-javascript-attributesdac-tinh-and-propertiesthuoc-tinh-cua-dom-trong-javascript%2F&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTMxLjAuNjc3OC4yMDUiLG51bGwsMCxudWxsLCI2NCIsW1siR29vZ2xlIENocm9tZSIsIjEzMS4wLjY3NzguMjA1Il0sWyJDaHJvbWl1bSIsIjEzMS4wLjY3NzguMjA1Il0sWyJOb3RfQSBCcmFuZCIsIjI0LjAuMC4wIl1dLDBd&amp;dt=1735600975915&amp;bpp=1&amp;bdt=985&amp;idt=534&amp;shv=r20241212&amp;mjsv=m202412090101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3Dc8d1aadb69abb428%3AT%3D1735600976%3ART%3D1735600976%3AS%3DALNI_Ma97JVz8cnY_dN_ML3yNyOPxswg1A&amp;gpic=UID%3D00000fc6e58f02c7%3AT%3D1735600976%3ART%3D1735600976%3AS%3DALNI_Ma8XA6Olplal5DfFCLdOut6QZc8vA&amp;eo_id_str=ID%3D5ce7be846a91b15d%3AT%3D1735600976%3ART%3D1735600976%3AS%3DAA-AfjaD5J1IW_yMxPr-Bwiz5lih&amp;prev_fmts=0x0%2C696x280%2C324x250%2C324x250%2C324x250%2C324x250%2C324x250%2C1200x280%2C696x280%2C1349x641%2C1005x124%2C696x280%2C468x60%2C728x90%2C696x280&amp;nras=4&amp;correlator=8415705087904&amp;frm=20&amp;pv=1&amp;u_tz=420&amp;u_his=15&amp;u_h=768&amp;u_w=1366&amp;u_ah=728&amp;u_aw=1366&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=141&amp;ady=10204&amp;biw=1349&amp;bih=641&amp;scr_x=0&amp;scr_y=7698&amp;eid=31088670%2C31089330%2C31089337%2C95345967&amp;oid=2&amp;psts=AOrYGsnZ_asrSU4BhJ3mVsotPcZnFjYULgB87MeJdvVhccCDfRW3NIQ_TEFIbiPPwJEUgGNZEbTVMOCAR2XSIkDuj_6lJ70-lDCCx-8hNcTk9lWmVeZPuw&amp;pvsid=1807840698320409&amp;tmod=937132645&amp;uas=3&amp;nvt=1&amp;ref=https%3A%2F%2Fwww.google.com%2F&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1366%2C0%2C1366%2C728%2C1366%2C641&amp;vis=1&amp;rsz=%7C%7CoeEbr%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;bz=1&amp;td=1&amp;tdf=0&amp;psd=W251bGwsbnVsbCwibGFiZWxfb25seV8zIiwxXQ..&amp;nt=1&amp;ifi=6&amp;uci=a!6&amp;btvi=11&amp;fsb=1&amp;dtd=32864" data-google-container-id="a!6" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CO7u0MzR0IoDFdV6nQkdjOoNpw" data-load-complete="true" data-mce-fragment="1"></iframe></div></div>
+</ins></div>
+<p>Bởi vì một thuộc tính sẽ thuận tiện hơn để quản lý. Trạng thái có thể được thay đổi dễ dàng như:</p>
+<pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>// a bit simpler than removing old/adding a new class
+div.setAttribute('order-state', 'canceled');</code></pre>
+<p>Nhưng có thể có một vấn đề có thể xảy ra với các thuộc tính tùy chỉnh. Điều gì sẽ xảy ra nếu chúng ta sử dụng một thuộc tính phi tiêu chuẩn cho các mục đích của mình và sau đó tiêu chuẩn giới thiệu nó và khiến nó hoạt động? Ngôn ngữ HTML vẫn tồn tại, nó phát triển và nhiều thuộc tính xuất hiện hơn để phù hợp với nhu cầu của các nhà phát triển. Có thể có những tác động không mong muốn trong trường hợp đó</p>
+<p>Để tránh xung đột, có các thuộc tính data- * .</p>
+<p><strong>Tất cả các thuộc tính bắt đầu bằng “data-” được dành riêng cho <svg viewbox="100 -1000 840 840" width="calc(15px - 2px)" height="15px"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"></path></svg> <span class="google-anno-t">lập trình</span> viên sử dụng. Chúng có sẵn trong thuộc tính dataset.</strong></p>
+<p>Ví dụ: nếu một thuộc tính elem có tên “data-about”, thuộc tính đó có sẵn dưới dạng elem.dataset.about.</p>
+<p>Như thế này:</p>
+<pre class="wp-block-code line-numbers language-javascript" tabindex="0"><code>&lt;body data-about="Elephants"&gt;
+&lt;script&gt;
+  alert(document.body.dataset.about); // Elephants
+&lt;/script&gt;</code></pre>
+<p>Nhiều từ các thuộc tính như data-order-state trở thành lạc đà: dataset.orderState.</p>
+<p>Đây là một ví dụ về “trạng thái đơn hàng” được viết lại:</p>
+<pre class="wp-block-code line-numbers language-markup" tabindex="0"><code>&lt;style&gt;
+  .order[data-order-state="new"] {
+    color: green;
+  }
+
+  .order[data-order-state="pending"] {
+    color: blue;
+  }
+
+  .order[data-order-state="canceled"] {
+    color: red;
+  }
+&lt;/style&gt;
+
+&lt;div id="order" class="order" data-order-state="new"&gt;
+  A new order.
+&lt;/div&gt;
+
+&lt;script&gt;
+  // read
+  alert(order.dataset.orderState); // new
+
+  // modify
+  order.dataset.orderState = "pending"; // (*)
+&lt;/script&gt;</code></pre>
+<p>Sử dụng thuộc tính data-* là một cách hợp lệ, an <svg viewbox="100 -1000 840 840" width="calc(15px - 2px)" height="15px"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"></path></svg> <span class="google-anno-t">toàn</span> để chuyển dữ liệu tùy chỉnh.</p>
+<p>Xin lưu ý rằng chúng ta không chỉ có thể đọc mà còn có thể sửa đổi các thuộc tính dữ liệu. Sau đó CSS ​​cập nhật chế độ xem cho phù hợp: trong ví dụ trên, dòng cuối cùng (*)thay đổi màu thành màu xanh lam.</p>
+<h2 class="wp-block-heading"><span id="6_Tom_luoc" class="ez-toc-section"></span>6. <strong>Tóm lược</strong></h2>
+<ul>
+<li>Đặc tính(Attributes) – là những gì được viết bằng HTML.</li>
+<li>Thuộc tính(Properties) – là những gì trong các đối tượng DOM.</li>
+</ul>
+<p>Một so sánh nhỏ:</p>
+<table class="wp-block-table">
 <tbody>
 <tr>
-<td><strong>for…in</strong></td>
-<td><strong>for…of</strong></td>
+<td> </td>
+<td><strong>Tính chất</strong></td>
+<td><strong>Thuộc tính</strong></td>
 </tr>
 <tr>
-<td>Được sử dụng để lặp qua các khóa (keys) của một đối tượng</td>
-<td>Được sử dụng để lặp qua các giá trị của một iterable.</td>
+<td>Kiểu</td>
+<td>Bất kỳ giá trị nào, thuộc tính tiêu chuẩn có các loại được mô tả trong thông số kỹ thuật</td>
+<td>Một chuỗi</td>
 </tr>
 <tr>
-<td>Có thể sử dụng for…in để lặp qua một iterable như mảng, chuỗi. Tuy nhiên, tránh sử dụng for…in cho các iterable.</td>
-<td>Không thể sử dụng để lặp qua một đối tượng.</td>
+<td>Tên</td>
+<td>Tên phân biệt chữ hoa chữ thường</td>
+<td>Tên không phân biệt chữ hoa chữ thường</td>
 </tr>
 </tbody>
 </table>
-<h2><span id="Tong_ket"><strong>Tổng kết</strong></span></h2>
-<p><strong>Vòng lặp trong </strong>JavaScript là một cấu trúc linh hoạt giúp các lập trình viên tự động hóa các tác vụ lặp đi lặp lại. Bằng cách hiểu rõ các loại vòng lặp khác nhau như for, while hay do…while và cách sử dụng chúng một cách hiệu quả, bạn có thể viết được những đoạn code JavaScript ngắn gọn và tối ưu dễ dàng.</p>
+<p>Các phương pháp để làm việc với các thuộc tính là:</p>
+<ul>
+<li>elem.hasAttribute(name) – để kiểm tra sự tồn tại.</li>
+<li>elem.getAttribute(name) – để nhận giá trị.</li>
+<li>elem.setAttribute(name, value) – để đặt giá trị.</li>
+<li>elem.removeAttribute(name) – để loại bỏ thuộc tính.</li>
+<li>elem.attributes là một tập hợp của tất cả các thuộc tính.</li>
+</ul>
+<p>Đối với hầu hết các tình huống, việc sử dụng thuộc tính DOM là tốt hơn. Chúng ta chỉ nên tham khảo các thuộc tính khi các thuộc tính DOM không phù hợp với chúng ta, khi chúng ta cần các thuộc tính chính xác, ví dụ:</p>
+<ul>
+<li>Chúng ta cần một thuộc tính không chuẩn. Nhưng nếu nó bắt đầu bằng data-, thì chúng ta nên sử dụng dataset.</li>
+<li>Chúng ta muốn đọc giá trị “như được viết” trong HTML. Giá trị của thuộc tính DOM có thể khác nhau, ví dụ: thuộc tính href luôn là một URL đầy đủ và chúng ta có thể muốn lấy giá trị “gốc”.</li>
+</ul>
             ]]>
         </content>
     </entry>
@@ -1497,6 +1403,803 @@ World!";
 </div>
 <h1 id="_ket-thuc-7">Kết thúc</h1>
 <p>Đây là một số kiến thức mình học được vào tham khảo từ nhiều nguồn (w3schools ..) trong quá trình học javascript.</p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Chuỗi trong Javascript</title>
+        <author>
+            <name>Cuong</name>
+        </author>
+        <link href="https://servyn.github.io/CuongBlog/blog/chuoi-trong-javascript/"/>
+        <id>https://servyn.github.io/CuongBlog/blog/chuoi-trong-javascript/</id>
+            <category term="Tự học Javascript"/>
+
+        <updated>2024-12-08T06:10:00+07:00</updated>
+            <summary>
+                <![CDATA[
+                    1. Giới thiệu String là một chuỗi gồm một hoặc nhiều ký tự có thể bao gồm các chữ cái, số hoặc ký hiệu. Chuỗi&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h1 id="_1-gioi-thieu-0">1. Giới thiệu</h1>
+<p>String là một chuỗi gồm một hoặc nhiều ký tự có thể bao gồm các chữ cái, số hoặc ký hiệu. Chuỗi trong JavaScript là kiểu dữ liệu nguyên thủy và không thay đổi, có nghĩa là chúng không thay đổi.</p>
+<p>Vì chuỗi là cách chúng ta hiển thị và làm việc với văn bản, và văn bản là cách giao tiếp và hiểu chính của chúng ta thông qua máy tính, chuỗi là một trong những khái niệm cơ bản nhất của lập trình để làm quen.</p>
+<p>Trong bài viết này, chúng ta sẽ tìm hiểu cách tạo và xem đầu ra của chuỗi, cách nối các chuỗi, cách lưu trữ chuỗi trong biến và quy tắc sử dụng dấu nháy kép, dấu nháy đơn và thêm dòng mới trong chuỗi của JavaScript.</p>
+<h1 id="_2-tao-chuoi-1">2. Tạo chuỗi</h1>
+<p>Trong JavaScript, có ba cách để viết một chuỗi - có thể được viết bên trong dấu nháy đơn <code>('')</code>, dấu nháy kép <code>("")</code> hoặc dấu nháy (``). Kiểu sử dụng phải phù hợp với cả hai bên, tuy nhiên có thể cả ba kiểu trên đều có thể được sử dụng trong cùng một hoàn cảnh.</p>
+<p>Các chuỗi sử dụng dấu nháy kép và dấu nháy đơn có hiệu quả giống nhau. Vì không có quy ước hoặc ưu tiên chính thức cho các chuỗi được trích dẫn đơn hoặc kép, tất cả những gì quan trọng là sự nhất quán trong các file code.</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>'This string uses single quotes.';
+"This string uses double quotes.";
+</code></pre>
+</div>
+<p>Cách thứ ba và mới nhất để tạo một chuỗi được gọi là <strong>template literal</strong>. Các ký tự mẫu sử dụng cần gạt ngược (còn được gọi là dấu trọng âm) và hoạt động giống như các chuỗi thông thường với một số phần bổ sung mà chúng tôi sẽ đề cập trong bài viết này.</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>`This string uses backticks.`;
+
+Output
+This is a string in the console.
+</code></pre>
+</div>
+<p>Có thể dùng <code>console.log()</code> hoặc <code>alert()</code> để xem kết quả trên trình duyệt.</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>console.log("This is a string in the console.");
+alert("This is a string in an alert.");
+</code></pre>
+</div>
+<h1 id="_3-luu-tru-mot-chuoi-trong-mot-bien-2">3. Lưu trữ một chuỗi trong một biến</h1>
+<p>Các biến trong JavaScript là các vùng chứa được đặt tên để lưu trữ một giá trị, sử dụng các từ khóa var, const hoặc let. Chúng ta có thể gán giá trị của một chuỗi cho một biến được đặt tên.</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>const newString = "This is a string assigned to a variable.";
+
+Output:
+This is a string assigned to a variable.
+</code></pre>
+</div>
+<p>Bằng cách sử dụng các biến để thay thế cho chuỗi, chúng ta không phải nhập lại một chuỗi mỗi khi chúng ta muốn sử dụng nó, giúp chúng ta làm việc và thao tác với các chuỗi trong chương trình của mình đơn giản hơn.</p>
+<h1 id="_4-ket-noi-chuoi-3">4. Kết nối chuỗi</h1>
+<p>Nối cuỗi tức là nối hai hoặc nhiều chuỗi lại với nhau để tạo ra một chuỗi mới. Để nối chuỗi, chúng ta sử dụng toán tử nối, được biểu diễn bằng ký hiệu +. Ký hiệu + cũng là toán tử cộng khi được sử dụng với các phép toán số học.</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>"Sea" + "horse";
+
+Output
+Seahorse
+</code></pre>
+</div>
+<p>Kết nối các chuỗi từ đầu đến cuối, kết hợp chúng và xuất ra một giá trị chuỗi hoàn toàn mới. Nếu chúng ta muốn có khoảng trắng giữa các từ Sea and horse, chúng ta sẽ cần bao gồm một ký tự khoảng trắng vào một trong các chuỗi:</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>"Sea " + "horse";
+
+Output
+Sea horse
+</code></pre>
+</div>
+<p>Chúng ta có thể nối các chuỗi và biến như sau :</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>const poem = "The Wide Ocean";
+const author = "Pablo Neruda";
+
+const favePoem = "My favorite poem is " + poem + " by " + author + ".";
+Output
+My favorite poem is The Wide Ocean by Pablo Neruda
+</code></pre>
+</div>
+<h1 id="_5-bien-trong-chuoi-voi-template-literals-4">5. Biến trong chuỗi với Template Literals</h1>
+<p>Một tính năng đặc biệt của tính năng Template Literals là khả năng bao gồm các biểu thức và biến trong một chuỗi. Thay vì phải sử dụng phép nối, chúng ta có thể sử dụng cú pháp <code>$ {}</code> để chèn một biến.</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>const poem = "The Wide Ocean";
+const author = "Pablo Neruda";
+
+const favePoem = `My favorite poem is ${poem} by ${author}.`;
+
+Output
+My favorite poem is The Wide Ocean by Pablo Neruda.
+</code></pre>
+</div>
+<p>Như chúng ta có thể thấy, các biểu thức trong các Template Literals là một cách khác để đạt được kết quả tương tự. Trong trường hợp này, sử dụng các ký tự mẫu có thể dễ viết hơn và thuận tiện hơn.</p>
+<h1 id="_6-chuoi-chu-va-gia-tri-chuoi-5">6. Chuỗi chữ và giá trị chuỗi</h1>
+<p>Bạn có thể nhận thấy rằng các chuỗi chúng tôi viết trong code được đặt trong dấu nháy kép hoặc dấu gạch ngược, nhưng kết quả in thực tế không bao gồm bất kỳ câu trích dẫn nào.</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>"Beyond the Sea";
+
+Output
+Beyond the Sea
+</code></pre>
+</div>
+<p>Có một sự khác biệt khi đề cập đến từng điều này. Một chuỗi ký tự là chuỗi được viết trong source code, bao gồm cả các dấu trích dẫn. Giá trị chuỗi là những gì chúng ta thấy trong đầu ra và không bao gồm dấu ngoặc kép.</p>
+<p>Trong ví dụ trên, "Beyond the Sea" là một chuỗi theo nghĩa đen và Beyond the Sea là một giá trị chuỗi.</p>
+<h1 id="_7-thoat-khoi-dau-trich-dan-trong-chuoi-6">7. Thoát khỏi dấu trích dẫn trong chuỗi</h1>
+<p>Do thực tế là dấu ngoặc kép được sử dụng để biểu thị chuỗi, cần phải xem xét đặc biệt khi sử dụng dấu nháy đơn và dấu ngoặc kép trong chuỗi. Ví dụ: cố gắng sử dụng dấu nháy đơn ở giữa chuỗi được trích dẫn đơn lẻ sẽ kết thúc chuỗi và JavaScript sẽ cố gắng phân tích cú pháp phần còn lại của chuỗi dự định dưới dạng code.</p>
+<p>Ví dụ :</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>const brokenString = 'I'm a broken string';
+
+console.log(brokenString);
+
+Output
+unknown: Unexpected token (1:24)
+</code></pre>
+</div>
+<p>Điều tương tự cũng sẽ áp dụng cho việc cố gắng sử dụng dấu nháy kép trong một chuỗi được dùng dấu nháy kép.</p>
+<p>Để tránh xảy ra lỗi trong những trường hợp này, chúng tôi có một số tùy chọn mà chúng tôi có thể sử dụng:</p>
+<ul>
+<li>Cú pháp chuỗi đối lập</li>
+<li>Ký tự thoát</li>
+<li>Chữ mẫu (Template literals) Chúng ta sẽ khám phá các tùy chọn này bên dưới.</li>
+</ul>
+<h3 id="_su-dung-cu-phap-chuoi-thay-the-7">Sử dụng cú pháp chuỗi thay thế</h3>
+<p>Một cách dễ dàng để giải quyết các trường hợp cá biệt về chuỗi có khả năng bị đứt là sử dụng cú pháp chuỗi ngược lại với cú pháp mà bạn hiện đang sử dụng.</p>
+<p>Ví dụ:</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>"We're safely using an apostrophe in double quotes."
+Quotation marks in strings built with '.
+
+'Then he said, "Hello, World!"';
+</code></pre>
+</div>
+<p>Theo cách chúng ta kết hợp dấu nháy đơn và dấu nháy kép, chúng ta có thể kiểm soát việc hiển thị dấu ngoặc kép và dấu nháy đơn trong chuỗi của chúng ta. Tuy nhiên, khi chúng tôi đang tìm cách để sử dụng cú pháp nhất quán trong các file code, điều này có thể khó duy trì trong toàn bộ cơ sở code.</p>
+<h3 id="_su-dung-ky-tu-thoat--8">Sử dụng ký tự thoát (<code>"\"</code>)</h3>
+<p>Chúng ta có thể sử dụng dấu gạch chéo ngược <code>(\)</code> (ký tự thoát) để ngăn JavaScript diễn giải một câu trích dẫn là phần cuối của chuỗi.</p>
+<p>Cú pháp của<code>(\')</code>sẽ luôn là một dấu nháy đơn và cú pháp của<code>( \ ")</code>sẽ luôn là dấu nháy kép mà không sợ làm đứt chuỗi.</p>
+<p>Sử dụng phương pháp này, chúng ta có thể sử dụng dấu nháy đơn trong chuỗi được xây dựng bằng dấu nháy kép :</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>'We\'re safely using an apostrophe in single quotes.'
+We can also use quotation marks in strings built with ".
+
+"Then he said, \"Hello, World!\"";
+</code></pre>
+</div>
+<p>Phương thức này trông hơi lộn xộn hơn một chút, nhưng bạn có thể cần sử dụng cả dấu nháy đơn và dấu ngoặc kép trong cùng một chuỗi, điều này sẽ khiến việc thoát trở nên cần thiết.</p>
+<h3 id="_su-dung-chu-mau-template-literals-9">Sử dụng chữ mẫu (template literals)</h3>
+<p>Các ký tự của mẫu được xác định bằng dấu gạch ngược, và do đó, cả dấu ngoặc kép và dấu nháy đơn đều có thể được sử dụng một cách an toàn mà không cần phải xem xét hoặc thêm bất kỳ hình thức nào.</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>`We're safely using apostrophes and "quotes" in a template literal.`;
+</code></pre>
+</div>
+<p>Ngoài việc ngăn chặn việc thoát ký tự và cho phép các biểu thức nhúng, các nghĩa đen của mẫu cũng cung cấp hỗ trợ nhiều dòng, điều mà chúng ta sẽ thảo luận trong phần tiếp theo.</p>
+<p>Với cú pháp chuỗi xen kẽ, sử dụng các ký tự thoát và sử dụng các ký tự mẫu, có một số cách để tạo một chuỗi một cách an toàn.</p>
+<h3 id="_voi-chuoi-dai-va-tao-dong-moi-10">Với chuỗi dài và tạo dòng mới</h3>
+<p>Đôi khi, bạn có thể muốn chèn một ký tự xuống dòng trong chuỗi của mình. Các ký tự <code>\ n</code> hoặc<code>\ r</code> có thể được sử dụng để chèn một dòng mới trong đầu ra của code.</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>const threeLines = "This is a string\nthat spans across\nthree lines.";
+Output
+This is a string
+that spans across
+three lines.
+</code></pre>
+</div>
+<p>Về mặt kỹ thuật, điều này hoạt động để có được đầu ra của trên nhiều dòng. Tuy nhiên, viết một chuỗi rất dài trên một dòng sẽ nhanh chóng trở nên rất khó đọc và làm việc. Chúng ta có thể sử dụng toán tử nối để hiển thị chuỗi trên nhiều dòng.</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>const threeLines = "This is a string\n" +
+"that spans across\n" +
+"three lines.";
+</code></pre>
+</div>
+<p>Thay vì nối nhiều chuỗi, chúng ta có thể sử dụng ký tự <code>\</code>để thoát dòng mới.</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>const threeLines = "This is a string\n\
+that spans across\n\
+three lines.";
+</code></pre>
+</div>
+<p>Lưu ý: Phương pháp này không được ưu tiên vì nó có thể gây ra sự cố với một số trình duyệt.</p>
+<p>Để làm cho code dễ đọc hơn, thay vào đó chúng ta có thể sử dụng các chuỗi ký tự mẫu. Những điều này loại bỏ sự cần thiết phải nối hoặc thoát trên các chuỗi dài có chứa các dòng mới. Chuỗi cũng như dòng mới sẽ được giữ nguyên.</p>
+<div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;">
+<pre class="language-none" data-filename=""><code>const threeLines = `This is a string
+that spans across
+three lines.`;
+
+Output
+This is a string
+that spans across
+three lines.
+</code></pre>
+</div>
+<p>Điều quan trọng là phải biết tất cả các cách tạo dòng mới và chuỗi trải dài trên nhiều dòng, vì các cơ sở code khác nhau có thể đang sử dụng các tiêu chuẩn khác nhau.</p>
+<h1 id="_ket-luan-11">Kết luận</h1>
+<p>Trong bài viết này, chúng tôi đã giới thiệu cho các bạn những điều cơ bản về cách làm việc với chuỗi trong JavaScript, từ việc tạo và hiển thị các ký tự chuỗi bằng cách sử dụng dấu nháy kép và đơn, tạo các ký tự mẫu, nối, thoát và gán giá trị chuỗi cho các biến.</p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Mảng trong Javascript</title>
+        <author>
+            <name>Cuong</name>
+        </author>
+        <link href="https://servyn.github.io/CuongBlog/blog/mang-trong-javascript/"/>
+        <id>https://servyn.github.io/CuongBlog/blog/mang-trong-javascript/</id>
+            <category term="Tự học Javascript"/>
+
+        <updated>2024-12-08T05:52:00+07:00</updated>
+            <summary>
+                <![CDATA[
+                    Định nghĩa về Array Javascript Mảng (Array) là kiểu dữ liệu trong Javascript và được sử dụng để lưu trữ nhiều giá trị trong một biến. Các&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <div id="t1" class="section">
+<h2><span id="Dinh_nghia_ve_Array_Javascript"><strong>Định nghĩa về Array Javascript</strong></span></h2>
+<p>Mảng (Array) là kiểu dữ liệu trong <strong>Javascript</strong> và được sử dụng để lưu trữ nhiều giá trị trong một biến. Các giá trị trong mảng có thể thuộc bất kỳ kiểu dữ liệu nào, chẳng hạn như chuỗi, số, boolean, hoặc các kiểu dữ liệu khác.</p>
+<figure class="size-full wp-image-77353 aligncenter sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro.jpg 1000w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-300x132.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-700x309.webp 640w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-200x88.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-100x44.webp 100w" sizes="(max-width: 1000px) 100vw, 1000px" type="image/webp"><img loading="lazy"  src="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro.jpg" sizes="(max-width: 1000px) 100vw, 1000px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro.jpg 1000w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-300x132.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-700x309.jpg 640w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-200x88.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-1-vippro-100x44.jpg 100w" alt="array javascript - itviec blog" width="1000" height="441" data-is-external-image="true"></figure></picture></p>
+<p><i>Array Javascript (Nguồn: Geeksforgeeks)</i></p>
+<p>Một số thuật ngữ cơ bản trong Array Javascript như:</p>
+<ul>
+<li aria-level="1"><strong>Mảng (Array):</strong> Cấu trúc dữ liệu trong Javascript cho phép bạn lưu trữ nhiều giá trị trong một biến duy nhất.</li>
+<li aria-level="1"><strong>Phần tử mảng (Array Element):</strong> Mỗi giá trị trong một mảng được gọi là một phần tử, các phần tử được truy cập theo chỉ mục của chúng.</li>
+<li aria-level="1"><strong>Chỉ mục mảng (Array Index):</strong> Một biểu diễn số cho biết vị trí của một phần tử trong mảng. Mảng Javascript được lập chỉ mục bằng 0, nghĩa là phần tử đầu tiên có chỉ mục là 0.</li>
+<li aria-level="1"><strong>Độ dài mảng (Array Length):</strong> Số lượng phần tử trong một mảng, có thể truy xuất bằng thuộc tính length.</li>
+</ul>
+<h2><span id="12_phuong_thuc_co_ban_cua_Array_Javascript"><strong>12 phương thức cơ bản của Array Javascript </strong></span></h2>
+<h3><strong>Array Length</strong></h3>
+<p>Thuộc tính length có công dụng trả về độ dài (kích thước) của một mảng:</p>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;<strong>html</strong>&gt;
+&lt;<strong>body</strong>&gt;
+&lt;<strong>h1</strong>&gt;JavaScript Arrays&lt;/<strong>h1</strong>&gt;
+&lt;<strong>h2</strong>&gt;The length Property&lt;/<strong>h2</strong>&gt;
+
+&lt;<strong>p</strong>&gt;The length property returns the length of an array:&lt;/<strong>p</strong>&gt;
+
+&lt;<strong>p</strong> id="demo"&gt;&lt;/<strong>p</strong>&gt;
+
+&lt;<strong>script</strong>&gt;
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let size = fruits.length;
+document.getElementById("demo").innerHTML = size;
+&lt;/<strong>script</strong>&gt;
+
+&lt;/<strong>body</strong>&gt;
+&lt;/<strong>html</strong>&gt;</pre>
+<h3><strong>ArraytoString()</strong></h3>
+<p>Phương thức Javascript toString() giúp chuyển đổi một mảng thành một chuỗi các giá trị mảng, được phân tách bằng dấu phẩy.</p>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;<strong>html</strong>&gt;
+&lt;<strong>body</strong>&gt;
+&lt;<strong>h1</strong>&gt;JavaScript Arrays&lt;/<strong>h1</strong>&gt; 
+&lt;<strong>h2</strong>&gt;The toString() Method&lt;/<strong>h2</strong>&gt;
+
+&lt;<strong>p</strong>&gt;The toString() method returns an array as a comma separated string:&lt;/<strong>p</strong>&gt;
+
+&lt;<strong>p</strong> id="demo"&gt;&lt;/<strong>p</strong>&gt;
+
+&lt;<strong>script</strong>&gt;
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+&lt;/<strong>script</strong>&gt;
+
+&lt;/<strong>body</strong>&gt;
+&lt;/<strong>html</strong>&gt;</pre>
+<h3><strong>Array join()</strong></h3>
+<p>Phương pháp join() giúp nối tất cả các phần tử trong mảng thành một chuỗi. Nhìn chung, join() hoạt động giống toString() nhưng bạn có thể chỉ định thêm dấu phân cách. </p>
+<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.join(" * ");
+&lt;/<strong>html</strong>&gt;</pre>
+<h3><strong>Array pop() và push()</strong></h3>
+<p>Trong quá trình khai báo array, khi muốn thêm hoặc xóa bớt một phần tử trong mảng, bạn có thể sử dụng pop() và push(). Trong khi pop() được dùng để xóa phần tử cuối trong mảng thì push() có công dụng thêm một phần tử mới vào trong mảng.</p>
+<p>Khi sử dụng pop() để xóa phần tử, kết quả sẽ trả về giá trị đã được “bật ra”.</p>
+<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fruit = fruits.pop();</pre>
+<p>Tương tự, khi bạn thêm một phần tử mới vào cuối mảng, bạn sẽ sử dụng push(). Push() sẽ trả về kết quả là độ dài của mảng mới. Cụ thể:</p>
+<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let length = fruits.push("Kiwi");</pre>
+<h3><strong>Array shift()</strong></h3>
+<p>Shift() có công dụng xóa phần tử đầu tiên trong mảng và chuyển các phần tử khác sang chỉ mục thấp hơn. Khi khai báo, shift() sẽ trả về giá trị mảng sau khi phần tử đã được chuyển ra.</p>
+<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fruit = fruits.shift();</pre>
+<h3><strong>Array unshift()</strong></h3>
+<p>Khác với shift(), unshift() sẽ thêm một phần tử mới vào mảng (ở phần đầu) và bỏ dịch chuyển ở các phần tử cũ hơn. Khi trả về kết quả, unshift() sẽ trả về độ dài mảng mới sau khi đã được thêm phần tử vào.</p>
+<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon");</pre>
+<h3><strong>Array concat()</strong></h3>
+<p>Trong Javascript, khi muốn thực hiện nối các mảng, nghĩa là nối các mảng lại với nhau từ đầu đến cuối, bạn sẽ sử dụng phương thức concat() để tạo ra một mảng mới phù hợp với mảng hiện có. </p>
+<p>Chẳng hạn như khi nối hai mảng riêng biệt sau:</p>
+<pre>let myGirls = ["Cecilie", "Lone"];
+let myBoys = ["Emil", "Tobias", "Linus"];
+
+let myChildren = myGirls.concat(myBoys);</pre>
+<p>Bên cạnh đó, khi sử dụng phương pháp concat(), bạn nên lưu ý một số điều như sau:</p>
+<ul>
+<li aria-level="1">concat() không thay đổi các mảng hiện có, kết quả trả về sẽ là một mảng mới đã được nối từ phần tử đầu tiên đến cuối cùng.</li>
+<li aria-level="1">concat() có thể lấy bất kỳ số lượng đối số của mảng hoặc có thể lấy chuỗi để làm đối số.</li>
+</ul>
+<h3><strong>Array splice()</strong></h3>
+<p>splice() được sử dụng để thêm các mục mới vào trong một mảng. Chẳng hạn như:</p>
+<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 0, "Lemon", "Kiwi");</pre>
+<p>Ở ví dụ trên:</p>
+<ul>
+<li aria-level="1">Tham số đầu tiên (2) xác định vị trí mà các phần tử mới sẽ được thêm vào (nối vào)</li>
+<li aria-level="1">Tham số 0 xác định số lượng phần tử bị xóa</li>
+<li aria-level="1">Các tham số còn lại như “Lemon” và “Kiwi” chính là phần tử mới sẽ được thêm vào. </li>
+</ul>
+<p>Kết quả sau khi sử dụng splice() để thêm phần tử như sau:</p>
+<figure class="alignnone size-full wp-image-77352 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro.jpg 538w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro-300x54.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro-200x36.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro-100x18.webp 100w" sizes="(max-width: 538px) 100vw, 538px" type="image/webp"><img loading="lazy"  src="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro.jpg" sizes="(max-width: 538px) 100vw, 538px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro.jpg 538w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro-300x54.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro-200x36.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-2-vippro-100x18.jpg 100w" alt="array javascript - itviec blog" width="538" height="97" data-is-external-image="true"></figure></picture></p>
+<p>Ngoài ra, bạn cũng có thể sử dụng splice() để xóa các phần tử mà không để xuất hiện khoảng trống trong khoảng. Cụ thể:</p>
+<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(0, 1);</pre>
+<p>Trong đó:</p>
+<ul>
+<li aria-level="1">Tham số 0 đầu tiên xác định vị trí mà các phần tử mới sẽ được thêm vào.</li>
+<li aria-level="1">Tham số thứ hai là số 1 xác định số lượng phần tử sẽ bị xóa.</li>
+<li aria-level="1">Các tham số còn lại được bỏ qua vì không có phần tử mới được thêm vào.</li>
+</ul>
+<p>Kết quả hiển thị:</p>
+<figure class="alignnone size-full wp-image-77351 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro.jpg 507w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro-300x64.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro-200x43.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro-100x21.webp 100w" sizes="(max-width: 507px) 100vw, 507px" type="image/webp"><img loading="lazy"  src="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro.jpg" sizes="(max-width: 507px) 100vw, 507px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro.jpg 507w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro-300x64.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro-200x43.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-3-vippro-100x21.jpg 100w" alt="array javascript - itviec blog" width="507" height="108" data-is-external-image="true"></figure></picture></p>
+<h3><strong>Array slice()</strong></h3>
+<p>slice() trong Array có công dụng cắt một phần tử của mảng thành một mảng mới. Chúng có công dụng tạo một mảng mới và không xóa bất kỳ phần tử nào khỏi mảng nguồn.</p>
+<pre>const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus = fruits.slice(1, 3);</pre>
+<p>Phương thức slice() có thể lấy hai đối số như slice(1,3) và chọn các phần tử từ số bắt đầu và lên đến đối số kết thúc trong mảng. Nếu đối số kết thúc bị bỏ qua, slice() sẽ cắt phần còn lại của mảng.</p>
+<h3><strong>Array find()</strong></h3>
+<p>Phương thức find() có chức năng trả về giá trị của phần tử mảng đầu tiên qua hàm kiểm tra (a test function). Hàm này có 3 đối số chủ yếu là giá trị (value), chỉ mục (index) và mảng (array).</p>
+<p>Để hiểu rõ hơn về cách hoạt động của find(), bạn có thể xem qua ví dụ sau: Tìm (trả về giá trị) phần tử đầu tiên lớn hơn 18 như sau:</p>
+<pre>const numbers = [4, 9, 16, 25, 29];
+let first = numbers.find(myFunction);
+
+function myFunction(value, index, array) {
+  return value &gt; 18;
+}</pre>
+<h3><strong>Array sort()</strong></h3>
+<p>Khi muốn sắp xếp dữ liệu mảng trong mã, bạn có thể sử dụng phương thức sort() để thực hiện sắp xếp theo thứ tự từ A-Z. Ví dụ như:</p>
+<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();</pre>
+<p>Kết quả hiển thị:</p>
+<figure class="alignnone size-full wp-image-77349 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro.jpg 523w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro-300x69.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro-200x46.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro-100x23.webp 100w" sizes="(max-width: 523px) 100vw, 523px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro.jpg" sizes="(max-width: 523px) 100vw, 523px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro.jpg 523w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro-300x69.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro-200x46.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-5-vippro-100x23.jpg 100w" alt="array javascript - itviec blog" width="523" height="120" loading="lazy" data-is-external-image="true"></figure></picture></p>
+<p>Ngoài ra, Array Javascript cũng có thêm phương thức toSorted() như một cách an toàn để thực hiện sắp xếp mảng mà không làm thay đổi cấu trúc mảng gốc.</p>
+<p>Sự khác biệt giữa toSorted() và sort() là toSorted() cho phép tạo một mảng mới và vẫn giữ nguyên mảng gốc trong khi sort() có thể làm thay đổi mảng gốc.</p>
+<pre>const months = ["Jan", "Feb", "Mar", "Apr"];
+const sorted = months.toSorted();</pre>
+<h3><strong>Array reverse()</strong></h3>
+<p>Cách hoạt động của reverse() giúp đảo ngược các phần tử trong một mảng, cụ thể như:</p>
+<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.reverse();</pre>
+<p>Kết quả hiển thị:</p>
+<figure class="alignnone size-full wp-image-77348 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro.jpg 429w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro-300x76.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro-200x51.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro-100x25.webp 100w" sizes="(max-width: 429px) 100vw, 429px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro.jpg" sizes="(max-width: 429px) 100vw, 429px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro.jpg 429w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro-300x76.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro-200x51.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-6-vippro-100x25.jpg 100w" alt="array javascript - itviec blog" width="429" height="109" loading="lazy" data-is-external-image="true"></figure></picture></p>
+<p>Bên cạnh đó, khi kết hợp sort() và reverse(), bạn có thể thực hiện sắp xếp một mảng theo thứ tự giảm dần, như sau:</p>
+<pre>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();
+fruits.reverse();</pre>
+<p>Kết quả hiển thị:</p>
+<figure class="alignnone size-full wp-image-77347 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro.jpg 474w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro-300x63.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro-200x42.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro-100x21.webp 100w" sizes="(max-width: 474px) 100vw, 474px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro.jpg" sizes="(max-width: 474px) 100vw, 474px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro.jpg 474w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro-300x63.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro-200x42.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-7-vippro-100x21.jpg 100w" alt="array javascript - itviec blog" width="474" height="100" loading="lazy" data-is-external-image="true"></figure></picture></p>
+<blockquote>
+<p>Bên cạnh 12 phương thức cơ bản, Array Javascript còn có một số phương thức như map(), filter(), reduce(), some(), every(), includes(),…</p>
+<p>Bạn có thể tìm hiểu thêm về phương thức của Array Javascript qua các nguồn tài nguyên chất lượng như FreeCodeCamp, W3School hay MDN Web Docs để nâng cao thêm “tay nghề” lập trình của mình nhé!</p>
+</blockquote>
+<h2><span id="Cach_khai_bao_Array_Javascript"><strong>Cách khai báo Array Javascript</strong></span></h2>
+<p>Khi khai báo Array, bạn có thể thực hiện một trong hai cách là Array Literal và Array Constructor.</p>
+<h3><strong>Tạo Array bằng cách sử dụng Array Literal</strong></h3>
+<p>Tạo Array bằng cách dùng Literal sẽ sử dụng dấu ngoặc vuông [] để định nghĩa và tạo mảng. Phương pháp này có cú pháp ngắn gọn và thường được sử dụng nhiều bởi vì tính đơn giản của chúng. Cú pháp cơ bản của Array Literal như sau:</p>
+<pre>let arrayName = [value1, value2, ...];</pre>
+<p>Ví dụ:</p>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;<strong>html</strong>&gt;
+&lt;<strong>body</strong>&gt;
+&lt;<strong>h1</strong>&gt;JavaScript Arrays&lt;/<strong>h1</strong>&gt;
+
+&lt;<strong>p</strong> id="demo"&gt;&lt;/<strong>p</strong>&gt;
+
+&lt;<strong>script</strong>&gt;
+let cars = [
+  "Saab",
+  "Volvo",
+  "BMW"
+];
+document.getElementById("demo").innerHTML = cars;
+&lt;/<strong>script</strong>&gt;
+
+&lt;/<strong>body</strong>&gt;
+&lt;/<strong>html</strong>&gt;</pre>
+<h3><strong>Tạo Array bằng cách Array Constructor</strong></h3>
+<p>Array Constructor là phương pháp tạo mảng bằng cách dùng hàm Array constructor. Phương pháp này cho phép khởi động và có thể được sử dụng để tạo mảng có độ dài hoặc phần tử được chỉ định. Cú pháp cơ bản của phương pháp này như sau:</p>
+<pre>let arrayName = new Array();</pre>
+<p>Ví dụ: </p>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;<strong>html</strong>&gt;
+&lt;<strong>body</strong>&gt;
+&lt;<strong>h1</strong>&gt;JavaScript Arrays&lt;/<strong>h1</strong>&gt;
+
+&lt;<strong>p</strong> id="demo"&gt;&lt;/<strong>p</strong>&gt;
+
+&lt;<strong>script</strong>&gt;
+let cars = new Array("Saab", "Volvo", "BMW");
+document.getElementById("demo").innerHTML = cars;
+&lt;/<strong>script</strong>&gt;
+
+&lt;/<strong>body</strong>&gt;
+&lt;/<strong>html</strong>&gt;</pre>
+<h2><span id="Thao_tac_co_ban_voi_Array_Javascript"><strong>Thao tác cơ bản với Array Javascript</strong></span></h2>
+<h3><strong>Truy cập phần tử của Array</strong></h3>
+<p>Bất kỳ phần tử nào trong mảng đều có thể truy cập bằng cách sử dụng số chỉ mục (index number). Chỉ mục trong mảng thường bắt đầu bằng 0. </p>
+<pre>let courses = ["HTML", "CSS", "Javascript", "React"];
+
+console.log(courses[0]);
+console.log(courses[1]);
+console.log(courses[2]);
+console.log(courses[3]);</pre>
+<p>Kết quả hiển thị của đoạn mã trên như sau:</p>
+<pre>HTML
+
+CSS
+
+Javascript
+
+React</pre>
+<h3><strong>Truy cập phần tử đầu tiên của Array</strong></h3>
+<p>Các chỉ số mảng bắt đầu từ 0, do đó bạn có thể truy cập phần tử đầu tiên của mảng bằng cách sử dụng chỉ số đó.</p>
+<pre>let courses = ["HTML", "CSS", "JavaScript", "React"];
+
+let firstItem = courses[0];
+
+console.log("First Item: ", firstItem);</pre>
+<p>Lúc này, kết quả sẽ hiển thị phần tử đầu tiên trong mảng chính là HTML. </p>
+<h3><strong>Truy cập phần tử cuối cùng của Array</strong></h3>
+<p>Bạn có thể thực hiện truy cập phần tử mảng cuối cùng bằng cách sử dụng số chỉ mục [array.length-1].</p>
+<pre>let courses = ["HTML", "CSS", "JavaScript", "React"];
+
+let lastItem = courses[courses.length - 1];
+
+console.log("First Item: ", lastItem);</pre>
+<p>Sau khi thực hiện lệnh trên, kết quả sẽ hiển thị phần tử cuối trong mảng là React. </p>
+<h3><strong>Sửa đổi các phần tử Mảng</strong></h3>
+<p>Để thực hiện sửa đổi các phần tử trong mảng bằng cách gán trị mới cho chỉ mục tương ứng của chúng. Cụ thể như sau:</p>
+<pre>let courses = ["HTML", "CSS", "Javascript", "React"];
+console.log(courses);
+
+courses[1]= "Bootstrap";
+console.log(courses);</pre>
+<p>Kết quả hiển thị sau khi bạn thực hiện lệnh đổi phần tử CSS sang Boostrap. </p>
+<pre>[ 'HTML', 'CSS', 'Javascript', 'React' ]
+
+[ 'HTML', 'Bootstrap', 'Javascript', 'React' ]</pre>
+<h3><strong>Thêm phần tử vào Mảng</strong></h3>
+<p>Để tiến hành thêm một hoặc một số phần tử vào mảng, bạn có thể sử dụng push() hoặc unshift(). Cách thực hiện cụ thể như:</p>
+<pre>let courses = ["HTML", "CSS", "Javascript", "React"];
+
+courses.push("Node.js");
+
+courses.unshift("Web Development");
+
+console.log(courses);</pre>
+<p>Kết quả hiển thị như sau:</p>
+<pre>[ 'Web Development', 'HTML', 'CSS', 'Javascript', 'React', 'Node.js' ]</pre>
+<h3><strong>Loại một phần tử khỏi Mảng</strong></h3>
+<p>Khi bạn muốn xóa các phần tử không còn cần thiết trong mảng, có thể sử dụng phương thức pop(), shift() hoặc splice(). Cụ thể như:</p>
+<pre>let courses = ["HTML", "CSS", "Javascript", "React", "Node.js"];
+console.log("Original Array: " + courses);
+
+let lastElement = courses.pop();
+console.log("After Removing the last elements: " + courses);
+
+let firstElement = courses.shift();
+console.log("After Removing the First elements: " + courses);
+
+courses.splice(1, 2);
+console.log("After Removing 2 elements starting from index 1: " + courses);</pre>
+<p>Kết quả hiển thị cho đoạn mã trên như sau:</p>
+<pre>Original Array: HTML,CSS,Javascript,React,Node.js
+
+After Removing the last elements: HTML,CSS,Javascript,React
+
+After Removing the First elements: CSS,Javascript,React
+
+After Removing 2 elements starting from index 1: CSS</pre>
+<h3><strong>Array Length</strong></h3>
+<p>Đối với một đoạn mã dài và có nhiều phần tử, để biết được trong mảng đó có bao nhiêu phần tử, bạn có thể sử dụng thuộc tính length. Cụ thể như sau:</p>
+<pre>let courses = ["HTML", "CSS", "Javascript", "React", "Node.js"];
+let len = courses.length;
+console.log("Array Length: " + len);</pre>
+<p>Khi đó, kết quả sẽ hiển thị độ dài của mảng là 5.</p>
+<h3><strong>Tăng và giảm độ dài của Mảng</strong></h3>
+<p>Khi thực hiện tăng hoặc giảm độ dài của Mảng bằng cách sử dụng thuộc tính length trong Javascript. Cụ thể như sau:</p>
+<pre>let courses = ["HTML", "CSS", "Javascript", "React", "Node.js"];
+courses.length = 7;
+console.log("Array After Increase the Length: ", courses);
+courses.length = 2;
+console.log("Array After Decrease the Length: ", courses)</pre>
+<p>Kết quả hiển thị sau khi thực hiện đoạn mã trên: </p>
+<pre>Array After Increase the Length:  [ 'HTML', 'CSS', 'Javascript', 'React', 'Node.js', &lt;2 empty items&gt; ]
+
+Array After Decrease the Length:  [ 'HTML', 'CSS' ]</pre>
+<h3><strong>Lặp lại các phần tử Mảng</strong></h3>
+<p>Bạn có thể lặp lại mảng và truy cập các phần tử mảng bằng cách sử dụng for và forEach loop. Cụ thể khi sử dụng for:</p>
+<pre>let courses = ["HTML", "CSS", "JavaScript", "React"];
+for (let i = 0; i &lt; courses.length; i++) {
+    console.log(courses[i])
+}</pre>
+<p>Hoặc khi bạn sử dụng ForEach loop:</p>
+<pre>let courses = ["HTML", "CSS", "JavaScript", "React"];
+courses.forEach(function myfunc(elements) {
+    console.log(elements);
+});</pre>
+<h3><strong>Nối Mảng (Array Concatenation)</strong></h3>
+<p>Khi bạn thực hiện kết hợp hai hoặc nhiều mảng bằng phương thức concat() thì trình duyệt sẽ trả về một mảng mới chứa các phần tử từ các mảng đã kết hợp. Cụ thể:</p>
+<pre>let courses = ["HTML", "CSS", "JavaScript", "React"];
+let otherCourses = ["Node.js", "Expess.js"];
+let concateArray = courses.concat(otherCourses);
+console.log("Concatenated Array: ", concateArray);</pre>
+<p>Kết quả sẽ trả về như sau:</p>
+<pre>Concatenated Array:  [ 'HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Expess.js' ]</pre>
+<h3><strong>Chuyển đổi Array sang Chuỗi (String)</strong></h3>
+<p>Khi thực hiện chuyển đổi từ Mảng (Array) sang chuỗi (String), bạn có thể sử dụng phương pháp toString() tích hợp để thực hiện quá trình này. Cụ thể:</p>
+<pre>let courses = ["HTML", "CSS", "JavaScript", "React"];
+console.log(courses.toString());</pre>
+<h3><strong>Kiểm tra loại của Mảng</strong></h3>
+<p>Để thực hiện kiểm tra kiểu của một Mảng, bạn sử dụng toán tử Javascript typeof. Khi trả kết quả, chúng sẽ trả về object cho các mảng. Cụ thể:</p>
+<pre>let courses = ["HTML", "CSS", "JavaScript", "React"];
+console.log(typeof courses);</pre>
+<h2><span id="Cau_hoi_thuong_gap_ve_Array_Javascript"><strong>Câu hỏi thường gặp về Array Javascript</strong></span></h2>
+<h3><strong>Khi nào nên sử dụng Array Javascript?</strong></h3>
+<p>Bạn nên sử dụng khai báo Array Javascript khi:</p>
+<ul>
+<li aria-level="1">Cần lưu trữ một danh sách các giá trị có thứ tự và thực hiện phép toán hoặc thao tác trên nhiều phần tử.</li>
+<li aria-level="1">Không cần các thuộc tính hoặc phương thức đặc biệt mà đối tượng (Object) cung cấp.</li>
+<li aria-level="1">Cần lưu trữ các giá trị có thể là số, chuỗi, hoặc bất kỳ kiểu dữ liệu nào khác trong cùng một danh sách. </li>
+</ul>
+<h3><strong>Sự khác nhau giữa Array và Object</strong></h3>
+<p>Trong Javascript, sự khác nhau cơ bản giữa Array và Object chính là cách thức tổ chức và khả năng truy cập dữ liệu trong Array cũng như Object. Cụ thể:</p>
+<ul>
+<li aria-level="1"><strong>Array:</strong> Trong Javascript, Array được dùng như một cấu trúc dữ liệu để lưu trữ các phần tử. Các phần tử này được truy cập thông qua chỉ số (index) dạng số bắt đầu từ 0.</li>
+<li aria-level="1"><strong>Object: </strong>Một cấu trúc dữ liệu được dùng để lưu trữ các cặp key-value. Trong đó, key thường là một chuỗi (string) và value có thể là bất kỳ dữ liệu nào. </li>
+</ul>
+<h3><strong>Làm thế nào để biết một biến có phải là Array không?</strong></h3>
+<p>Chẳng hạn như đoạn mã dưới đây, khi sử dụng typeof, Javascript Operator sẽ trả về kết quả là một Object. Vậy để giải quyết vấn đề này, bạn có thể sử dụng phương pháp là Array.isArray(), cụ thể:</p>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;<strong>html</strong>&gt;
+&lt;<strong>body</strong>&gt;
+&lt;<strong>h1</strong>&gt;JavaScript Arrays&lt;/<strong>h1</strong>&gt;
+&lt;<strong>h2</strong>&gt;The isArray() Method&lt;/<strong>h2</strong>&gt;
+
+&lt;<strong>p</strong> id="demo"&gt;&lt;/<strong>p</strong>&gt;
+
+&lt;<strong>script</strong>&gt;
+const fruits = ["Banana", "Orange", "Apple"];
+document.getElementById("demo").innerHTML = Array.isArray(fruits);
+&lt;/<strong>script</strong>&gt;
+
+&lt;/<strong>body</strong>&gt;
+&lt;/<strong>html</strong>&gt;</pre>
+<p>Ngoài ra, một phương pháp nữa bạn có thể sử dụng là instanceof trả về true nếu một đối tượng được tạo bởi một hàm nhất định. Cụ thể:</p>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;<strong>html</strong>&gt;
+&lt;<strong>body</strong>&gt;
+&lt;<strong>h1</strong>&gt;JavaScript Operators&lt;/<strong>h1</strong>&gt;
+&lt;<strong>h2</strong>&gt;The instanceof Operator&lt;/<strong>h2</strong>&gt;
+
+&lt;<strong>p</strong>&gt;The instanceof operator returns true if an object is an instance of a specified object type:&lt;/<strong>p</strong>&gt;
+
+&lt;<strong>p</strong> id="demo"&gt;&lt;/<strong>p</strong>&gt;
+
+&lt;<strong>script</strong>&gt; 
+// Create an Array
+const fruits = ["apples", "bananas", "oranges"];
+
+document.getElementById("demo").innerHTML =
+"Array: " + (fruits instanceof Array);
+&lt;/<strong>script</strong>&gt;
+
+&lt;/<strong>body</strong>&gt;
+&lt;/<strong>html</strong>&gt;</pre>
+<p>Kết quả đoạn mã trên:</p>
+<figure class="alignnone size-full wp-image-77350 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro.jpg 885w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-300x89.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-700x209.webp 640w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-200x60.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-100x30.webp 100w" sizes="(max-width: 885px) 100vw, 885px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro.jpg" sizes="(max-width: 885px) 100vw, 885px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro.jpg 885w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-300x89.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-700x209.jpg 640w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-200x60.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/array-javascript-4-vippro-100x30.jpg 100w" alt="array javascript - itviec blog" width="885" height="264" loading="lazy" data-is-external-image="true"></figure></picture></p>
+<h2><span id="Tong_ket_ve_Array_Javascript"><strong>Tổng kết về Array Javascript</strong></span></h2>
+<p>Như vậy, bài viết đã giải đáp chi tiết về Array Javascript, một trong những cấu trúc dữ liệu cơ bản trong Javascript. Để nắm vững hơn nền tảng kiến thức về Javascript, hãy thử áp dụng chúng vào những dự án thực tế cũng như có cơ hội tìm hiểu nhiều hơn về khái niệm nâng cao.</p>
+</div>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Vòng lặp trong Javascript</title>
+        <author>
+            <name>Cuong</name>
+        </author>
+        <link href="https://servyn.github.io/CuongBlog/blog/vong-lap-trong-javascript/"/>
+        <id>https://servyn.github.io/CuongBlog/blog/vong-lap-trong-javascript/</id>
+            <category term="Tự học Javascript"/>
+
+        <updated>2024-12-08T05:40:00+07:00</updated>
+            <summary>
+                <![CDATA[
+                    Vòng lặp trong JavaScript là gì? Vòng lặp trong JavaScript cho phép bạn thực hiện câu lệnh nhiều lần cho đến khi một điều kiện&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h2><span id="Vong_lap_trong_JavaScript_la_gi"><strong>Vòng lặp trong JavaScript là gì?</strong></span></h2>
+<p>Vòng lặp trong JavaScript cho phép bạn thực hiện câu lệnh nhiều lần cho đến khi một điều kiện được đáp ứng. Vòng lặp (Loop) giúp bạn tự động hóa các tác vụ mang tính lặp đi lặp lại, tiết kiệm thời gian hiệu quả.</p>
+<p>Ví dụ, bạn thực hiện hiển thị dòng chữ ITviec Blog 5 lần bằng cách sử dụng vòng lặp trong JavaScript. Trong Loop, câu lệnh chỉ cần được viết một lần và vòng lặp sẽ thực hiện 5 lần. Cụ thể như sau:</p>
+<pre>for (let i = 0; i &lt; 5; i++) {
+    console.log("ITviec Blog");
+}</pre>
+<p>Khi thực hiện đoạn mã trên, kết quả sẽ được hiển thị như sau:</p>
+<pre>ITviec Blog
+
+ITviec Blog
+
+ITviec Blog
+
+ITviec Blog
+
+ITviec Blog</pre>
+<blockquote>
+<p><i>Xem thêm: </i><strong><i>JavaScript là gì? Học JavaScript cơ bản với lộ trình dễ hiểu nhất</i></strong></p>
+</blockquote>
+<h2><span id="Cac_phuong_thuc_co_ban_cua_vong_lap_trong_javascript"><strong>Các phương thức cơ bản của vòng lặp trong javascript</strong></span></h2>
+<h3><strong>Vòng lặp trong JavaScript: Vòng lặp for</strong></h3>
+<p>Trong JavaScript, vòng lặp for được sử dụng để lặp lại một đoạn mã theo số lần nhất định hoặc lặp lại các phần tử của một mảng. Vòng lặp for chứa vùng khởi tạo, điều kiện tăng/giảm trong một dòng, do đó cấu trúc của vòng lặp sẽ ngắn gọn và ít lỗi hơn.</p>
+<p>Cú pháp cơ bản của vòng lặp for:</p>
+<pre>for (initialExpression; condition; updateExpression) {
+    // for loop body
+}</pre>
+<p>Trong đó:</p>
+<ul>
+<li aria-level="1"><strong>initialExpression:</strong> Khởi tạo một biến đếm.</li>
+<li aria-level="1"><strong>Condition: </strong>Điều kiện cần được đánh giá, nếu điều kiện đúng, nội dung của vòng lặp sẽ được thực thi.</li>
+<li aria-level="1"><strong>UpdateExpression:</strong> Cập nhật giá trị của initialExpression.</li>
+</ul>
+<p>Sau khi hoàn tất một lần lặp của vòng lặp, điều kiện sẽ được đánh giá lại. Quá trình sẽ được tiếp tục cho đến khi điều kiện sai.</p>
+<figure class="size-full wp-image-77832 aligncenter sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro.png 1072w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-268x300.webp 268w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-768x860.webp 572w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-179x200.webp 179w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-89x100.webp 89w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-402x450.webp 402w" sizes="(max-width: 1072px) 100vw, 1072px" type="image/webp"><img loading="lazy"  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro.png" sizes="(max-width: 1072px) 100vw, 1072px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro.png 1072w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-268x300.png 268w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-768x860.png 572w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-179x200.png 179w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-89x100.png 89w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-1-vippro-402x450.png 402w" alt="vòng lặp trong javascript - itviec blog" width="1072" height="1200" data-is-external-image="true"></figure></picture></p>
+<p><em>Cách hoạt động của vòng lặp for (Nguồn: programiz.com).</em></p>
+<p>Ví dụ, thực hiện hiển thị dãy số từ 1-5 với điều kiện giá trị nhỏ hơn 6. Cụ thể như sau:</p>
+<pre>for (let i = 1; i &lt; 6; i++) {
+    console.log(i);
+}</pre>
+<p>Với cú pháp trên, trình duyệt sẽ hiển thị dãy số từ 1-5 là những giá trị thỏa mãn điều kiện. Khi thực thi, vòng lặp for sẽ phân tích từ giá trị đầu tiên là số 1 với điều kiện là i &lt; 6, số 1 thỏa điều kiện vòng lặp sẽ tiếp tục phân tích đến các giá trị 2,3,4,5 và 6. Đến khi có một giá trị không thỏa mãn điều kiện, vòng lặp sẽ kết thúc.</p>
+<figure class="alignnone size-full wp-image-77831 aligncenter sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro.png 800w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-300x139.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-700x324.webp 640w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-200x93.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-100x46.webp 100w" sizes="(max-width: 800px) 100vw, 800px" type="image/webp"><img loading="lazy"  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro.png" sizes="(max-width: 800px) 100vw, 800px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro.png 800w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-300x139.png 300w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-700x324.png 640w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-200x93.png 200w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-2-vippro-100x46.png 100w" alt="vòng lặp trong javascript - itviec blog" width="800" height="370" data-is-external-image="true"></figure></picture></p>
+<p><i>Cách hoạt động của vòng lặp while (Nguồn: GeeksForGeeks)</i></p>
+<h3><strong>Vòng lặp trong JavaScript: </strong><strong>Vòng lặp while</strong></h3>
+<p>Vòng lặp while là một câu lệnh điều khiển luồng cho phép mã được thực thi nhiều lần dựa trên một điều kiện boolean nhất định. Vòng lặp while cũng có thể được coi như một câu lệnh if lặp lại. Cú pháp cơ bản của vòng lặp while như sau: </p>
+<pre>while (boolean condition) {
+    loop statements...
+}</pre>
+<p>Trong đó: </p>
+<ul>
+<li aria-level="1">Vòng lặp while bắt đầu bằng việc kiểm tra điều kiện, nếu điều kiện đúng thì các câu lệnh trong vòng lặp sẽ được thực thi. Ngược lại, nếu điều kiện câu lệnh đầu tiên không đúng, thì câu lệnh tiếp theo sẽ được thực thi. </li>
+<li aria-level="1">Các câu lệnh chứa giá trị được cập nhật cho biến được xử lý cho lần lặp tiếp theo.</li>
+<li aria-level="1">Khi điều kiện sai, vòng lặp sẽ kết thúc. </li>
+</ul>
+<p>Ví dụ cách sử dụng vòng lặp while khi thực hiện dãy số như sau:</p>
+<pre>let val = 1;
+
+while (val &lt; 6) {
+    console.log(val); 
+    val += 1;
+}</pre>
+<p>Kết quả hiển thị của đoạn mã trên:</p>
+<figure class="alignnone size-full wp-image-77830 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro.jpg 388w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro-300x163.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro-200x109.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro-100x54.webp 100w" sizes="(max-width: 388px) 100vw, 388px" type="image/webp"><img loading="lazy"  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro.jpg" sizes="(max-width: 388px) 100vw, 388px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro.jpg 388w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro-300x163.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro-200x109.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-3-vippro-100x54.jpg 100w" alt="vòng lặp trong javascript - itviec blog" width="388" height="211" data-is-external-image="true"></figure></picture></p>
+<h3><strong>Vòng lặp trong JavaScript: Vòng lặp do…while</strong></h3>
+<p>Vòng lặp do…while có chức năng tương tự với while nhưng điểm khác biệt chính là do…while sẽ kiểm tra điều kiện sau khi thực thi các câu lệnh. Do đó, do…while sẽ thực thi nội dung vòng lặp ít nhất một lần ngay cả khi điều kiện sai.</p>
+<pre>do {
+    Statements...
+}
+while (condition);</pre>
+<p>Với cú pháp cơ bản của do…while, có thể thấy:</p>
+<ul>
+<li aria-level="1">Vòng lặp do…while sẽ bắt đầu thực thi các câu lệnh, không có kiểm tra bất kỳ điều kiện nào lần đầu tiên.</li>
+<li aria-level="1">Sau khi thực thi các câu lệnh và cập nhật giá trị biến, điều kiện sẽ được kiểm tra đúng hay sai. </li>
+<li aria-level="1">Nếu điều kiện đúng, vòng lặp tiếp theo sẽ bắt đầu. Nếu điều kiện sai, vòng lặp sẽ kết thúc. </li>
+</ul>
+<p>Ngoài ra, cần lưu ý rằng vòng lặp do…while sẽ thực thi câu lệnh ít nhất một lần trước khi bất kỳ điều kiện nào được kiểm tra. </p>
+<p>Chẳng hạn như ví dụ tính tổng của các dãy số như sau: </p>
+<pre>let sum = 0, num = 0;
+do {
+    sum += num;
+    num = parseInt(prompt("Enter a number: "));
+} while (num &gt;= 0);
+console.log(`The sum is ${sum}`);</pre>
+<p>Ở ví dụ trên, do…while nhắc người dùng nhập một số, miễn chúng là các số dương thì vòng lặp sẽ tự cộng chúng lại và nhắc user nhập thêm các số khác. Ngược lại, nếu bạn nhập số âm thì vòng lặp sẽ kết thúc mà không được nhập thêm bất kỳ số âm nào.</p>
+<p>Kết quả hiển thị:</p>
+<figure class="alignnone size-full wp-image-77829 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro.jpg 705w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-300x58.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-700x135.webp 640w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-200x39.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-100x19.webp 100w" sizes="(max-width: 705px) 100vw, 705px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro.jpg" sizes="(max-width: 705px) 100vw, 705px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro.jpg 705w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-300x58.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-700x135.jpg 640w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-200x39.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-4-vippro-100x19.jpg 100w" alt="vòng lặp trong javascript - itviec blog" width="705" height="136" loading="lazy" data-is-external-image="true"></figure></picture></p>
+<h3><strong>Vòng lặp trong JavaScript: Vòng lặp for…in</strong></h3>
+<p>Vòng lặp for…in được sử dụng để thực hiện hành động lặp qua các thuộc tính của một đối tượng (object). For…in chỉ lặp qua các giá trị keys của một đối tượng có thuộc tính có thể đếm được để đặt thành “true”.</p>
+<pre>for(let variable_name in object_name) {
+    // Statement
+}</pre>
+<p>Ví dụ về vòng lặp for…in như sau:</p>
+<pre>const salaries = {
+    Jack: 24000,
+    Paul: 34000,
+    Monica: 55000
+};
+for (let i in salaries) {
+    let salary = "$" + salaries[i];
+    console.log(`${i}: ${salary}`);
+};</pre>
+<p>Ở ví dụ trên, có thể thấy:</p>
+<ul>
+<li aria-level="1">Vòng lặp for…in được sử dụng để lặp lại các thuộc tính của đối tượng salary. </li>
+<li aria-level="1">Thêm chuỗi $ vào mỗi giá trị của đối tượng. </li>
+<li aria-level="1">Đoạn mã sử dụng biến i thay vì key vì có thể sử dụng bất kỳ tên biến nào, miễn là chúng hợp lệ. </li>
+</ul>
+<p>Kết quả hiển thị:</p>
+<figure class="alignnone size-full wp-image-77828 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro.jpg 559w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro-300x63.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro-200x42.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro-100x21.webp 100w" sizes="(max-width: 559px) 100vw, 559px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro.jpg" sizes="(max-width: 559px) 100vw, 559px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro.jpg 559w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro-300x63.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro-200x42.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-5-vippro-100x21.jpg 100w" alt="vòng lặp trong javascript - itviec blog" width="559" height="117" loading="lazy" data-is-external-image="true"></figure></picture></p>
+<h3><strong>Vòng lặp trong JavaScript: Vòng lặp for…of</strong></h3>
+<p>Vòng lặp for…of được sử dụng để lặp lại các đối tượng có thể lặp lại, chẳng hạn như mảng (array), đối tượng (object), set hoặc map. Vòng lặp sẽ lặp lại trực tiếp giá trị của đối tượng đã cho và có cú pháp ngắn gọn hơn vòng lặp for. </p>
+<pre>for(let variable_name of  object_name) {
+    // Statement
+}</pre>
+<p>Ví dụ về cách sử dụng for…of như sau: </p>
+<pre>const students = ['John', 'Sara', 'Jack'];
+for (let element of students) {
+    console.log(element);
+}</pre>
+<p>Ở ví dụ trên đã thực hiện vòng lặp for…of đối với mảng (array), cụ thể là lặp qua các đối tượng mảng là student và hiển thị tất cả các giá trị của nó.</p>
+<p>Kết quả hiển thị:</p>
+<figure class="alignnone size-full wp-image-77827 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro.jpg 600w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro-300x57.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro-200x38.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro-100x19.webp 100w" sizes="(max-width: 600px) 100vw, 600px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro.jpg" sizes="(max-width: 600px) 100vw, 600px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro.jpg 600w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro-300x57.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro-200x38.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-6-vippro-100x19.jpg 100w" alt="vòng lặp trong javascript - itviec blog" width="600" height="114" loading="lazy" data-is-external-image="true"></figure></picture></p>
+<h3><strong>Vòng lặp trong JavaScript: Break Statement</strong></h3>
+<p>Câu lệnh break được sử dụng để chấm dứt việc thực thi vòng lặp hoặc câu lệnh switch khi điều kiện đúng. Ví dụ như sau: </p>
+<pre>for (let i = 1; i &lt; 6; i++) {
+    if (i == 4) 
+        break;
+        
+    console.log(i);
+}</pre>
+<p>Ở ví dụ trên, có thể thấy như sau:</p>
+<ul>
+<li aria-level="1">Vòng lặp bắt đầu với i=1 và tiếp tục cho đến khi giá trị i nhỏ hơn 6. </li>
+<li aria-level="1">Khi i bằng 4, câu lệnh break được thực thi, điều này sẽ dừng vòng lặp ngay lập tức.</li>
+<li aria-level="1">Các giá trị của i từ 1 đến 3 sẽ được hiển thị. Khi đến giá trị i bằng 4, vòng lặp sẽ dừng lại trước khi i=4 được hiển thị.</li>
+</ul>
+<p>Kết quả hiển thị:</p>
+<figure class="alignnone size-full wp-image-77826 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro.jpg 357w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro-300x114.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro-200x76.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro-100x38.webp 100w" sizes="(max-width: 357px) 100vw, 357px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro.jpg" sizes="(max-width: 357px) 100vw, 357px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro.jpg 357w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro-300x114.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro-200x76.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-7-vippro-100x38.jpg 100w" alt="vòng lặp trong javascript - itviec blog" width="357" height="136" loading="lazy" data-is-external-image="true"></figure></picture></p>
+<h3><strong>Vòng lặp trong JavaScript: Continue Statement</strong></h3>
+<p>Câu lệnh continue được sử dụng để bỏ qua phần còn lại của vòng lặp hiện tại và tiếp tục với vòng lặp tiếp theo.</p>
+<p>Câu lệnh continue khác biệt so với câu lệnh break ở một số đặc điểm như:</p>
+<ul>
+<li aria-level="1">Câu lệnh continue sẽ dừng hoàn toàn vòng lặp và tiếp tục thực thi mã sau vòng lặp.</li>
+<li aria-level="1">Trong khi đó, câu lệnh break sẽ bỏ qua phần còn lại của vòng lặp hiện tại, tiếp tục với vòng lặp tiếp theo mà không dừng hoàn toàn vòng lặp.</li>
+</ul>
+<p>Chẳng hạn như ví dụ sau:</p>
+<pre>for (let i = 0; i &lt; 11; i++) {
+    if (i % 2 == 0) 
+        continue;
+        
+    console.log(i);
+}</pre>
+<p>Ở ví dụ trên, giá trị của i được tăng lên cho lần lặp tiếp theo, sau đó câu lệnh continue sẽ bỏ qua lần lặp hiện tại. Lưu ý rằng đoạn mã trên đã tăng giá trị của i cả bên trong và bên ngoài câu lệnh if. </p>
+<p>Kết quả hiển thị:</p>
+<figure class="alignnone size-full wp-image-77825 sp-no-webp"><picture><source srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro.jpg 489w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro-300x136.webp 300w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro-200x91.webp 200w,https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro-100x45.webp 100w" sizes="(max-width: 489px) 100vw, 489px" type="image/webp"><img  src="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro.jpg" sizes="(max-width: 489px) 100vw, 489px" srcset="https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro.jpg 489w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro-300x136.jpg 300w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro-200x91.jpg 200w, https://itviec.com/blog/wp-content/uploads/2024/08/vong-lap-trong-javascript-8-vippro-100x45.jpg 100w" alt="vòng lặp trong javascript - itviec blog" width="489" height="222" loading="lazy" data-is-external-image="true"></figure></picture></p>
+<h3><strong>Vòng lặp trong JavaScript: Infinite Loop </strong></h3>
+<p>Vòng lặp vô hạn (hay còn gọi là Infinite Loop) là một trong những lỗi sai phổ biến khi triển khai bất kỳ loại vòng lặp nào, bởi chúng có thể không bao giờ thoát, tức là vòng lặp sẽ chạy vô hạn lần. Điều này xảy ra khi điều kiện không thành công vì một lý do nào đó.</p>
+<pre>for (let i = 5; i != 0; i -= 2) {
+    console.log(i);
+}
+
+let x = 5;
+while (x == 5) {
+    console.log("In the loop");
+}</pre>
+<h2><span id="Cau_hoi_thuong_gap_ve_vong_lap_trong_JavaScript"><strong>Câu hỏi thường gặp về vòng lặp trong JavaScript</strong></span></h2>
+<h3><strong>Vòng lặp while và do…while khác nhau như thế nào?</strong></h3>
+<p>Vòng lặp while và do…while đều được sử dụng để thực hiện câu lệnh nhiều lần cho đến khi điều kiện không còn đúng. Tuy nhiên, cả hai vẫn có một số điểm khác biệt như:</p>
+<ul>
+<li aria-level="1"><strong>Vòng lặp while</strong>: Thường kiểm tra điều kiện trước khi đoạn mã được thực thi. </li>
+<li aria-level="1"><strong>Vòng lặp do…while: </strong>Sẽ thực thi đoạn mã một lần trước khi kiểm tra điều kiện.</li>
+</ul>
+<h3><strong>Làm sao để tránh vòng lặp vô hạn (Infinite Loop)?</strong></h3>
+<p>Vòng lặp vô hạn (Infinite Loop) xảy ra khi điều kiện kết thúc (Terminating condition) của vòng lặp không được đáp ứng, khiến cho vòng lặp chạy vô thời hạn. Để tránh tình trạng này, bạn cần đảm bảo điều kiện cuối cùng của vòng lặp là sai (False).</p>
+<h3><strong>Sự khác nhau giữa for…in và for…of</strong></h3>
+<p>Một số điểm khác nhau giữa for…in và for…of cụ thể như:</p>
+<table>
+<tbody>
+<tr>
+<td><strong>for…in</strong></td>
+<td><strong>for…of</strong></td>
+</tr>
+<tr>
+<td>Được sử dụng để lặp qua các khóa (keys) của một đối tượng</td>
+<td>Được sử dụng để lặp qua các giá trị của một iterable.</td>
+</tr>
+<tr>
+<td>Có thể sử dụng for…in để lặp qua một iterable như mảng, chuỗi. Tuy nhiên, tránh sử dụng for…in cho các iterable.</td>
+<td>Không thể sử dụng để lặp qua một đối tượng.</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="Tong_ket"><strong>Tổng kết</strong></span></h2>
+<p><strong>Vòng lặp trong </strong>JavaScript là một cấu trúc linh hoạt giúp các lập trình viên tự động hóa các tác vụ lặp đi lặp lại. Bằng cách hiểu rõ các loại vòng lặp khác nhau như for, while hay do…while và cách sử dụng chúng một cách hiệu quả, bạn có thể viết được những đoạn code JavaScript ngắn gọn và tối ưu dễ dàng.</p>
             ]]>
         </content>
     </entry>
